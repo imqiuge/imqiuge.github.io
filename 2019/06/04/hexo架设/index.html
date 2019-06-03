@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>hexo架设经验总结 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="1.下载安装2个文件(node.js与git)https://git-scm.com/download/winhttps://nodejs.org/en/download/安装后检查状态。node ,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">hexo架设经验总结</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">hexo架设经验总结</h1>
+        <div class="stuff">
+            <span>六月 04, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>1.<br>下载安装2个文件(node.js与git)<br><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a><br><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br>安装后检查状态。<br>node -v<br>npm -v<br>git –version</p>
+<p>1.2 配置SSH公钥： 使用下面的命令生成ssh公钥:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;imqiuge&quot;  //一路回车</span><br></pre></td></tr></table></figure>
+
+<p>生成id_rsa和id_rsa.pub这两个文件，前者是密钥，后者是公钥，用记事本打开id_rsa.pub，复制其中的全部内容，添加到GitHub上 (我的是在C:\Users\Administrator.ssh)<br>到github的setting中的 SSH and GPG keys-&gt;New SSH key-&gt;粘贴key内容</p>
+<p>SSH key添加之后，就可以在本机git bash中进行测试，输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>进行测试，<br>返回Hi username ！You’ve successfully ……说明你已经成功啦！</p>
+<p>2.<br>在任意一个地方新建一个文件夹，在git bash中进入这个文件夹，比如cd /d/Files/hexo/（之后安装的内容会保存在这个文件夹内），输入npm install -g hexo安装hexo即可，如下图（我已经安装过了，就不再安装了）<br>npm install -g hexo<br>npm install hexo –save<br>hexo v #查看是否安装成功<br>hexo init</p>
+<p>下载好了，再输入<br>hexo s #启动本地服务，默认4000端口</p>
+<p>我们可以去看一下我们的源码的位置，就在之前新建的那个文件夹里，在source-&gt;_posts文件夹下，有一篇helloworld的初始化文章，如果想要添加新的文章，可以在命令行输入hexo new ‘filename’,就会生成一个新的.md文件，对它编辑就可以了。</p>
+<p>3.3 上传项目</p>
+<p>　　先打开配置文档_config.yml，对它做如下修改，repository后面的内容是 <a href="mailto:git@gitbub.com" target="_blank" rel="noopener">git@gitbub.com</a>:username/库地址 的形式</p>
+<p>　　注意：type、repository、branch冒号的后面都有一个空格<br>deploy:<br>  type: git<br>  repository: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:imqiuge/imqiuge.github.io.git<br>  branch: master</p>
+<p>部署好之后，我们就可以上传我们的代码咯</p>
+<p>　　回到命令行窗口，输入npm install hexo-deployer-git –save,</p>
+<p>hexo g #保存git<br>hexo d #上传git</p>
+<p>安装主题：<br>$ git clone <a href="https://github.com/Fechin/hexo-theme-diaspora.git" target="_blank" rel="noopener">https://github.com/Fechin/hexo-theme-diaspora.git</a> diaspora<br>完成了把主题移到themes目录<br>再改_config.yml中的theme: diaspora (注意空格)</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+        <div class="side">
+            
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
