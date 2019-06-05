@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>about theme yilia | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#git的hexo目录中执行 1git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  会下载到theme目录中。再改配置修改hexo根目录下的 _config.yml ： theme: yilia这样就安装好了，但是分类文章显示不出来。还需要:  node 大于6.0(node -v 查看版本)  执行 i h">
+  <meta name="description" content="#git的hexo目录中执行# 1git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  会下载到theme目录中。再改配置修改hexo根目录下的 _config.yml ： theme: yilia这样就安装好了，但是分类文章显示不出来。还需要:  node 大于6.0(node -v 查看版本) 执行1npm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="about theme yilia">
 <meta property="og:url" content="http://yoursite.com/2019/06/05/about-theme-yilia/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#git的hexo目录中执行 1git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  会下载到theme目录中。再改配置修改hexo根目录下的 _config.yml ： theme: yilia这样就安装好了，但是分类文章显示不出来。还需要:  node 大于6.0(node -v 查看版本)  执行 i h">
+<meta property="og:description" content="#git的hexo目录中执行# 1git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  会下载到theme目录中。再改配置修改hexo根目录下的 _config.yml ： theme: yilia这样就安装好了，但是分类文章显示不出来。还需要:  node 大于6.0(node -v 查看版本) 执行1npm">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-05T05:20:35.960Z">
+<meta property="og:updated_time" content="2019-06-05T05:21:49.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="about theme yilia">
-<meta name="twitter:description" content="#git的hexo目录中执行 1git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  会下载到theme目录中。再改配置修改hexo根目录下的 _config.yml ： theme: yilia这样就安装好了，但是分类文章显示不出来。还需要:  node 大于6.0(node -v 查看版本)  执行 i h">
+<meta name="twitter:description" content="#git的hexo目录中执行# 1git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  会下载到theme目录中。再改配置修改hexo根目录下的 _config.yml ： theme: yilia这样就安装好了，但是分类文章显示不出来。还需要:  node 大于6.0(node -v 查看版本) 执行1npm">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -174,21 +174,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#git的hexo目录中执行</p>
+        <p>#git的hexo目录中执行#</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
 
 <p>会下载到theme目录中。再改配置<br>修改hexo根目录下的 _config.yml ： theme: yilia<br>这样就安装好了，但是分类文章显示不出来。<br>还需要:</p>
 <ol>
-<li><p>node 大于6.0(node -v 查看版本)</p>
-</li>
-<li><p>执行</p>
-<figure class="highlight plain"><figcaption><span>i hexo-generator-json-content --save</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">3._config.yml添加配置</span><br></pre></td></tr></table></figure>
+<li>node 大于6.0(node -v 查看版本)</li>
+<li>执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
 
-<p>jsonContent:<br> meta: false<br> pages: false<br> posts:<br>   title: true<br>   date: true<br>   path: true<br>   text: false<br>   raw: false<br>   content: false<br>   slug: false<br>   updated: false<br>   comments: false<br>   link: false<br>   permalink: false<br>   excerpt: false<br>   categories: false<br>   tags: true</p>
 </li>
 </ol>
-<p>```</p>
-
+<p>3._config.yml添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">jsonContent:</span><br><span class="line">   meta: false</span><br><span class="line">   pages: false</span><br><span class="line">   posts:</span><br><span class="line">     title: true</span><br><span class="line">     date: true</span><br><span class="line">     path: true</span><br><span class="line">     text: false</span><br><span class="line">     raw: false</span><br><span class="line">     content: false</span><br><span class="line">     slug: false</span><br><span class="line">     updated: false</span><br><span class="line">     comments: false</span><br><span class="line">     link: false</span><br><span class="line">     permalink: false</span><br><span class="line">     excerpt: false</span><br><span class="line">     categories: false</span><br><span class="line">     tags: true</span><br></pre></td></tr></table></figure>
       
 
       
