@@ -4,15 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="公众号开发, qiuge">
-    <meta name="description" content="测试号信息
+    <meta name="keywords" content="C#配合开发公众号尝试（处理JSON数据), qiuge">
+    <meta name="description" content="初步尝试用C#直接调用socket操作公众号的信息。
+1.VS的NuGet里安装Newtonsoft.Json包
+2.用现成的平台生成JSON数据的类:
 
-
-
-
-微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）https://mp.weixin.qq.com/debug/
-第一步：先需要基础支持中填写appid与secret获取access_token接口
-或者浏">
+http://json2csharp.chahuo.com/
+http://tool">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>公众号开发 | qiuge</title>
+    <title>C#配合开发公众号尝试（处理JSON数据) | qiuge</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        公众号开发
+                        C#配合开发公众号尝试（处理JSON数据)
                     </div>
                 </div>
             </div>
@@ -381,8 +379,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/公众号/" target="_blank">
-                                <span class="chip bg-color">公众号</span>
+                            <a href="/tags/公众号-C-JSON/" target="_blank">
+                                <span class="chip bg-color">公众号 C# JSON</span>
                             </a>
                         
                     </div>
@@ -412,29 +410,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>测试号信息</p>
-<!--access_token(需要生成):-->
-<!--22_5jWrCdpC9d3MaMcQbAMlEDydL7xv3CDUiQg6ZtbRRMjRY9MYxL9C5Z3pcw2yTqb0rAd5lmYceTI25KlTSEJwV6WThknJLS8YAewLCUDTQBNfbB78DJoSaifOWKU_3ftv6NTGJ7zD7ccDovYtNFSiABAQIV-->
+                <p>初步尝试用C#直接调用socket操作公众号的信息。</p>
+<p>1.VS的NuGet里安装Newtonsoft.Json包</p>
+<p>2.用现成的平台生成JSON数据的类:</p>
+<blockquote>
+<p><a href="http://json2csharp.chahuo.com/" target="_blank" rel="noopener">http://json2csharp.chahuo.com/</a></p>
+<p><a href="http://tool.chinaz.com/tools/json2entity.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/tools/json2entity.aspx</a></p>
+<p>以上2个均可</p>
+</blockquote>
+<p><code>{&quot;errcode&quot;:42001,&quot;errmsg&quot;:&quot;access_token expired hint: [E24ZKa00228879!]&quot;}</code></p>
+<p>这个调用ACCESS_TOKEN返回的错误，先拿这个测试，具体使用时要判断。</p>
+<p>3.实现类</p>
+<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> Newtonsoft<span class="token punctuation">.</span>Json<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Root</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">/// &lt;summary></span>
+            <span class="token comment" spellcheck="true">/// Errcode</span>
+            <span class="token comment" spellcheck="true">/// &lt;/summary></span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> errcode <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">/// &lt;summary></span>
+            <span class="token comment" spellcheck="true">/// access_token expired hint: [E24ZKa00228879!]</span>
+            <span class="token comment" spellcheck="true">/// &lt;/summary></span>
+            <span class="token keyword">public</span> <span class="token keyword">string</span> errmsg <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
 
-<hr>
-<h3 id="微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）"><a href="#微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）" class="headerlink" title="微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）"></a><code>微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）</code></h3><p><code>https://mp.weixin.qq.com/debug/</code></p>
-<p>第一步：<br>先需要基础支持中填写appid与secret获取access_token接口</p>
-<p>或者浏览器GET，返回的就是access_token<br><a href="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=xxx&amp;secret=xxx" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=xxx&amp;secret=xxx</a><br>返回值：<br>{“access_token”:”22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL”,”expires_in”:7200}</p>
-<hr>
-<h3 id="获取微信服务器IP地址"><a href="#获取微信服务器IP地址" class="headerlink" title="获取微信服务器IP地址"></a>获取微信服务器IP地址</h3><p><a href="https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL</a><br>返回值<br>{“ip_list”:[“101.226.233.139”,”223.166.222.112”]}</p>
-<hr>
-<h3 id="获取模板列表"><a href="#获取模板列表" class="headerlink" title="获取模板列表"></a>获取模板列表</h3><p><a href="https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL</a><br>返回值<br>{“template_list”:[{“template_id”:”sygppCzs-yyenN92lCuOC7OlMhe6Q84Ow1ZIH3KpmSM”,”title”:”2265”,”primary_industry”:””,”deputy_industry”:””,”content”:”65656565”,”example”:””}]}</p>
-<hr>
-<h5 id="上传文件得到media-id-gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR-cRB7aqUSdf-bNo0aV5d"><a href="#上传文件得到media-id-gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR-cRB7aqUSdf-bNo0aV5d" class="headerlink" title="上传文件得到media_id    :gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d"></a>上传文件得到media_id    :gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d</h5><hr>
-<h3 id="给用户发文本消息"><a href="#给用户发文本消息" class="headerlink" title="给用户发文本消息"></a>给用户发文本消息</h3><p>（1）发送文本消息<br><code>{</code><br>    <code>&quot;touser&quot;: &quot;oVd4s6JRqpGeUjxCxPQXnO5l4BC0&quot;,</code><br>    <code>&quot;msgtype&quot;: &quot;text&quot;,</code><br>    <code>&quot;text&quot;: {</code><br>        <code>&quot;content&quot;: &quot;哥几个喝几杯!&quot;</code><br>    <code>}</code><br><code>}</code></p>
-<hr>
-<h3 id="（2）发送图片消息"><a href="#（2）发送图片消息" class="headerlink" title="（2）发送图片消息"></a>（2）发送图片消息</h3><p>{
-    “touser”:”oVd4s6JRqpGeUjxCxPQXnO5l4BC0”,<br>    “msgtype”:”image”,<br>    “image”:<br>    {<br>      “media_id”:”gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d”<br>    }<br>}</p>
-<hr>
-<p>以下部分测试未成功<br>{
-    “touser”:”oVd4s6JRqpGeUjxCxPQXnO5l4BC0”,<br>    “msgtype”:”mpnews”,<br>    “mpnews”:<br>    {<br>         “media_id”:”gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d”<br>    }<br>}</p>
-<p>发送图文消息（点击跳转到外链） 图文消息条数限制在8条以内，注意，如果图文数超过8，则将会无响应。<br>{
-    “touser”:”oVd4s6JRqpGeUjxCxPQXnO5l4BC0”,<br>    “msgtype”:”news”,<br>    “news”:{<br>        “articles”: [<br>         {<br>             “title”:”Happy Day”,<br>             “description”:”Is Really A Happy Day”,<br>             “url”:”URL”,<br>             “picurl”:”PIC_URL”<br>         },<br>         {<br>             “title”:”Happy Day”,<br>             “description”:”Is Really A Happy Day”,<br>             “url”:”URL”,<br>             “picurl”:”PIC_URL”<br>         }<br>         ]<br>    }<br>}</p>
+            <span class="token keyword">string</span> jsonText <span class="token operator">=</span> <span class="token string">"{\"errcode\":42001,\"errmsg\":\"access_token expired hint: [E24ZKa00228879!]\"}"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//要有[]</span>
+            Root item <span class="token operator">=</span> JsonConvert<span class="token punctuation">.</span><span class="token generic-method function">DeserializeObject<span class="token punctuation">&lt;</span>Root<span class="token punctuation">></span></span><span class="token punctuation">(</span>jsonText<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//反序列化json字符串得到对象</span>
+
+            MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>errcode<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>errmsg<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr>
@@ -466,9 +470,9 @@
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《公众号开发》
+                    《C#配合开发公众号尝试（处理JSON数据)》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/25/公众号开发/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/25/C-配合开发公众号尝试/" property="cc:attributionName" rel="cc:attributionURL">
                 Qiuge
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -509,7 +513,8 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/06/25/C-配合开发公众号尝试/">
                     <div class="card-image">
@@ -532,9 +537,9 @@ http://tool
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -543,6 +548,7 @@ http://tool
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -561,25 +567,31 @@ http://tool
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/24/hexo-theme-matery主题安装使用/">
+                <a href="/2019/06/25/公众号开发/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="hexo-theme-matery主题安装使用">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="公众号开发">
                         
-                        <span class="card-title">hexo-theme-matery主题安装使用</span>
+                        <span class="card-title">公众号开发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            下载当你看到这里的时候，应该已经有一个自己的 Hexo 博客了。如果还没有的话，不妨使用 Hexo 和 Markdown 来写博客和文章。
-点击 这里 下载 master 分支的最新稳定版的代码，解压缩后，将 hexo-theme-mate
+                            测试号信息
+
+
+
+
+微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）https://mp.weixin.qq.com/debug/
+第一步：先需要基础支持中填写appid与secret获取access_token接口
+或者浏
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-25
                             </span>
                         <span class="publish-author">
                             
@@ -588,6 +600,14 @@ http://tool
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/公众号/" target="_blank">
+                        <span class="chip bg-color">公众号</span>
+                    </a>
+                    
                 </div>
                 
             </div>
