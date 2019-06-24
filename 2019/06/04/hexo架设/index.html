@@ -29,7 +29,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -404,9 +404,7 @@
             <div id="articleContent">
                 <p>1.<br>下载安装2个文件(node.js与git)<br><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a><br><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br>安装后检查状态。<br>node -v<br>npm -v<br>git –version</p>
 <p>1.2 配置SSH公钥： 使用下面的命令生成ssh公钥:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;imqiuge&quot;  //一路回车</span><br></pre></td></tr></table></figure>
-
-<p>生成id_rsa和id_rsa.pub这两个文件，前者是密钥，后者是公钥，用记事本打开id_rsa.pub，复制其中的全部内容，添加到GitHub上 (我的是在C:\Users\Administrator.ssh)<br>到github的setting中的 SSH and GPG keys-&gt;New SSH key-&gt;粘贴key内容</p>
+<pre><code>ssh-keygen -t rsa -C &quot;imqiuge&quot;  //一路回车</code></pre><p>生成id_rsa和id_rsa.pub这两个文件，前者是密钥，后者是公钥，用记事本打开id_rsa.pub，复制其中的全部内容，添加到GitHub上 (我的是在C:\Users\Administrator.ssh)<br>到github的setting中的 SSH and GPG keys-&gt;New SSH key-&gt;粘贴key内容</p>
 <p>SSH key添加之后，就可以在本机git bash中进行测试，输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>进行测试，<br>返回Hi username ！You’ve successfully ……说明你已经成功啦！</p>
 <p>2.<br>在任意一个地方新建一个文件夹，在git bash中进入这个文件夹，比如cd /d/Files/hexo/（之后安装的内容会保存在这个文件夹内），输入npm install -g hexo安装hexo即可，如下图（我已经安装过了，就不再安装了）<br>npm install -g hexo<br>npm install hexo –save<br>hexo v #查看是否安装成功<br>hexo init</p>
 <p>下载好了，再输入<br>hexo s #启动本地服务，默认4000端口</p>
@@ -689,7 +687,8 @@
                     <div class="summary block-with-text">
                         
                             代码高亮标签：
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606
+| 1C                      | 1c                                                           |
+|--------------------
                         
                     </div>
                     <div class="publish-info">
