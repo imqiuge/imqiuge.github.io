@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>公众号开发</title>
+      <link href="/2019/06/25/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/"/>
+      <url>/2019/06/25/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><p>测试号信息</p><!--access_token(需要生成):--><!--22_5jWrCdpC9d3MaMcQbAMlEDydL7xv3CDUiQg6ZtbRRMjRY9MYxL9C5Z3pcw2yTqb0rAd5lmYceTI25KlTSEJwV6WThknJLS8YAewLCUDTQBNfbB78DJoSaifOWKU_3ftv6NTGJ7zD7ccDovYtNFSiABAQIV--><hr><p><code>微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）</code><br><code>https://mp.weixin.qq.com/debug/</code></p><p>第一步：<br>先需要基础支持中填写appid与secret获取access_token接口</p><p>或者浏览器GET，返回的就是access_token<br><a href="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=xxx&amp;secret=xxx" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=xxx&amp;secret=xxx</a><br>返回值：<br>{“access_token”:”22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL”,”expires_in”:7200}</p><hr><p>获取微信服务器IP地址<br><a href="https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL</a><br>返回值<br>{“ip_list”:[“101.226.233.139”,”223.166.222.112”]}</p><p>获取模板列表<br><a href="https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL</a><br>返回值<br>{“template_list”:[{“template_id”:”sygppCzs-yyenN92lCuOC7OlMhe6Q84Ow1ZIH3KpmSM”,”title”:”2265”,”primary_industry”:””,”deputy_industry”:””,”content”:”65656565”,”example”:””}]}</p><p>上传文件得到media_id    :gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d</p><p>给用户发文本消息<br>（1）发送文本消息<br>{    “touser”: “oVd4s6JRqpGeUjxCxPQXnO5l4BC0”,<br>    “msgtype”: “text”,<br>    “text”: {<br>        “content”: “哥几个喝几杯!”<br>    }<br>}</p><p>（2）发送图片消息<br>{    “touser”:”oVd4s6JRqpGeUjxCxPQXnO5l4BC0”,<br>    “msgtype”:”image”,<br>    “image”:<br>    {<br>      “media_id”:”gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d”<br>    }<br>}</p><p>以下部分测试未成功<br>{    “touser”:”oVd4s6JRqpGeUjxCxPQXnO5l4BC0”,<br>    “msgtype”:”mpnews”,<br>    “mpnews”:<br>    {<br>         “media_id”:”gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d”<br>    }<br>}</p><p>发送图文消息（点击跳转到外链） 图文消息条数限制在8条以内，注意，如果图文数超过8，则将会无响应。<br>{    “touser”:”oVd4s6JRqpGeUjxCxPQXnO5l4BC0”,<br>    “msgtype”:”news”,<br>    “news”:{<br>        “articles”: [<br>         {<br>             “title”:”Happy Day”,<br>             “description”:”Is Really A Happy Day”,<br>             “url”:”URL”,<br>             “picurl”:”PIC_URL”<br>         },<br>         {<br>             “title”:”Happy Day”,<br>             “description”:”Is Really A Happy Day”,<br>             “url”:”URL”,<br>             “picurl”:”PIC_URL”<br>         }<br>         ]<br>    }<br>}</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 公众号 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo-theme-matery主题安装使用</title>
       <link href="/2019/06/24/hexo-theme-matery%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/"/>
       <url>/2019/06/24/hexo-theme-matery%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</url>
