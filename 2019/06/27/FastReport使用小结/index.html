@@ -4,15 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="公众号开发, qiuge">
-    <meta name="description" content="测试号信息
+    <meta name="keywords" content="FastReport使用小结, qiuge">
+    <meta name="description" content="使用方法整理：
+1.先复制4个文件到debug目录：
 
+FastReport.Bars.dll
+FastReport.dll
+FastReport.Editor.dll
+report.frx
 
-
-
-微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）https://mp.weixin.qq.com/debug/
-第一步：先需要基础支持中填写appid与secret获取access_token接口
-或者浏">
+2.引用文件 FastReport.dll(添">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>公众号开发 | qiuge</title>
+    <title>FastReport使用小结 | qiuge</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        公众号开发
+                        FastReport使用小结
                     </div>
                 </div>
             </div>
@@ -381,8 +382,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/公众号/" target="_blank">
-                                <span class="chip bg-color">公众号</span>
+                            <a href="/tags/FastReport/" target="_blank">
+                                <span class="chip bg-color">FastReport</span>
+                            </a>
+                        
+                            <a href="/tags/C/" target="_blank">
+                                <span class="chip bg-color">C#</span>
                             </a>
                         
                     </div>
@@ -396,7 +401,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-25
+                    2019-06-27
                 </div>
 
                 
@@ -412,70 +417,61 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>测试号信息</p>
-<!--access_token(需要生成):-->
-<!--22_5jWrCdpC9d3MaMcQbAMlEDydL7xv3CDUiQg6ZtbRRMjRY9MYxL9C5Z3pcw2yTqb0rAd5lmYceTI25KlTSEJwV6WThknJLS8YAewLCUDTQBNfbB78DJoSaifOWKU_3ftv6NTGJ7zD7ccDovYtNFSiABAQIV-->
+                <p>使用方法整理：</p>
+<p>1.先复制4个文件到debug目录：</p>
+<blockquote>
+<p>FastReport.Bars.dll</p>
+<p>FastReport.dll</p>
+<p>FastReport.Editor.dll</p>
+<p>report.frx</p>
+</blockquote>
+<p>2.引用文件 FastReport.dll(添加引用-&gt;浏览)</p>
+<p>3.代码部分：</p>
+<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> FastReport<span class="token punctuation">;</span>
 
-<hr>
-<h3 id="微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）"><a href="#微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）" class="headerlink" title="微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）"></a><code>微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）</code></h3><p><code>https://mp.weixin.qq.com/debug/</code></p>
-<p>第一步：<br>先需要基础支持中填写appid与secret获取access_token接口</p>
-<p>或者浏览器GET，返回的就是access_token<br><a href="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=xxx&amp;secret=xxx" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=xxx&amp;secret=xxx</a><br>返回值：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span><span class="token property">"access_token"</span><span class="token operator">:</span><span class="token string">"22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL"</span><span class="token punctuation">,</span><span class="token property">"expires_in"</span><span class="token operator">:</span><span class="token number">7200</span><span class="token punctuation">}</span></code></pre>
-<hr>
-<h3 id="获取微信服务器IP地址"><a href="#获取微信服务器IP地址" class="headerlink" title="获取微信服务器IP地址"></a>获取微信服务器IP地址</h3><p><a href="https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL</a><br>返回值</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span><span class="token property">"ip_list"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"101.226.233.139"</span><span class="token punctuation">,</span><span class="token string">"223.166.222.112"</span><span class="token punctuation">]</span><span class="token punctuation">}</span></code></pre>
-<hr>
-<h3 id="获取模板列表"><a href="#获取模板列表" class="headerlink" title="获取模板列表"></a>获取模板列表</h3><p><a href="https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL</a><br>返回值</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span><span class="token property">"template_list"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token property">"template_id"</span><span class="token operator">:</span><span class="token string">"sygppCzs-yyenN92lCuOC7OlMhe6Q84Ow1ZIH3KpmSM"</span><span class="token punctuation">,</span><span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"2265"</span><span class="token punctuation">,</span><span class="token property">"primary_industry"</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token property">"deputy_industry"</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token property">"content"</span><span class="token operator">:</span><span class="token string">"65656565"</span><span class="token punctuation">,</span><span class="token property">"example"</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span></code></pre>
-<hr>
-<h5 id="上传文件得到media-id-gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR-cRB7aqUSdf-bNo0aV5d"><a href="#上传文件得到media-id-gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR-cRB7aqUSdf-bNo0aV5d" class="headerlink" title="上传文件得到media_id    :gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d"></a>上传文件得到media_id    :gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d</h5><hr>
-<h3 id="给用户发文本消息"><a href="#给用户发文本消息" class="headerlink" title="给用户发文本消息"></a>给用户发文本消息</h3><p>（1）发送文本消息</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"touser"</span><span class="token operator">:</span> <span class="token string">"oVd4s6JRqpGeUjxCxPQXnO5l4BC0"</span><span class="token punctuation">,</span> 
-    <span class="token property">"msgtype"</span><span class="token operator">:</span> <span class="token string">"text"</span><span class="token punctuation">,</span> 
-    <span class="token property">"text"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">"content"</span><span class="token operator">:</span> <span class="token string">"哥几个喝几杯!"</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<hr>
-<h3 id="（2）发送图片消息"><a href="#（2）发送图片消息" class="headerlink" title="（2）发送图片消息"></a>（2）发送图片消息</h3><pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"touser"</span><span class="token operator">:</span><span class="token string">"oVd4s6JRqpGeUjxCxPQXnO5l4BC0"</span><span class="token punctuation">,</span>
-    <span class="token property">"msgtype"</span><span class="token operator">:</span><span class="token string">"image"</span><span class="token punctuation">,</span>
-    <span class="token property">"image"</span><span class="token operator">:</span>
-    <span class="token punctuation">{</span>
-      <span class="token property">"media_id"</span><span class="token operator">:</span><span class="token string">"gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d"</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<hr>
-<p>以下部分测试未成功</p>
-<pre><code>{
-    &quot;touser&quot;:&quot;oVd4s6JRqpGeUjxCxPQXnO5l4BC0&quot;,
-    &quot;msgtype&quot;:&quot;mpnews&quot;,
-    &quot;mpnews&quot;:
-    {
-         &quot;media_id&quot;:&quot;gQ67vciqNYpmKRxhJudTjbp7emXUcLIAUVZs6dHAlgvR_cRB7aqUSdf_bNo0aV5d&quot;
-    }
-}</code></pre><p>发送图文消息（点击跳转到外链） 图文消息条数限制在8条以内，注意，如果图文数超过8，则将会无响应。</p>
-<pre><code>{
-    &quot;touser&quot;:&quot;oVd4s6JRqpGeUjxCxPQXnO5l4BC0&quot;,
-    &quot;msgtype&quot;:&quot;news&quot;,
-    &quot;news&quot;:{
-        &quot;articles&quot;: [
-         {
-             &quot;title&quot;:&quot;Happy Day&quot;,
-             &quot;description&quot;:&quot;Is Really A Happy Day&quot;,
-             &quot;url&quot;:&quot;URL&quot;,
-             &quot;picurl&quot;:&quot;PIC_URL&quot;
-         },
-         {
-             &quot;title&quot;:&quot;Happy Day&quot;,
-             &quot;description&quot;:&quot;Is Really A Happy Day&quot;,
-             &quot;url&quot;:&quot;URL&quot;,
-             &quot;picurl&quot;:&quot;PIC_URL&quot;
-         }
-         ]
-    }
-}</code></pre>
+        <span class="token keyword">private</span> DataSet FDataSet<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//全局变量</span>
+
+        <span class="token keyword">public</span> <span class="token function">Form1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">InitializeComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">CreateDataSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">CreateDataSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// create simple dataset with one table</span>
+            FDataSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            DataTable table <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            table<span class="token punctuation">.</span>TableName <span class="token operator">=</span> <span class="token string">"Employees"</span><span class="token punctuation">;</span>
+            FDataSet<span class="token punctuation">.</span>Tables<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            table<span class="token punctuation">.</span>Columns<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            table<span class="token punctuation">.</span>Columns<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"Name"</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            table<span class="token punctuation">.</span>Rows<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Andrew Fuller"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            table<span class="token punctuation">.</span>Rows<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"Nancy Davolio"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            table<span class="token punctuation">.</span>Rows<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"Margaret Peacock"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">button3_Click</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> EventArgs e<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// create report instance</span>
+            Report report <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Report</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// load the existing report</span>
+            report<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span><span class="token string">@".\report.frx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// register the dataset</span>
+            report<span class="token punctuation">.</span><span class="token function">RegisterData</span><span class="token punctuation">(</span>FDataSet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// run the report</span>
+            report<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// free resources used by report</span>
+            report<span class="token punctuation">.</span><span class="token function">Dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+
             </div>
             <hr>
 
@@ -506,9 +502,9 @@
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《公众号开发》
+                    《FastReport使用小结》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/25/公众号开发/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/27/FastReport使用小结/" property="cc:attributionName" rel="cc:attributionURL">
                 Qiuge
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -549,57 +545,54 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/06/25/C-配合开发公众号尝试/">
+                <a href="/2019/06/27/FastReport使用小结/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C#配合开发公众号尝试（处理JSON数据)">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="FastReport使用小结">
                         
-                        <span class="card-title">C#配合开发公众号尝试（处理JSON数据)</span>
+                        <span class="card-title">FastReport使用小结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            初步尝试用C#直接调用socket操作公众号的信息。
-1.VS的NuGet里安装Newtonsoft.Json包
-2.用现成的平台生成JSON数据的类:
+                            使用方法整理：
+1.先复制4个文件到debug目录：
 
-http://json2csharp.chahuo.com/
-http://tool
+FastReport.Bars.dll
+FastReport.dll
+FastReport.Editor.dll
+report.frx
+
+2.引用文件 FastReport.dll(添
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-27
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/开发/" class="post-category" target="_blank">
-                                    开发
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Qiuge
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/FastReport/" target="_blank">
+                        <span class="chip bg-color">FastReport</span>
+                    </a>
+                    
                     <a href="/tags/C/" target="_blank">
                         <span class="chip bg-color">C#</span>
-                    </a>
-                    
-                    <a href="/tags/公众号/" target="_blank">
-                        <span class="chip bg-color">公众号</span>
-                    </a>
-                    
-                    <a href="/tags/JSON/" target="_blank">
-                        <span class="chip bg-color">JSON</span>
                     </a>
                     
                 </div>
@@ -613,25 +606,26 @@ http://tool
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/24/hexo-theme-matery主题安装使用/">
+                <a href="/2019/06/26/FastReport直接打印相关问题整理-转/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="hexo-theme-matery主题安装使用">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="FastReport直接打印相关问题整理(转)">
                         
-                        <span class="card-title">hexo-theme-matery主题安装使用</span>
+                        <span class="card-title">FastReport直接打印相关问题整理(转)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            下载当你看到这里的时候，应该已经有一个自己的 Hexo 博客了。如果还没有的话，不妨使用 Hexo 和 Markdown 来写博客和文章。
-点击 这里 下载 master 分支的最新稳定版的代码，解压缩后，将 hexo-theme-mate
+                            https://www.evget.com/article/2013/9/5/19550.html
+FastReport直接打印相关问题整理
+概述：最近慧都收集到很多关于FastReport直接打印的需求，小编整理了几种实现方式，供大家参考
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-26
                             </span>
                         <span class="publish-author">
                             
@@ -644,8 +638,12 @@ http://tool
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/主题/" target="_blank">
-                        <span class="chip bg-color">主题</span>
+                    <a href="/tags/FastReport/" target="_blank">
+                        <span class="chip bg-color">FastReport</span>
+                    </a>
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C#</span>
                     </a>
                     
                 </div>
