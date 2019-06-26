@@ -4,13 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C#配合开发公众号尝试（处理JSON数据), qiuge">
-    <meta name="description" content="初步尝试用C#直接调用socket操作公众号的信息。
-1.VS的NuGet里安装Newtonsoft.Json包
-2.用现成的平台生成JSON数据的类:
-
-http://json2csharp.chahuo.com/
-http://tool">
+    <meta name="keywords" content="FastReport直接打印相关问题整理(转), qiuge">
+    <meta name="description" content="https://www.evget.com/article/2013/9/5/19550.html
+FastReport直接打印相关问题整理
+概述：最近慧都收集到很多关于FastReport直接打印的需求，小编整理了几种实现方式，供大家参考">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +15,7 @@ http://tool">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C#配合开发公众号尝试（处理JSON数据) | qiuge</title>
+    <title>FastReport直接打印相关问题整理(转) | qiuge</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +259,13 @@ http://tool">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        C#配合开发公众号尝试（处理JSON数据)
+                        FastReport直接打印相关问题整理(转)
                     </div>
                 </div>
             </div>
@@ -379,16 +376,12 @@ http://tool">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/公众号/" target="_blank">
-                                <span class="chip bg-color">公众号</span>
-                            </a>
-                        
                             <a href="/tags/C/" target="_blank">
                                 <span class="chip bg-color">C#</span>
                             </a>
                         
-                            <a href="/tags/JSON/" target="_blank">
-                                <span class="chip bg-color">JSON</span>
+                            <a href="/tags/FastReport/" target="_blank">
+                                <span class="chip bg-color">FastReport</span>
                             </a>
                         
                     </div>
@@ -396,22 +389,13 @@ http://tool">
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/开发/" class="post-category" target="_blank">
-                                开发
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-25
+                    2019-06-26
                 </div>
 
                 
@@ -427,36 +411,54 @@ http://tool">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>初步尝试用C#直接调用socket操作公众号的信息。</p>
-<p>1.VS的NuGet里安装Newtonsoft.Json包</p>
-<p>2.用现成的平台生成JSON数据的类:</p>
-<blockquote>
-<p><a href="http://json2csharp.chahuo.com/" target="_blank" rel="noopener">http://json2csharp.chahuo.com/</a></p>
-<p><a href="http://tool.chinaz.com/tools/json2entity.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/tools/json2entity.aspx</a></p>
-<p>以上2个均可</p>
+                <p><a href="https://www.evget.com/article/2013/9/5/19550.html" target="_blank" rel="noopener">https://www.evget.com/article/2013/9/5/19550.html</a></p>
+<h2 id="FastReport直接打印相关问题整理"><a href="#FastReport直接打印相关问题整理" class="headerlink" title="FastReport直接打印相关问题整理"></a>FastReport直接打印相关问题整理</h2><blockquote>
+<p><strong>概述：</strong>最近慧都收集到很多关于FastReport直接打印的需求，小编整理了几种实现方式，供大家参考。</p>
 </blockquote>
-<p><code>{&quot;errcode&quot;:42001,&quot;errmsg&quot;:&quot;access_token expired hint: [E24ZKa00228879!]&quot;}</code></p>
-<p>这个调用ACCESS_TOKEN返回的错误，先拿这个测试，具体使用时要判断。</p>
-<p>3.实现类</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> Newtonsoft<span class="token punctuation">.</span>Json<span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Root</span>
-        <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">/// &lt;summary></span>
-            <span class="token comment" spellcheck="true">/// Errcode</span>
-            <span class="token comment" spellcheck="true">/// &lt;/summary></span>
-            <span class="token keyword">public</span> <span class="token keyword">int</span> errcode <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-            <span class="token comment" spellcheck="true">/// &lt;summary></span>
-            <span class="token comment" spellcheck="true">/// access_token expired hint: [E24ZKa00228879!]</span>
-            <span class="token comment" spellcheck="true">/// &lt;/summary></span>
-            <span class="token keyword">public</span> <span class="token keyword">string</span> errmsg <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
+<p>　　最近慧都收集到很多关于<a href="http://www.evget.com/zh-CN/partner/106/default.aspx" target="_blank" rel="noopener">FastReport</a>直接打印的需求，具体就是点击打印后，需要不出现打印对话框也不预览报表，直接开始打印，这种需求在发票单据、条码标签打印中非常常用。小编整理了几种实现<strong>报表直接打印</strong>方式，供大家参考。</p>
+<h2 id="FastReportVCL"><a href="#FastReportVCL" class="headerlink" title="FastReportVCL"></a>FastReportVCL</h2><p>　　在<a href="http://www.evget.com/zh-CN/product/233/feature.aspx" target="_blank" rel="noopener">FastReport VCL</a>中，需要将打印选项的对话框设置为False，也可以用以下代码实现。</p>
+<pre class=" language-delphi"><code class="language-delphi">Report.LoadFromFile('filename');
+Report.PrepareReport;
+Report.PrintOptions.ShowDialog := False;
+Report.Print;</code></pre>
+<h2 id="FastReport-NET（WinForm）"><a href="#FastReport-NET（WinForm）" class="headerlink" title="FastReport .NET（WinForm）"></a>FastReport .NET（WinForm）</h2><p>　　使用<a href="http://www.evget.com/zh-CN/product/1861/feature.aspx" target="_blank" rel="noopener">FastReport.Net</a>在WinForm平台上进行<strong>报表开发</strong>，实现直接打印的方式和VCL相识，将PrintSettings对话框设置为False就行了，也可以使用以下代码实现。</p>
+<pre class=" language-csharp"><code class="language-csharp">Report report <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Report</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+report<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+report<span class="token punctuation">.</span><span class="token function">RegisterData</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+report<span class="token punctuation">.</span>PrintSettings<span class="token punctuation">.</span>ShowDialog <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+report<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="FastReport-NET（WebForm）"><a href="#FastReport-NET（WebForm）" class="headerlink" title="FastReport .NET（WebForm）"></a>FastReport .NET（WebForm）</h2><p>　　使用FastReport ASP.Net版本开发的Web报表时，是不能直接实现直接打印报表，需要先导出为PDF后，再由Adobe Reader的打印功能间接实现。可以参考以下代码。</p>
+<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">Button1_Click</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> EventArgs e<span class="token punctuation">)</span>
+ <span class="token punctuation">{</span>
+     FastReport<span class="token punctuation">.</span>Utils<span class="token punctuation">.</span>Config<span class="token punctuation">.</span>WebMode <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
 
-            <span class="token comment" spellcheck="true">//string jsonText = "{\"errcode\":42001,\"errmsg\":\"access_token expired hint: [E24ZKa00228879!]\"}"; //要有[]</span>
-            <span class="token keyword">string</span> str <span class="token operator">=</span> <span class="token function">PostMoths</span><span class="token punctuation">(</span><span class="token string">"https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=22_hYHMoiF5_3d_yevA55CgzXlZyM7zsiIJEY8n2WwwGMyB9iZUUNXUVD95yjo1QVm_XsnuypDTJSP92R3kVGtwzL36FgeY6t_VYhRfPdg1L7rV7XXyfOJ1jyrRC7IUUAgAGAFFL"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Root item <span class="token operator">=</span> JsonConvert<span class="token punctuation">.</span><span class="token generic-method function">DeserializeObject<span class="token punctuation">&lt;</span>Root<span class="token punctuation">></span></span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//反序列化json字符串得到对象</span>
+     <span class="token keyword">using</span> <span class="token punctuation">(</span>Report report <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Report</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+  report<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span><span class="token string">"your_report.frx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  report<span class="token punctuation">.</span><span class="token function">RegisterData</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  report<span class="token punctuation">.</span><span class="token function">Prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>errcode<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>errmsg<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+  <span class="token comment" spellcheck="true">// Export report to PDF stream</span>
+  FastReport<span class="token punctuation">.</span>Export<span class="token punctuation">.</span>Pdf<span class="token punctuation">.</span>PDFExport pdfExport <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FastReport<span class="token punctuation">.</span>Export<span class="token punctuation">.</span>Pdf<span class="token punctuation">.</span>PDFExport</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">using</span> <span class="token punctuation">(</span>MemoryStream strm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MemoryStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      report<span class="token punctuation">.</span><span class="token function">Export</span><span class="token punctuation">(</span>pdfExport<span class="token punctuation">,</span> strm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment" spellcheck="true">// Stream the PDF back to the client as an attachment</span>
+      Response<span class="token punctuation">.</span><span class="token function">ClearContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Response<span class="token punctuation">.</span><span class="token function">ClearHeaders</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Response<span class="token punctuation">.</span>Buffer <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+      Response<span class="token punctuation">.</span>ContentType <span class="token operator">=</span> <span class="token string">"Application/PDF"</span><span class="token punctuation">;</span>
+      Response<span class="token punctuation">.</span><span class="token function">AddHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Disposition"</span><span class="token punctuation">,</span> <span class="token string">"attachment;filename=report.pdf"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      strm<span class="token punctuation">.</span>Position <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      strm<span class="token punctuation">.</span><span class="token function">WriteTo</span><span class="token punctuation">(</span>Response<span class="token punctuation">.</span>OutputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Response<span class="token punctuation">.</span><span class="token function">End</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+     <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span></code></pre>
+<p>　　以上方法是FastReport官方唯一推荐的方法，当然Web报表的直接打印，还有很多替代的方式，如调用IE的HTML页面打印，调用第三方打印插件，如AcitveX打印插件等。但是这些打印方法可能会影响报表的打印质量，浏览器兼容性与稳定性也不能保证，慧都在这里并不提倡。</p>
 
             </div>
             <hr>
@@ -488,9 +490,9 @@ http://tool">
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《C#配合开发公众号尝试（处理JSON数据)》
+                    《FastReport直接打印相关问题整理(转)》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/25/C-配合开发公众号尝试/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/26/FastReport直接打印相关问题整理-转/" property="cc:attributionName" rel="cc:attributionURL">
                 Qiuge
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -531,7 +533,8 @@ http://tool">
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/06/26/FastReport直接打印相关问题整理-转/">
                     <div class="card-image">
@@ -551,9 +554,9 @@ FastReport直接打印相关问题整理
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -562,6 +565,7 @@ FastReport直接打印相关问题整理
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -584,26 +588,24 @@ FastReport直接打印相关问题整理
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/25/公众号开发/">
+                <a href="/2019/06/25/C-配合开发公众号尝试/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="公众号开发">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C#配合开发公众号尝试（处理JSON数据)">
                         
-                        <span class="card-title">公众号开发</span>
+                        <span class="card-title">C#配合开发公众号尝试（处理JSON数据)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            测试号信息
+                            初步尝试用C#直接调用socket操作公众号的信息。
+1.VS的NuGet里安装Newtonsoft.Json包
+2.用现成的平台生成JSON数据的类:
 
-
-
-
-微信自带在线调试工具，入口（左侧开发者工具-》在线接口调试工具）https://mp.weixin.qq.com/debug/
-第一步：先需要基础支持中填写appid与secret获取access_token接口
-或者浏
+http://json2csharp.chahuo.com/
+http://tool
                         
                     </div>
                     <div class="publish-info">
@@ -612,8 +614,12 @@ FastReport直接打印相关问题整理
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Qiuge
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/开发/" class="post-category" target="_blank">
+                                    开发
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -623,6 +629,14 @@ FastReport直接打印相关问题整理
                     
                     <a href="/tags/公众号/" target="_blank">
                         <span class="chip bg-color">公众号</span>
+                    </a>
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C#</span>
+                    </a>
+                    
+                    <a href="/tags/JSON/" target="_blank">
+                        <span class="chip bg-color">JSON</span>
                     </a>
                     
                 </div>
