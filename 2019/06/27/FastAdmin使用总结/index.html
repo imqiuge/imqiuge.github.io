@@ -5,7 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="FastAdmin使用总结, qiuge">
-    <meta name="description" content="php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)1.2设计表，按需添加，还是要备注清楚！步骤2：//生成fa_test">
+    <meta name="description" content="php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)1.2设计表，按需添加，还是要备注清楚！
+步骤2：//生成fa_tes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -382,9 +383,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/PHP/" target="_blank">
+                                <span class="chip bg-color">PHP</span>
+                            </a>
+                        
+                            <a href="/tags/FastAdmin/" target="_blank">
+                                <span class="chip bg-color">FastAdmin</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -411,7 +420,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="php-think-crud的命令非常好用，用于一键生成该功能的全部代码。"><a href="#php-think-crud的命令非常好用，用于一键生成该功能的全部代码。" class="headerlink" title="php think crud的命令非常好用，用于一键生成该功能的全部代码。"></a>php think crud的命令非常好用，用于一键生成该功能的全部代码。</h2><p>步骤1：<br>1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)<br>1.2设计表，按需添加，还是要备注清楚！<br>步骤2：<br>//生成fa_test表的CRUD<br>在根目录执行（think文件目录，记的把php加到环境变量）：</p>
+                <h2 id="php-think-crud的命令非常好用，用于一键生成该功能的全部代码。"><a href="#php-think-crud的命令非常好用，用于一键生成该功能的全部代码。" class="headerlink" title="php think crud的命令非常好用，用于一键生成该功能的全部代码。"></a>php think crud的命令非常好用，用于一键生成该功能的全部代码。</h2><h5 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h5><p>1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)<br>1.2设计表，按需添加，还是要备注清楚！</p>
+<h5 id="步骤2："><a href="#步骤2：" class="headerlink" title="步骤2："></a>步骤2：</h5><p>//生成fa_test表的CRUD<br>在根目录执行（think文件目录，记的把php加到环境变量）：</p>
 <pre class=" language-php"><code class="language-php">php think crud <span class="token operator">-</span>t test10  <span class="token shell-comment comment">#作用：生成全部文件。</span>
 或
 php think crud <span class="token operator">-</span>t test10 <span class="token operator">-</span>c money<span class="token operator">/</span>test10 <span class="token shell-comment comment">#同上一样作用，只是生成在money目录里</span>
@@ -419,8 +429,7 @@ php think crud <span class="token operator">-</span>t test10 <span class="token 
 php think crud <span class="token operator">-</span>t test10 <span class="token operator">-</span>u <span class="token number">1</span> <span class="token comment" spellcheck="true">//添加并同时生成菜单</span>
 
 php think crud <span class="token operator">-</span>t test10 <span class="token operator">--</span>force<span class="token operator">=</span><span class="token boolean">true</span> <span class="token comment" spellcheck="true">//强制重新生成</span></code></pre>
-<p>步骤3：</p>
-<pre class=" language-php"><code class="language-php">php think menu <span class="token operator">-</span>c test10 <span class="token shell-comment comment">#生成菜单</span>
+<h5 id="步骤3："><a href="#步骤3：" class="headerlink" title="步骤3："></a>步骤3：</h5><pre class=" language-php"><code class="language-php">php think menu <span class="token operator">-</span>c test10 <span class="token shell-comment comment">#生成菜单</span>
 php think menu <span class="token operator">-</span>c money2\<span class="token package">test10</span> <span class="token shell-comment comment">#同步骤2对应的路径，相应的money2后的二级目录</span>
 
 以上代码要反操作删除的话最后 <span class="token operator">-</span>d <span class="token number">1</span> 即可
@@ -470,11 +479,7 @@ php think menu <span class="token operator">-</span>c all<span class="token oper
 <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">auth</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">username</span> <span class="token comment" spellcheck="true">//用户名</span>
 <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">auth</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">paemail</span>        <span class="token comment" spellcheck="true">//邮箱</span></code></pre>
 <hr>
-<p>删除菜单侧栏下面相关链接部分：<br>application\admin\view\common\menu.html文件下面的4行</p>
-<!--以下4行可以删除或改成自己的链接,但建议你在你的网站上添加一个FastAdmin的链接-->
-
-<hr>
-<hr>
+<p>删除菜单侧栏下面相关链接文件位于：<br>application\admin\view\common\menu.html文件下面的4行<br>以下4行可以删除或改成自己的链接,但建议你在你的网站上添加一个FastAdmin的链接</p>
 <hr>
 <p>字段<br>createtime    创建时间    int    记录添加时间字段,不需要手动维护<br>updatetime    更新时间    int    记录更新时间的字段,不需要手动维护</p>
 <p>deletetime    删除时间    int    记录删除时间的字段,不需要手动维护,如果存在此字段将会生成回收站功能,字段默认值务必为null</p>
@@ -511,15 +516,20 @@ php think menu <span class="token operator">-</span>c all<span class="token oper
 <p>​                    operate: ‘LIKE %…%’},</p>
 <hr>
 <h2 id="TABLE上增加序号栏"><a href="#TABLE上增加序号栏" class="headerlink" title="TABLE上增加序号栏"></a>TABLE上增加序号栏</h2><p>，通过修改JS文件实现。<br>\public\assets\js\backend\schools.js (schools.js与control同名)</p>
-<p>{checkbox: true},    //以下文件直接复制即可使用<br>                        {field: ‘id’,title: __(‘序号’), formatter:function (value,row,index)<br>                        {<br>                        return index+1;<br>                        }<br>                        },</p>
+<pre class=" language-php"><code class="language-php"><span class="token punctuation">{</span>checkbox<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//以下文件直接复制即可使用</span>
+<span class="token punctuation">{</span>field<span class="token punctuation">:</span> <span class="token string">'id'</span><span class="token punctuation">,</span>title<span class="token punctuation">:</span> <span class="token function">__</span><span class="token punctuation">(</span><span class="token string">'序号'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> formatter<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span>row<span class="token punctuation">,</span>index<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">return</span> index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <hr>
-<h2 id="实现分页序号连续。"><a href="#实现分页序号连续。" class="headerlink" title="实现分页序号连续。"></a>实现分页序号连续。</h2><pre class=" language-php"><code class="language-php">                    <span class="token punctuation">{</span>field<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token function">__</span><span class="token punctuation">(</span><span class="token string">'序号'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> formatter<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span> row<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                            <span class="token keyword">var</span> options <span class="token operator">=</span> table<span class="token punctuation">.</span><span class="token function">bootstrapTable</span><span class="token punctuation">(</span><span class="token string">'getOptions'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                            <span class="token keyword">var</span> pageNumber <span class="token operator">=</span> options<span class="token punctuation">.</span>pageNumber<span class="token punctuation">;</span>
-                            <span class="token keyword">var</span> pageSize <span class="token operator">=</span> options<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
+<h2 id="实现分页序号连续。"><a href="#实现分页序号连续。" class="headerlink" title="实现分页序号连续。"></a>实现分页序号连续。</h2><pre class=" language-php"><code class="language-php"><span class="token punctuation">{</span>field<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token function">__</span><span class="token punctuation">(</span><span class="token string">'序号'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> formatter<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span> row<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> options <span class="token operator">=</span> table<span class="token punctuation">.</span><span class="token function">bootstrapTable</span><span class="token punctuation">(</span><span class="token string">'getOptions'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> pageNumber <span class="token operator">=</span> options<span class="token punctuation">.</span>pageNumber<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> pageSize <span class="token operator">=</span> options<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
 
-                            <span class="token keyword">return</span> <span class="token punctuation">(</span>pageNumber <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> pageSize <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> index<span class="token punctuation">;</span>
-                        <span class="token punctuation">}</span><span class="token punctuation">,</span> operate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>pageNumber <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> pageSize <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> index<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> operate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <hr>
 <p>可以参考自带的例子，以及表 字段的写法，注意注释部分。</p>
 <p>FastAdmin自带一个fa_test表用于测试CRUD能支持的字段名称和类型，请直接使用php think crud -t test生成查看</p>
@@ -540,7 +550,6 @@ php think menu <span class="token operator">-</span>c all<span class="token oper
 <p>1、打开application/config.php，找到app_debug,将它的值置为true即可</p>
 <p>2、如果你有启用.env环境配置，修改其中app_debug的值为true即可。</p>
 </blockquote>
-<hr>
 <hr>
 
             </div>
@@ -631,7 +640,8 @@ php think menu <span class="token operator">-</span>c all<span class="token oper
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)1.2设计表，按需添加，还是要备注清楚！步骤2：//生成fa_test
+                            php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)1.2设计表，按需添加，还是要备注清楚！
+步骤2：//生成fa_tes
                         
                     </div>
                     <div class="publish-info">
@@ -647,6 +657,18 @@ php think menu <span class="token operator">-</span>c all<span class="token oper
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PHP/" target="_blank">
+                        <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/FastAdmin/" target="_blank">
+                        <span class="chip bg-color">FastAdmin</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -688,12 +710,12 @@ php think menu <span class="token operator">-</span>c all<span class="token oper
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C#</span>
-                    </a>
-                    
                     <a href="/tags/FastReport/" target="_blank">
                         <span class="chip bg-color">FastReport</span>
+                    </a>
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C#</span>
                     </a>
                     
                 </div>
