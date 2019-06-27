@@ -4,9 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="使用功能强大的插件FastReport.Net打印报表实例(转), qiuge">
-    <meta name="description" content="使用功能强大的插件FastReport.Net打印报表实例　　我第一次使用FastReport插件做的功能是打印一个十分复杂的excel表格，有几百个字段都需要绑定数据，至少需要4个数据源，而且用到横向、竖向合并单元格。
-　　我不是直接连接">
+    <meta name="keywords" content="FastAdmin使用总结, qiuge">
+    <meta name="description" content="{:build_heading()}菜单上方的导入 及搜索操作应该在这个代码里面
+
+php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>使用功能强大的插件FastReport.Net打印报表实例(转) | qiuge</title>
+    <title>FastAdmin使用总结 | qiuge</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -268,13 +269,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        使用功能强大的插件FastReport.Net打印报表实例(转)
+                        FastAdmin使用总结
                     </div>
                 </div>
             </div>
@@ -385,18 +386,35 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/" target="_blank">
-                                <span class="chip bg-color">C#</span>
+                            <a href="/tags/PHP/" target="_blank">
+                                <span class="chip bg-color">PHP</span>
                             </a>
                         
-                            <a href="/tags/FastReport/" target="_blank">
-                                <span class="chip bg-color">FastReport</span>
+                            <a href="/tags/FastAdmin/" target="_blank">
+                                <span class="chip bg-color">FastAdmin</span>
+                            </a>
+                        
+                            <a href="/tags/Thinkphp/" target="_blank">
+                                <span class="chip bg-color">Thinkphp</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/开发/" class="post-category" target="_blank">
+                                开发
+                            </a>
+                        
+                            <a href="/categories/开发/PHP/" class="post-category" target="_blank">
+                                PHP
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -420,154 +438,137 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用功能强大的插件FastReport-Net打印报表实例"><a href="#使用功能强大的插件FastReport-Net打印报表实例" class="headerlink" title="使用功能强大的插件FastReport.Net打印报表实例"></a><a href="https://www.cnblogs.com/wang7/p/4049567.html" target="_blank" rel="noopener">使用功能强大的插件FastReport.Net打印报表实例</a></h1><p>　　我第一次使用FastReport插件做的功能是打印一个十分复杂的excel表格，有几百个字段都需要绑定数据，至少需要4个数据源，而且用到横向、竖向合并单元格。</p>
-<p>　　我不是直接连接数据库，而是使用RegisterData的方式自己注册DataSet对象，所有的表Table都是代码生成，填充到DataSet中，然后注册到控件中。</p>
-<p>　　最开始尝试使用这个插件做一个简单的功能使用的就是下面的例子，不过花了一整天，还请假了4个人都没有搞出来，晚上拿着别人的模板直接修改，然后测试，就通过了。</p>
-<p>　　之前测试，一直都提示未连接到数据源，原因是我直接使用记事本来向模板添加数据源导致的，平时别人使用的数据源都是自己写代码，调用Design的方式得到的，而且只能是winform程序，webform程序不行，因为要启动com组件。</p>
-<p>　　下面是我总结的特别简单的一个方式，使用RegisterData的方式自己注册DataSet对象。</p>
-<p>1，          选择【File】-》【New】 新建FastReport模板，选择下图的1。</p>
-<p>  <img src="https://images0.cnblogs.com/blog/298550/201410/242337573086239.jpg" alt="img">                     </p>
-<p>2，          选择【View】-》【Data】，显示如下，导出Dictionary，保存。</p>
-<p> <img src="https://images0.cnblogs.com/blog/298550/201410/242338049653434.jpg" alt="img"></p>
-<p>3，          编辑导出的.frd文件，编辑完后保存，再导入。</p>
-<p>如下：</p>
-<p>(1)  TableDataSource 是数据源节点。</p>
-<p>(2)  Name是DataSet对象的Table的表名。</p>
-<p>(3)  Column是Table的列，模板绑定数据时，使用Column的Name属性。</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+                <p>{:build_heading()}菜单上方的导入 及搜索操作应该在这个代码里面</p>
+<hr>
+<h2 id="php-think-crud的命令非常好用，用于一键生成该功能的全部代码。"><a href="#php-think-crud的命令非常好用，用于一键生成该功能的全部代码。" class="headerlink" title="php think crud的命令非常好用，用于一键生成该功能的全部代码。"></a>php think crud的命令非常好用，用于一键生成该功能的全部代码。</h2><p>步骤1：<br>1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)<br>1.2设计表，按需添加，还是要备注清楚！<br>步骤2：<br>//生成fa_test表的CRUD<br>在根目录执行（think文件目录，记的把php加到环境变量）：</p>
+<pre class=" language-php"><code class="language-php">php think crud <span class="token operator">-</span>t test10  <span class="token shell-comment comment">#作用：生成全部文件。</span>
+或
+php think crud <span class="token operator">-</span>t test10 <span class="token operator">-</span>c money<span class="token operator">/</span>test10 <span class="token shell-comment comment">#同上一样作用，只是生成在money目录里</span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Dictionary</span><span class="token punctuation">></span></span>
+php think crud <span class="token operator">-</span>t test10 <span class="token operator">-</span>u <span class="token number">1</span> <span class="token comment" spellcheck="true">//添加并同时生成菜单</span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TableDataSource</span> <span class="token attr-name">Name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Table1<span class="token punctuation">"</span></span> <span class="token attr-name">ReferenceName</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Data.Table1<span class="token punctuation">"</span></span> <span class="token attr-name">DataType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>System.Int32<span class="token punctuation">"</span></span> <span class="token attr-name">Enabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+php think crud <span class="token operator">-</span>t test10 <span class="token operator">--</span>force<span class="token operator">=</span><span class="token boolean">true</span> <span class="token comment" spellcheck="true">//强制重新生成</span></code></pre>
+<p>步骤3：</p>
+<pre class=" language-php"><code class="language-php">php think menu <span class="token operator">-</span>c test10 <span class="token shell-comment comment">#生成菜单</span>
+php think menu <span class="token operator">-</span>c money2\<span class="token package">test10</span> <span class="token shell-comment comment">#同步骤2对应的路径，相应的money2后的二级目录</span>
 
-​    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Column</span> <span class="token attr-name">Name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>姓名<span class="token punctuation">"</span></span> <span class="token attr-name">DataType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>System.String<span class="token punctuation">"</span></span> <span class="token attr-name">PropName</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Column<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+以上代码要反操作删除的话最后 <span class="token operator">-</span>d <span class="token number">1</span> 即可
 
-​    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Column</span> <span class="token attr-name">Name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>密码<span class="token punctuation">"</span></span> <span class="token attr-name">DataType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>System.String<span class="token punctuation">"</span></span> <span class="token attr-name">PropName</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Column<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token comment" spellcheck="true">//生成fa_test表的CRUD</span>
+php think crud <span class="token operator">-</span>t test
+<span class="token comment" spellcheck="true">//生成fa_test表的CRUD且一键生成菜单</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">-</span>u <span class="token number">1</span>
+<span class="token comment" spellcheck="true">//删除fa_test表生成的CRUD</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">-</span>d <span class="token number">1</span>
+<span class="token comment" spellcheck="true">//生成fa_test表的CRUD且控制器生成在二级目录下</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">-</span>c mydir<span class="token operator">/</span>test
+<span class="token comment" spellcheck="true">//生成fa_test_log表的CRUD且生成对应的控制器为testlog</span>
+php think crud <span class="token operator">-</span>t test_log <span class="token operator">-</span>c testlog
+<span class="token comment" spellcheck="true">//生成fa_test表的CRUD且对应的模型名为testmodel</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">-</span>m testmodel
+<span class="token comment" spellcheck="true">//生成fa_test表的CRUD且生成关联模型category，外链为category_id，关联表主键为id</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">-</span>r category <span class="token operator">-</span>k category_id <span class="token operator">-</span>p id
+<span class="token comment" spellcheck="true">//生成fa_test表的CRUD且所有以list或data结尾的字段都生成复选框</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">--</span>setcheckboxsuffix<span class="token operator">=</span>list <span class="token operator">--</span>setcheckboxsuffix<span class="token operator">=</span>data
+<span class="token comment" spellcheck="true">//生成fa_test表的CRUD且所有以image和img结尾的字段都生成图片上传组件</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">--</span>imagefield<span class="token operator">=</span>image <span class="token operator">--</span>imagefield<span class="token operator">=</span>img
+<span class="token comment" spellcheck="true">//关联多个表,参数传递时请按顺序依次传递，支持以下几个参数relation/relationmodel/relationforeignkey/relationprimarykey/relationfields/relationmode</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">--</span>relation<span class="token operator">=</span>category <span class="token operator">--</span>relation<span class="token operator">=</span>admin <span class="token operator">--</span>relationforeignkey<span class="token operator">=</span>category_id <span class="token operator">--</span>relationforeignkey<span class="token operator">=</span>admin_id
+<span class="token comment" spellcheck="true">//生成v_phealth_db2数据库下的fa_test表的CRUD</span>
+php think crud <span class="token operator">-</span>t test <span class="token operator">--</span>db<span class="token operator">=</span>v_phealth_db2
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>TableDataSource</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">//一键生成test控制器的权限菜单</span>
+php think menu <span class="token operator">-</span>c test
+<span class="token comment" spellcheck="true">//一键生成mydir/test控制器的权限菜单</span>
+php think menu <span class="token operator">-</span>c mydir<span class="token operator">/</span>test
+<span class="token comment" spellcheck="true">//删除test控制器生成的菜单</span>
+php think menu <span class="token operator">-</span>c test <span class="token operator">-</span>d <span class="token number">1</span>
+<span class="token comment" spellcheck="true">//一键全部重新所有控制器的权限菜单</span>
+php think menu <span class="token operator">-</span>c all<span class="token operator">-</span>controller</code></pre>
+<p><a href="https://doc.fastadmin.net/docs/command.html#准备工作-10" target="_blank" rel="noopener">https://doc.fastadmin.net/docs/command.html#准备工作-10</a></p>
+<hr>
+<p>含有此字段生成CRUD的时候会带【回收站】<br>名：deletetime<br>类型：int<br>长度：10</p>
+<p>注释：删除时间    </p>
+<hr>
+<p>用户信息、用户名、ID、昵称等：</p>
+<pre class=" language-php"><code class="language-php"><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"用户ID:"</span><span class="token punctuation">.</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">auth</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">id</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"用户昵称:"</span><span class="token punctuation">.</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">auth</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">nickname</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">auth</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">password</span> <span class="token comment" spellcheck="true">//加密后的密码字符</span>
+<span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">auth</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">username</span> <span class="token comment" spellcheck="true">//用户名</span>
+<span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">auth</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">paemail</span>        <span class="token comment" spellcheck="true">//邮箱</span></code></pre>
+<hr>
+<p>删除菜单侧栏下面相关链接部分：<br>application\admin\view\common\menu.html文件下面的4行</p>
+<!--以下4行可以删除或改成自己的链接,但建议你在你的网站上添加一个FastAdmin的链接-->
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Dictionary</span><span class="token punctuation">></span></span></code></pre>
-<p>4，          编辑模板，添加一个Table控件。</p>
-<p>第一行直接双击输入文本；第二行直接将右边的数据源托到单元格中；</p>
-<p>设置边框、字体。</p>
-<p> <img src="https://images0.cnblogs.com/blog/298550/201410/242338225439864.jpg" alt="img"></p>
-<p>5，          添加事件后台方法</p>
-<p>如下图，选中Table1，在事件ManualBuild的后面双击，添加下面的代码：</p>
-<p> <img src="https://images0.cnblogs.com/blog/298550/201410/242338411994165.jpg" alt="img"></p>
-<pre class=" language-csharp"><code class="language-csharp"> <span class="token comment" spellcheck="true">// 控件Table1的构建事件</span>
-    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">Table1_ManualBuild</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> EventArgs e<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        DataSourceBase data1 <span class="token operator">=</span> Report<span class="token punctuation">.</span><span class="token function">GetDataSource</span><span class="token punctuation">(</span><span class="token string">"Table1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 获取DataSet中表名为Table1的数据源</span>
-        data1<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 初始化</span>
-        Table1<span class="token punctuation">.</span><span class="token function">PrintRow</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 控件Table1打印第0行</span>
-        Table1<span class="token punctuation">.</span><span class="token function">PrintColumns</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 每打印一行，都要调用 PrintColumn或PrintColumns</span>
+<hr>
+<hr>
+<hr>
+<p>字段<br>createtime    创建时间    int    记录添加时间字段,不需要手动维护<br>updatetime    更新时间    int    记录更新时间的字段,不需要手动维护</p>
+<p>deletetime    删除时间    int    记录删除时间的字段,不需要手动维护,如果存在此字段将会生成回收站功能,字段默认值务必为null</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="模糊搜索的方法"><a href="#模糊搜索的方法" class="headerlink" title="模糊搜索的方法"></a>模糊搜索的方法</h2><p>(每次重新生成crud修改就会恢复回去)：</p>
+<p>目前只发现改js文件，对应的路径为：<br>\public\assets\js\backend\schools.js (schools.js与control同名)<br>初始化表格部分把原：<br>{field: ‘NAME’, title: __(‘Name’)｝，<br>再加一行修改为<br>{field: ‘NAME’, title: __(‘Name’),</p>
+<p>​                    operate: ‘LIKE %…%’},</p>
+<hr>
+<h2 id="TABLE上增加序号栏"><a href="#TABLE上增加序号栏" class="headerlink" title="TABLE上增加序号栏"></a>TABLE上增加序号栏</h2><p>，通过修改JS文件实现。<br>\public\assets\js\backend\schools.js (schools.js与control同名)</p>
+<p>{checkbox: true},    //以下文件直接复制即可使用<br>                        {field: ‘id’,title: __(‘序号’), formatter:function (value,row,index)<br>                        {<br>                        return index+1;<br>                        }<br>                        },</p>
+<hr>
+<h2 id="实现分页序号连续。"><a href="#实现分页序号连续。" class="headerlink" title="实现分页序号连续。"></a>实现分页序号连续。</h2><pre class=" language-php"><code class="language-php">                    <span class="token punctuation">{</span>field<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token function">__</span><span class="token punctuation">(</span><span class="token string">'序号'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> formatter<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span> row<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            <span class="token keyword">var</span> options <span class="token operator">=</span> table<span class="token punctuation">.</span><span class="token function">bootstrapTable</span><span class="token punctuation">(</span><span class="token string">'getOptions'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token keyword">var</span> pageNumber <span class="token operator">=</span> options<span class="token punctuation">.</span>pageNumber<span class="token punctuation">;</span>
+                            <span class="token keyword">var</span> pageSize <span class="token operator">=</span> options<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
 
-        <span class="token keyword">while</span><span class="token punctuation">(</span>data1<span class="token punctuation">.</span>HasMoreRows<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 打印重复循环的行</span>
-        <span class="token punctuation">{</span>
-            Table1<span class="token punctuation">.</span><span class="token function">PrintRow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Table1<span class="token punctuation">.</span><span class="token function">PrintColumns</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            data1<span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 读取下一行</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span></code></pre>
-<p>说明：</p>
-<p>(1)   Table控件是从第0行开始的。</p>
-<p>(2)   绑定数据的重复行，算作一行。</p>
-<p>(3)   输出行之前，要先调用Init() 方法，当有两个数据源，比如data1和data2，data1又是data2的父数据源，需要把data1当做参数，如 data2.Init(data1);</p>
-<p>(4)   每打印一行，都要调用 PrintColumn或PrintColumns</p>
-<p>6，          添加c#代码</p>
-<p>新建一个测试页面test.aspx，将一个FastReport控件拖放到页面上（只有按照过FastReport.net，且引用了FastReport.dll，FastReport.Bars.dll，FastReport.Web.dll之后才可以）</p>
-<p>添加后页面如下：</p>
-<body>
-
-<p>​    <form id="form1" runat="server">   </form></p>
-<p>​    &lt;cc1:WebReport ID=”webReport” runat=”server” OnStartReport=”WebReport_StartReport” /&gt;</p>
-<p>​       </p>
-</body>
-
-
-
-<p>后台方法：</p>
-<pre class=" language-csharp"><code class="language-csharp">      <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">WebReport_StartReport</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> EventArgs e<span class="token punctuation">)</span>
-
-        <span class="token punctuation">{</span>
-
-
-
-            DataSet ds <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-
-            DataTable table1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            table1<span class="token punctuation">.</span>TableName <span class="token operator">=</span> <span class="token string">"Table1"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 一定要设置表名称</span>
-
-            ds<span class="token punctuation">.</span>Tables<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>table1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token comment" spellcheck="true">// 添加表中的列</span>
-
-            table1<span class="token punctuation">.</span>Columns<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"姓名"</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            table1<span class="token punctuation">.</span>Columns<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"密码"</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token comment" spellcheck="true">// 任意添加一些数据</span>
-
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> maxI <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> maxI<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-
-            <span class="token punctuation">{</span>
-
-                DataRow row <span class="token operator">=</span> table1<span class="token punctuation">.</span><span class="token function">NewRow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-                row<span class="token punctuation">[</span><span class="token string">"姓名"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"我是"</span> <span class="token operator">+</span> i<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-                row<span class="token punctuation">[</span><span class="token string">"密码"</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-                table1<span class="token punctuation">.</span>Rows<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token punctuation">}</span>
-
-
-
-            Report FReport <span class="token operator">=</span> <span class="token punctuation">(</span>sender <span class="token keyword">as</span> WebReport<span class="token punctuation">)</span><span class="token punctuation">.</span>Report<span class="token punctuation">;</span>       
-
-            <span class="token keyword">string</span> sPath <span class="token operator">=</span> <span class="token function">GetReportsPath</span><span class="token punctuation">(</span><span class="token string">"test.frx"</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
-
-            FReport<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span>sPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token comment" spellcheck="true">// 将DataSet对象注册到FastReport控件中</span>
-
-            FReport<span class="token punctuation">.</span><span class="token function">RegisterData</span><span class="token punctuation">(</span>ds<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-
-        <span class="token punctuation">}</span>
-
-
-
-        <span class="token comment" spellcheck="true">/// &lt;summary></span>
-
-        <span class="token comment" spellcheck="true">/// 获取fastreport模板的路径</span>
-
-        <span class="token comment" spellcheck="true">/// &lt;/summary></span>
-
-        <span class="token comment" spellcheck="true">/// &lt;param name="sReportName">模板名称&lt;/param></span>
-
-        <span class="token comment" spellcheck="true">/// &lt;returns>返回模板路径&lt;/returns></span>
-
-        <span class="token keyword">public</span> <span class="token keyword">string</span> <span class="token function">GetReportsPath</span><span class="token punctuation">(</span><span class="token keyword">string</span> sReportName<span class="token punctuation">)</span>
-
-        <span class="token punctuation">{</span>
-
-            <span class="token keyword">return</span> FastReport<span class="token punctuation">.</span>Utils<span class="token punctuation">.</span>Config<span class="token punctuation">.</span>ApplicationFolder <span class="token operator">+</span> <span class="token string">"Reports\\"</span> <span class="token operator">+</span> sReportName<span class="token punctuation">;</span>
-
-        <span class="token punctuation">}</span>
-
-</code></pre>
-<p>7，          测试效果</p>
-<p>1对应保存，可以是各种格式；</p>
-<p>2对应打印；</p>
-<p>3对应分页。</p>
-<p> <img src="https://images0.cnblogs.com/blog/298550/201410/242339014495178.jpg" alt="img"></p>
-<p><a href="http://jingyan.baidu.com/article/046a7b3ec2c744f9c37fa944.html" target="_blank" rel="noopener">http://jingyan.baidu.com/article/046a7b3ec2c744f9c37fa944.html</a></p>
+                            <span class="token keyword">return</span> <span class="token punctuation">(</span>pageNumber <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> pageSize <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> index<span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span> operate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+<hr>
+<p>可以参考自带的例子，以及表 字段的写法，注意注释部分。</p>
+<p>FastAdmin自带一个fa_test表用于测试CRUD能支持的字段名称和类型，请直接使用php think crud -t test生成查看</p>
+<hr>
+<h2 id="关闭登陆验证码"><a href="#关闭登陆验证码" class="headerlink" title="关闭登陆验证码"></a>关闭登陆验证码</h2><blockquote>
+<p>打开application/config.php在文件 login_captcha的配置为false即可</p>
+<p>输入框要禁用，在模板文件里改readonly=”true”</p>
+</blockquote>
+<p>controller编写非常重要的：<br>php文件首字母需要大写,如果Okokok.php</p>
+<hr>
+<h2 id="提示你所浏览的页面暂时无法访问"><a href="#提示你所浏览的页面暂时无法访问" class="headerlink" title="提示你所浏览的页面暂时无法访问"></a>提示你所浏览的页面暂时无法访问</h2><p>如果我们在FastAdmin开发过程中遇到此错误，说明我们application/config.php中的app_debug是关闭的，必须开启app_debug为true才可以显示出详细的错误信息。如果开启app_debug仍然显示不出详细错误，请确保php.ini中的display_error为开启状态。</p>
+<hr>
+<p>准备工作：首先确保你的FastAdmin开启了调试模式application/config.php中的app_debug置为true<br>两种定位错误的方法：</p>
+<pre><code>使用Chrome浏览器，打开开发者工具，选中Network(网络)选项卡,刷新一下页面或重新请求一次，定位到我们请求的URL，点击然后在Preview即可看到错误信息
+直接查看runtime/log目录下的错误日志</code></pre><hr>
+<h2 id="在FastAdmin中如何开启调试模式？"><a href="#在FastAdmin中如何开启调试模式？" class="headerlink" title="在FastAdmin中如何开启调试模式？"></a>在FastAdmin中如何开启调试模式？</h2><p>开启调试模式的方法有两种：</p>
+<blockquote>
+<p>1、打开application/config.php，找到app_debug,将它的值置为true即可</p>
+<p>2、如果你有启用.env环境配置，修改其中app_debug的值为true即可。</p>
+</blockquote>
+<hr>
+<hr>
 
             </div>
             <hr>
@@ -599,9 +600,9 @@
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《使用功能强大的插件FastReport.Net打印报表实例(转)》
+                    《FastAdmin使用总结》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/27/使用功能强大的插件FastReport-Net打印报表实例-转/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/27/FastAdmin使用总结/" property="cc:attributionName" rel="cc:attributionURL">
                 Qiuge
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -642,7 +643,8 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/06/27/FastAdmin使用总结/">
                     <div class="card-image">
@@ -662,9 +664,9 @@ php think crud的命令非常好用，用于一键生成该功能的全部代码
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -681,6 +683,7 @@ php think crud的命令非常好用，用于一键生成该功能的全部代码
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -707,27 +710,20 @@ php think crud的命令非常好用，用于一键生成该功能的全部代码
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/27/FastReport使用小结/">
+                <a href="/2019/06/27/使用功能强大的插件FastReport-Net打印报表实例-转/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="FastReport使用小结">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="使用功能强大的插件FastReport.Net打印报表实例(转)">
                         
-                        <span class="card-title">FastReport使用小结</span>
+                        <span class="card-title">使用功能强大的插件FastReport.Net打印报表实例(转)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用方法整理：
-1.先复制4个文件到debug目录：
-
-FastReport.Bars.dll
-FastReport.dll
-FastReport.Editor.dll
-report.frx
-
-2.引用文件 FastReport.dll(添
+                            使用功能强大的插件FastReport.Net打印报表实例　　我第一次使用FastReport插件做的功能是打印一个十分复杂的excel表格，有几百个字段都需要绑定数据，至少需要4个数据源，而且用到横向、竖向合并单元格。
+　　我不是直接连接
                         
                     </div>
                     <div class="publish-info">
@@ -736,12 +732,8 @@ report.frx
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/开发/" class="post-category" target="_blank">
-                                    开发
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Qiuge
                             
                         </span>
                     </div>
