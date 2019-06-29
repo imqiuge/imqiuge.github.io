@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="FastAdmin使用总结, C#, 开发">
     <meta name="description" content="php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)1.2设计表，按需添加，还是要备注清楚！
-步骤2：//生成fa_tes">
+步骤2(生成文件)：//生成">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -420,7 +420,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="php-think-crud的命令非常好用，用于一键生成该功能的全部代码。"><a href="#php-think-crud的命令非常好用，用于一键生成该功能的全部代码。" class="headerlink" title="php think crud的命令非常好用，用于一键生成该功能的全部代码。"></a>php think crud的命令非常好用，用于一键生成该功能的全部代码。</h2><h5 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h5><p>1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)<br>1.2设计表，按需添加，还是要备注清楚！</p>
-<h5 id="步骤2："><a href="#步骤2：" class="headerlink" title="步骤2："></a>步骤2：</h5><p>//生成fa_test表的CRUD<br>在根目录执行（think文件目录，记的把php加到环境变量）：</p>
+<h5 id="步骤2-生成文件-："><a href="#步骤2-生成文件-：" class="headerlink" title="步骤2(生成文件)："></a>步骤2(生成文件)：</h5><p>//生成fa_test表的CRUD<br>在根目录执行（think文件目录，记的把php加到环境变量）：</p>
 <pre class=" language-php"><code class="language-php">php think crud <span class="token operator">-</span>t test10  <span class="token shell-comment comment">#作用：生成全部文件。</span>
 或
 php think crud <span class="token operator">-</span>t test10 <span class="token operator">-</span>c money<span class="token operator">/</span>test10 <span class="token shell-comment comment">#同上一样作用，只是生成在money目录里</span>
@@ -428,7 +428,7 @@ php think crud <span class="token operator">-</span>t test10 <span class="token 
 php think crud <span class="token operator">-</span>t test10 <span class="token operator">-</span>u <span class="token number">1</span> <span class="token comment" spellcheck="true">//添加并同时生成菜单</span>
 
 php think crud <span class="token operator">-</span>t test10 <span class="token operator">--</span>force<span class="token operator">=</span><span class="token boolean">true</span> <span class="token comment" spellcheck="true">//强制重新生成</span></code></pre>
-<h5 id="步骤3："><a href="#步骤3：" class="headerlink" title="步骤3："></a>步骤3：</h5><pre class=" language-php"><code class="language-php">php think menu <span class="token operator">-</span>c test10 <span class="token shell-comment comment">#生成菜单</span>
+<h5 id="步骤3-生成菜单-："><a href="#步骤3-生成菜单-：" class="headerlink" title="步骤3(生成菜单)："></a>步骤3(生成菜单)：</h5><pre class=" language-php"><code class="language-php">php think menu <span class="token operator">-</span>c test10 <span class="token shell-comment comment">#生成菜单</span>
 php think menu <span class="token operator">-</span>c money2\<span class="token package">test10</span> <span class="token shell-comment comment">#同步骤2对应的路径，相应的money2后的二级目录</span>
 
 以上代码要反操作删除的话最后 <span class="token operator">-</span>d <span class="token number">1</span> 即可
@@ -456,14 +456,15 @@ php think crud <span class="token operator">-</span>t test <span class="token op
 <span class="token comment" spellcheck="true">//生成v_phealth_db2数据库下的fa_test表的CRUD</span>
 php think crud <span class="token operator">-</span>t test <span class="token operator">--</span>db<span class="token operator">=</span>v_phealth_db2
 
-<span class="token comment" spellcheck="true">//一键生成test控制器的权限菜单</span>
-php think menu <span class="token operator">-</span>c test
-<span class="token comment" spellcheck="true">//一键生成mydir/test控制器的权限菜单</span>
-php think menu <span class="token operator">-</span>c mydir<span class="token operator">/</span>test
-<span class="token comment" spellcheck="true">//删除test控制器生成的菜单</span>
-php think menu <span class="token operator">-</span>c test <span class="token operator">-</span>d <span class="token number">1</span>
-<span class="token comment" spellcheck="true">//一键全部重新所有控制器的权限菜单</span>
-php think menu <span class="token operator">-</span>c all<span class="token operator">-</span>controller</code></pre>
+</code></pre>
+<h2 id="删除控制器及菜单"><a href="#删除控制器及菜单" class="headerlink" title="删除控制器及菜单"></a>删除控制器及菜单</h2><pre class=" language-shell"><code class="language-shell">//一键生成test控制器的权限菜单
+php think menu -c test
+//一键生成mydir/test控制器的权限菜单
+php think menu -c mydir/test
+//删除test控制器生成的菜单
+php think menu -c test -d 1
+//一键全部重新所有控制器的权限菜单
+php think menu -c all-controller</code></pre>
 <p><a href="https://doc.fastadmin.net/docs/command.html#准备工作-10" target="_blank" rel="noopener">https://doc.fastadmin.net/docs/command.html#准备工作-10</a></p>
 <hr>
 <p>{:build_heading()}菜单上方的导入 及搜索操作应该在这个代码里面</p>
@@ -700,7 +701,7 @@ php think menu <span class="token operator">-</span>c all<span class="token oper
                     <div class="summary block-with-text">
                         
                             php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)1.2设计表，按需添加，还是要备注清楚！
-步骤2：//生成fa_tes
+步骤2(生成文件)：//生成
                         
                     </div>
                     <div class="publish-info">
