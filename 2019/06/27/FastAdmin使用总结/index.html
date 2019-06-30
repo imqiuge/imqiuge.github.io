@@ -5,11 +5,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="FastAdmin使用总结, C#, 开发">
-    <meta name="description" content="快速搜索只需在控制器中定义搜索的字段
+    <meta name="description" content="FastAdmin控制管理员只显示自己添加的数据经测试可用，对超级管理员无效。
+1.给当前控制器添加一个$dataLimit属性，如下class Page extends Backend
+{
 
-protected $searchFields = &#39;XM&#39;;
-添加菜单头{:build_toolbar(&#39;refresh,add,edit,del,import&#39;)}
-{:build_heading">
+  protected $model = nu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -422,7 +422,28 @@ protected $searchFields = &#39;XM&#39;;
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="快速搜索"><a href="#快速搜索" class="headerlink" title="快速搜索"></a>快速搜索</h4><pre class=" language-php"><code class="language-php">只需在控制器中定义搜索的字段
+                <h4 id="FastAdmin控制管理员只显示自己添加的数据"><a href="#FastAdmin控制管理员只显示自己添加的数据" class="headerlink" title="FastAdmin控制管理员只显示自己添加的数据"></a>FastAdmin控制管理员只显示自己添加的数据</h4><p>经测试可用，对超级管理员无效。</p>
+<h5 id="1-给当前控制器添加一个-dataLimit属性，如下"><a href="#1-给当前控制器添加一个-dataLimit属性，如下" class="headerlink" title="1.给当前控制器添加一个$dataLimit属性，如下"></a>1.给当前控制器添加一个$dataLimit属性，如下</h5><pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">Page</span> <span class="token keyword">extends</span> <span class="token class-name">Backend</span>
+<span class="token punctuation">{</span>
+
+  <span class="token keyword">protected</span> <span class="token variable">$model</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这个有问题可以删除</span>
+  <span class="token keyword">protected</span> <span class="token variable">$dataLimit</span> <span class="token operator">=</span> <span class="token string">'personal'</span><span class="token punctuation">;</span> 
+  <span class="token comment" spellcheck="true">//这个属性在基类已经定义，默认为false，表示不启用，$dataLimit可使用auth和personal两个值</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>下面简单介绍一下它的意思 ```
+$dataLimit = false; //表示不启用，显示所有数据<br>$dataLimit = ‘auth’; //表示显示当前自己和所有子级管理员的所有数据<br>$dataLimit = ‘personal’; //表示仅显示当前自己的数据</p>
+</blockquote>
+<h5 id="2-给我们的数据表添加一个admin-id字段，类型为int-10-，新增数据默认自动加标识"><a href="#2-给我们的数据表添加一个admin-id字段，类型为int-10-，新增数据默认自动加标识" class="headerlink" title="2.给我们的数据表添加一个admin_id字段，类型为int(10)，新增数据默认自动加标识"></a>2.给我们的数据表添加一个admin_id字段，类型为int(10)，新增数据默认自动加标识</h5><p>如果不想使用admin_id字段，我们改用adminid字段，则可以在当前控制器中定义个</p>
+<p>$dataLimitField属性，如下 `</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">Page</span> <span class="token keyword">extends</span> <span class="token class-name">Backend</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">protected</span> <span class="token variable">$model</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">protected</span> <span class="token variable">$dataLimit</span> <span class="token operator">=</span> <span class="token string">'personal'</span><span class="token punctuation">;</span> 
+<span class="token keyword">protected</span> <span class="token variable">$dataLimitField</span> <span class="token operator">=</span> <span class="token string">'adminid'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h4 id="快速搜索"><a href="#快速搜索" class="headerlink" title="快速搜索"></a>快速搜索</h4><pre class=" language-php"><code class="language-php">只需在控制器中定义搜索的字段
 
 <span class="token keyword">protected</span> <span class="token variable">$searchFields</span> <span class="token operator">=</span> <span class="token string">'XM'</span><span class="token punctuation">;</span></code></pre>
 <h4 id="添加菜单头"><a href="#添加菜单头" class="headerlink" title="添加菜单头"></a>添加菜单头</h4><pre class=" language-js"><code class="language-js"><span class="token punctuation">{</span><span class="token punctuation">:</span><span class="token function">build_toolbar</span><span class="token punctuation">(</span><span class="token string">'refresh,add,edit,del,import'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
