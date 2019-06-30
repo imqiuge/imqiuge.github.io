@@ -5,8 +5,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="FastAdmin使用总结, C#, 开发">
-    <meta name="description" content="php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)1.2设计表，按需添加，还是要备注清楚！
-步骤2(生成文件)：//生成">
+    <meta name="description" content="快速搜索只需在控制器中定义搜索的字段
+
+protected $searchFields = &#39;XM&#39;;
+添加菜单头{:build_toolbar(&#39;refresh,add,edit,del,import&#39;)}
+{:build_heading">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -419,9 +422,70 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="php-think-crud的命令非常好用，用于一键生成该功能的全部代码。"><a href="#php-think-crud的命令非常好用，用于一键生成该功能的全部代码。" class="headerlink" title="php think crud的命令非常好用，用于一键生成该功能的全部代码。"></a>php think crud的命令非常好用，用于一键生成该功能的全部代码。</h2><h5 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h5><p>1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)<br>1.2设计表，按需添加，还是要备注清楚！</p>
+                <h4 id="快速搜索"><a href="#快速搜索" class="headerlink" title="快速搜索"></a>快速搜索</h4><pre class=" language-php"><code class="language-php">只需在控制器中定义搜索的字段
+
+<span class="token keyword">protected</span> <span class="token variable">$searchFields</span> <span class="token operator">=</span> <span class="token string">'XM'</span><span class="token punctuation">;</span></code></pre>
+<h4 id="添加菜单头"><a href="#添加菜单头" class="headerlink" title="添加菜单头"></a>添加菜单头</h4><pre class=" language-js"><code class="language-js"><span class="token punctuation">{</span><span class="token punctuation">:</span><span class="token function">build_toolbar</span><span class="token punctuation">(</span><span class="token string">'refresh,add,edit,del,import'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">:</span><span class="token function">build_heading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>菜单上方的导入 及搜索操作应该在这个代码里面</code></pre>
+<hr>
+<h4 id="导入问题解决办法："><a href="#导入问题解决办法：" class="headerlink" title="导入问题解决办法："></a>导入问题解决办法：</h4><h5 id="1-控制器中继承import方法"><a href="#1-控制器中继承import方法" class="headerlink" title="1.控制器中继承import方法"></a>1.控制器中继承import方法</h5><p>application\admin\controller\recruit\Schools.php</p>
+<pre class=" language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">import</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">parent</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">import</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<ol start="2">
+<li><h5 id="在模块对应的JS中添加import-url"><a href="#在模块对应的JS中添加import-url" class="headerlink" title="在模块对应的JS中添加import_url"></a>在模块对应的JS中添加import_url</h5><p>如下路径：\public\assets\js\backend\recruit\student.js</p>
+<pre class=" language-js"><code class="language-js">    Table<span class="token punctuation">.</span>api<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        extend<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            index_url<span class="token punctuation">:</span> <span class="token string">'recruit/student/index'</span> <span class="token operator">+</span> location<span class="token punctuation">.</span>search<span class="token punctuation">,</span>
+            add_url<span class="token punctuation">:</span> <span class="token string">'recruit/student/add'</span><span class="token punctuation">,</span>
+            edit_url<span class="token punctuation">:</span> <span class="token string">'recruit/student/edit'</span><span class="token punctuation">,</span>
+            del_url<span class="token punctuation">:</span> <span class="token string">'recruit/student/del'</span><span class="token punctuation">,</span>
+     import_url<span class="token punctuation">:</span> <span class="token string">'recruit/student/import'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//只添加了这部分</span>
+            multi_url<span class="token punctuation">:</span> <span class="token string">'recruit/student/multi'</span><span class="token punctuation">,</span>
+            table<span class="token punctuation">:</span> <span class="token string">'recruit_student'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ol>
+<h5 id="3-不可直接用导出的模板，需要保存下，另外id字段不可以加入"><a href="#3-不可直接用导出的模板，需要保存下，另外id字段不可以加入" class="headerlink" title="3.不可直接用导出的模板，需要保存下，另外id字段不可以加入"></a>3.不可直接用导出的模板，需要保存下，另外id字段不可以加入</h5><blockquote>
+<p>温馨提示：上传只支持xls、xlsx、csv三种格式的数据，第一行数据为数据表字段注释，因此请务必为你的数据表添加好注释。</p>
+</blockquote>
+<hr>
+<p>设置只读字段，保护数据不能修改，</p>
+<p>经测试有效，添加不影响，编辑提示成功，但是不会改动。</p>
+<p>在模型中定义：</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token variable">$readonly</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'XM'</span><span class="token punctuation">,</span> <span class="token string">'MZ'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//数据库</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h4 id="关联模型的CRUD生成命令（2个数据库绑定）"><a href="#关联模型的CRUD生成命令（2个数据库绑定）" class="headerlink" title="关联模型的CRUD生成命令（2个数据库绑定）"></a>关联模型的CRUD生成命令（2个数据库绑定）</h4><pre class=" language-shell"><code class="language-shell">php think crud -t test10 -r category -k category_1 -p id
+//解释： test10 中的category字段与category_1表绑定，category_1的主键为id</code></pre>
+<hr>
+<h4 id="列表上的tab键怎么生成"><a href="#列表上的tab键怎么生成" class="headerlink" title="列表上的tab键怎么生成?"></a>列表上的tab键怎么生成?</h4><p>方法1：<br>可以自已添加修改的。</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nav nav-tabs<span class="token punctuation">"</span></span> <span class="token attr-name">data-field</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>需要展现的字段名<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>active<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#t-all<span class="token punctuation">"</span></span> <span class="token attr-name">data-value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-toggle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{:__('All')}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+            {foreach name="后台传过来的数组list" item="vo"}
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#t-{$key}<span class="token punctuation">"</span></span> <span class="token attr-name">data-value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{$key}<span class="token punctuation">"</span></span> <span class="token attr-name">data-toggle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{$vo}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+            {/foreach}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<p>可以参考test生成的index.html</p>
+<p>注意要和table的字段一致</p>
+<p>方法2：</p>
+<p>数据库字段，及类型，生成的效果，建议收费状态加上这个字段</p>
+<pre><code>status状态:0=隐藏,1=正常,2=推荐
+enum(‘0’,’1’,’2’)</code></pre><p>将生成多个语言包和单选下拉列表,同时生成TAB选项卡,且列表中的值显示为对应的文字##</p>
+<hr>
+<p>后台会员增加会员添加功能，添加到数据库的密码是明码，怎么处理可以给密码加密？<br>密码规则是</p>
+<pre class=" language-php"><code class="language-php"><span class="token function">md5</span><span class="token punctuation">(</span><span class="token function">md5</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token operator">+</span>salt<span class="token punctuation">)</span></code></pre>
+<hr>
+<p>如何在会员管理里面设置一个添加<br><a href="https://ask.fastadmin.net/question/1606.html" target="_blank" rel="noopener">https://ask.fastadmin.net/question/1606.html</a></p>
+<hr>
+<h2 id="php-think-crud的命令非常好用，用于一键生成该功能的全部代码。"><a href="#php-think-crud的命令非常好用，用于一键生成该功能的全部代码。" class="headerlink" title="php think crud的命令非常好用，用于一键生成该功能的全部代码。"></a>php think crud的命令非常好用，用于一键生成该功能的全部代码。</h2><h5 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h5><p>1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)<br>1.2设计表，按需添加，还是要备注清楚！</p>
 <h5 id="步骤2-生成文件-："><a href="#步骤2-生成文件-：" class="headerlink" title="步骤2(生成文件)："></a>步骤2(生成文件)：</h5><p>//生成fa_test表的CRUD<br>在根目录执行（think文件目录，记的把php加到环境变量）：</p>
-<pre class=" language-php"><code class="language-php">php think crud <span class="token operator">-</span>t test10  <span class="token shell-comment comment">#作用：生成全部文件。</span>
+<pre class=" language-php"><code class="language-php">php think crud <span class="token operator">-</span>t test10      <span class="token shell-comment comment">#作用：生成全部文件。</span>
 或
 php think crud <span class="token operator">-</span>t test10 <span class="token operator">-</span>c money<span class="token operator">/</span>test10 <span class="token shell-comment comment">#同上一样作用，只是生成在money目录里</span>
 
@@ -685,29 +749,30 @@ php think menu -c all-controller</code></pre>
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/27/FastAdmin使用总结/">
+                <a href="/2019/06/30/一张图解析FastAdmin中的表格列表的功能/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="FastAdmin使用总结">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="一张图解析FastAdmin中的表格列表的功能">
                         
-                        <span class="card-title">FastAdmin使用总结</span>
+                        <span class="card-title">一张图解析FastAdmin中的表格列表的功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            php think crud的命令非常好用，用于一键生成该功能的全部代码。步骤1：1.1新建数据库fa_test10 (备注写清楚，文件以名称为标准，菜单信息以备注为准)1.2设计表，按需添加，还是要备注清楚！
-步骤2(生成文件)：//生成
+                            一张图解析FastAdmin中的表格列表的功能发布于 2017-08-29
+
+功能描述请根据图片上的数字索引查看对应功能说明。
+1.菜单名称和描述默认生成的CRUD是没有菜单名称和描述显示的，如果需要显示则可以修改权限管理-&gt;菜单规则
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-30
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -720,7 +785,6 @@ php think menu -c all-controller</code></pre>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
