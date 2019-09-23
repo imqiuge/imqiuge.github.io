@@ -4,11 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="atom插件, C#, 开发">
-    <meta name="description" content="###测试语句
-printf(&amp;quot;测试&amp;quot;);sequenceDiagramdddd
-A-&amp;gt;&amp;gt;B: How are you?
-B-&amp;gt;&amp;gt;A: Great!##CODEthis is inline cod">
+    <meta name="keywords" content="hexo架设经验总结, C#, 开发">
+    <meta name="description" content="1.下载安装2个文件(node.js与git)https://git-scm.com/download/winhttps://nodejs.org/en/download/安装后检查状态。node -vnpm -vgit –version
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@ B-&amp;gt;&amp;gt;A: Great!##CODEthis is inline cod">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>atom插件 | 邱哥的小站</title>
+    <title>hexo架设经验总结 | 邱哥的小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +258,13 @@ B-&amp;gt;&amp;gt;A: Great!##CODEthis is inline cod">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        atom插件
+                        hexo架设经验总结
                     </div>
                 </div>
             </div>
@@ -388,7 +386,7 @@ B-&amp;gt;&amp;gt;A: Great!##CODEthis is inline cod">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-09
+                    2019-09-23
                 </div>
 
                 
@@ -404,19 +402,20 @@ B-&amp;gt;&amp;gt;A: Great!##CODEthis is inline cod">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>###测试语句</p>
-<pre><code>printf(&quot;测试&quot;);</code></pre><pre><code>sequenceDiagramdddd
-A-&gt;&gt;B: How are you?
-B-&gt;&gt;A: Great!</code></pre><p>##CODE<br>this is inline code: ‘some code here’.</p>
-<pre><code>java
-public classs hello{
-
-}</code></pre><p>==234234==<br>序号 | 项目<br>—|—ddddd<br>11111 | 22222<br>3333 | 4444</p>
-<blockquote>
-<p>zzz</p>
-</blockquote>
-<p>++……++<br>==这个是高亮标识==</p>
-<p>test.jpg</p>
+                <p>1.<br>下载安装2个文件(node.js与git)<br><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a><br><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br>安装后检查状态。<br>node -v<br>npm -v<br>git –version</p>
+<p>1.2 配置SSH公钥： 使用下面的命令生成ssh公钥:</p>
+<pre><code>ssh-keygen -t rsa -C &quot;imqiuge&quot;  //一路回车</code></pre><p>生成id_rsa和id_rsa.pub这两个文件，前者是密钥，后者是公钥，用记事本打开id_rsa.pub，复制其中的全部内容，添加到GitHub上 (我的是在C:\Users\Administrator.ssh)<br>到github的setting中的 SSH and GPG keys-&gt;New SSH key-&gt;粘贴key内容</p>
+<p>SSH key添加之后，就可以在本机git bash中进行测试，输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>进行测试，<br>返回Hi username ！You’ve successfully ……说明你已经成功啦！</p>
+<p>2.<br>在任意一个地方新建一个文件夹，在git bash中进入这个文件夹，比如cd /d/Files/hexo/（之后安装的内容会保存在这个文件夹内），输入npm install -g hexo安装hexo即可，如下图（我已经安装过了，就不再安装了）<br>npm install -g hexo<br>npm install hexo –save<br>hexo v #查看是否安装成功<br>hexo init</p>
+<p>下载好了，再输入<br>hexo s #启动本地服务，默认4000端口</p>
+<p>我们可以去看一下我们的源码的位置，就在之前新建的那个文件夹里，在source-&gt;_posts文件夹下，有一篇helloworld的初始化文章，如果想要添加新的文章，可以在命令行输入hexo new ‘filename’,就会生成一个新的.md文件，对它编辑就可以了。</p>
+<p>3.3 上传项目</p>
+<p>　　先打开配置文档_config.yml，对它做如下修改，repository后面的内容是 <a href="mailto:git@gitbub.com" target="_blank" rel="noopener">git@gitbub.com</a>:username/库地址 的形式</p>
+<p>　　注意：type、repository、branch冒号的后面都有一个空格<br>deploy:<br>  type: git<br>  repository: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:imqiuge/imqiuge.github.io.git<br>  branch: master</p>
+<p>部署好之后，我们就可以上传我们的代码咯</p>
+<p>　　回到命令行窗口，输入npm install hexo-deployer-git –save,</p>
+<p>hexo g #保存git<br>hexo d #上传git</p>
+<p>安装主题：<br>$ git clone <a href="https://github.com/Fechin/hexo-theme-diaspora.git" target="_blank" rel="noopener">https://github.com/Fechin/hexo-theme-diaspora.git</a> diaspora<br>完成了把主题移到themes目录<br>再改_config.yml中的theme: diaspora (注意空格)</p>
 
             </div>
             <hr>
@@ -448,9 +447,9 @@ public classs hello{
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《atom插件》
+                    《hexo架设经验总结》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/09/atom插件/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/23/hexo架设/" property="cc:attributionName" rel="cc:attributionURL">
                 Qiuge
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -493,25 +492,26 @@ public classs hello{
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/24/hexo-theme-matery主题安装使用/">
+                <a href="/2019/09/23/test/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="hexo-theme-matery主题安装使用">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="MarkDown用法">
                         
-                        <span class="card-title">hexo-theme-matery主题安装使用</span>
+                        <span class="card-title">MarkDown用法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            下载当你看到这里的时候，应该已经有一个自己的 Hexo 博客了。如果还没有的话，不妨使用 Hexo 和 Markdown 来写博客和文章。
-点击 这里 下载 master 分支的最新稳定版的代码，解压缩后，将 hexo-theme-mate
+                            代码高亮标签：
+| 1C                      | 1c                                                           |
+|--------------------
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
                         </span>
                         <span class="publish-author">
                             
@@ -520,14 +520,6 @@ public classs hello{
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/主题/" target="_blank">
-                        <span class="chip bg-color">主题</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -539,26 +531,24 @@ public classs hello{
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/05/about-theme-yilia/">
+                <a href="/2019/09/23/hello2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="about theme yilia">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Hello World22222222222222222">
                         
-                        <span class="card-title">about theme yilia</span>
+                        <span class="card-title">Hello World22222222222222222</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            #git的hexo目录中执行#
-git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia会下载到theme目录中。再改配置修改hexo根目录下的 _
-conf
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
                             </span>
                         <span class="publish-author">
                             
@@ -567,14 +557,6 @@ conf
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/主题/" target="_blank">
-                        <span class="chip bg-color">主题</span>
-                    </a>
-                    
                 </div>
                 
             </div>

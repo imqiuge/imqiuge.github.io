@@ -1,0 +1,1177 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="C#开发代码存档, C#, 开发">
+    <meta name="description" content="==============================================================MYSQL最简化使用public static string strConn = “Host =localhost;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>C#开发代码存档 | 邱哥的小站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">邱哥的小站</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">邱哥的小站</div>
+        <div class="logo-desc">
+            
+            你现在是否有很多的劳苦重担?面临很多的痛苦和挑战?来到耶稣面前吧，把你的担忧、烦恼、忧愁都告诉他，放下你的一切聪明和自己的办法，单单来依靠交托他，担负他的轭，因为他的轭是轻省的。-马可福音11:24
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/imqiuge" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/imqiuge" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        C#开发代码存档
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/" target="_blank">
+                                <span class="chip bg-color">C#</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-24
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id><a href="#" class="headerlink" title="=============================================================="></a>==============================================================</h1><p>MYSQL最简化使用<br>public static string strConn = “Host =localhost;Database=fastadmin;Username=root;Password=root”;</p>
+<pre><code>        MySqlCommand mycom = null;
+        myconn.Open();
+        mycom = myconn.CreateCommand();
+        string sql = string.Format(&quot;SELECT * FROM  fa_classes&quot;);
+        mycom.CommandText = sql;
+        mycom.CommandType = CommandType.Text;
+        MySqlDataReader sdr = mycom.ExecuteReader();
+        int i = 0;
+        string strTmp = &quot;&quot;;
+        while (sdr.Read())
+        {
+            strTmp += sdr[&quot;id&quot;].ToString();
+            strTmp += &quot;\t&quot;;
+            strTmp += sdr[&quot;name&quot;].ToString();
+            strTmp += &quot;\r\n&quot;;
+            //listView1.Items.Add(sdr[0].ToString());
+            //listView1.Items[i].SubItems.Add(sdr[1].ToString());
+            i++;
+        }
+        MessageBox.Show(strTmp);
+
+        myconn.Close();</code></pre><p>==============================================================<br>全局变量使用方法：<br>namespace 学生课堂签到系统    //这个要同一个<br>{
+    class ClientBase<br>    {<br>        public static string strTitle = “title test”;    //注意要加static，外部才可调用 </p>
+<pre><code>    public static void TestFunc()
+    {
+        MessageBox.Show(&quot;is test fuction&quot;);
+        strTitle += &quot;ooooooooooooo&quot;;
+    }</code></pre><p>}</p>
+<p>调用方法:<br>            ClientBase.TestFunc();</p>
+<pre><code>        MessageBox.Show(ClientBase.strTitle);</code></pre><p>==============================================================<br>自定义函数类的使用List<br>     List<classes> list = new List<classes>();   //生成Class类的List列表</classes></classes></p>
+<pre><code>            string strName = &quot;&quot;;
+
+            MySqlDataReader dataReader = sql.GetDataReader(sqlstr);
+            while (dataReader.Read())
+            {
+                strName = (string)dataReader[&quot;name&quot;];
+                //int nId = (int)dataReader[&quot;id&quot;];
+
+                Classes cla = new Classes();    //生成单个class类
+                //cla.classID = nId.ToString();
+                cla.className = strName;        //赋值
+
+                list.Add(cla);                  //添加
+
+            }
+            foreach (var cla1 in list)          //遍历读取类列表中的内容
+                textBox1.AppendText(cla1.className + &quot;\r\n&quot;);
+
+class Classes
+{
+    public string classID;
+    public string className;
+    public string classBZR; //班主任
+}</code></pre><p>==============================================================</p>
+<p>mysql中数据的读取及转换方法<br>                string strClassName = “”; //数据库中加密的密码<br>                MySqlDataReader dataReader = sql.GetDataReader(sqlstr);<br>                while (dataReader.Read())<br>                {<br>                    strClassName = (string)dataReader[“name”];<br>                    int nId =  (int)dataReader[“id”];<br>                    ListViewItem lvi = new ListViewItem();<br>                    lvi.SubItems.Clear();</p>
+<pre><code>                lvi.SubItems[0].Text = nId.ToString();
+                lvi.SubItems.Add(strClassName);
+                lvi.SubItems.Add(&quot;未知&quot;);
+                lvi.SubItems.Add(&quot;000000&quot;);
+                lvi.SubItems.Add(&quot;000000&quot;);
+                listView1.Items.Add(lvi);
+
+            }</code></pre><p>==============================================================<br>控件中添加图标<br>方式1,来源为本地文件<br>            string s = @”E:\ico\downloads.png”;<br>            toolStripButton1.Image = Image.FromFile(s);</p>
+<p>方式2，为资源文件中：</p>
+<pre><code>        toolStripButton1.Image = Properties.Resources.logo; //直接调用Resources.resx中的资源</code></pre><p>==============================================================<br>C# Winform项目下实现左侧菜单右侧界面显示效果<br><a href="https://www.cnblogs.com/dreamskies/archive/2013/02/21/2921064.html" target="_blank" rel="noopener">https://www.cnblogs.com/dreamskies/archive/2013/02/21/2921064.html</a><br>添加splitContainer控件<br>            this.IsMdiContainer = true;<br>            添加学生 dlg = new 添加学生();<br>            dlg.Parent = splitContainer1.Panel2;<br>            dlg.Show();</p>
+<h1 id="会出错未细测先存档"><a href="#会出错未细测先存档" class="headerlink" title="会出错未细测先存档"></a>会出错未细测先存档</h1><p>combox控件默认点选第一列</p>
+<h1 id="this-cbType-SelectedIndex-0-combox控件默认点选第一列"><a href="#this-cbType-SelectedIndex-0-combox控件默认点选第一列" class="headerlink" title="this.cbType.SelectedIndex = 0;  //combox控件默认点选第一列"></a>this.cbType.SelectedIndex = 0;  //combox控件默认点选第一列</h1><p>ListView中点选操作响应函数。//选择状态<br>        private void ListView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)<br>        {<br>            if (listView1.SelectedItems.Count &gt; 0)<br>            {<br>                button1.Enabled = true;<br>            }<br>            else<br>                button1.Enabled = false;<br>        }</p>
+<p>==============================================================<br>ListView中选中，及取内容信息，到右边ListView2<br>            if (this.listView1.SelectedItems.Count &gt; 0)//判断listview有被选中项<br>            {<br>                string sID =    listView1.SelectedItems[0].Text;                //选中行的第一列<br>                string sName =  listView1.SelectedItems[0].SubItems[1].Text;    //选中的行的第二列。</p>
+<pre><code>            ListViewItem lvi = new ListViewItem();  //item信息
+            lvi.SubItems.Clear();
+
+            lvi.SubItems[0].Text = sID;
+            lvi.SubItems.Add(sName);
+            listView2.Items.Add(lvi);       //列表2中添加列表1中选中的信息
+
+            //删除当前选中的行
+            listView1.Items.Remove(listView1.SelectedItems[0]);
+        }</code></pre><p>==============================================================<br>在ListView中删除选择的行</p>
+<h1 id="listView1-Items-Remove-listView1-SelectedItems-0"><a href="#listView1-Items-Remove-listView1-SelectedItems-0" class="headerlink" title="listView1.Items.Remove(listView1.SelectedItems[0]);"></a>listView1.Items.Remove(listView1.SelectedItems[0]);</h1><p>listview初始化<br>　　　　　　　　ImageList imgList = new ImageList();<br>　　　　　　　　imgList.ImageSize = new Size(1, 25);<br>　　　　　　　　listView1.SmallImageList = imgList;</p>
+<p>　　　　　　　　listView1.GridLines = true;<br>　　　　　　　　listView1.FullRowSelect = true;</p>
+<p>　　　　　　　　listView1.View = View.Details;<br>　　　　　　　　listView1.Scrollable = true;<br>　　　　　　　　listView1.MultiSelect = false;</p>
+<p>　　　　　　　　listView1.Columns.Add(“姓名”, 90, HorizontalAlignment.Center);<br>　　　　　　　　listView1.Columns.Add(“性别”, 60, HorizontalAlignment.Center);<br>　　　　　　　　listView1.Columns.Add(“电话”, 90, HorizontalAlignment.Center);<br>　　　　　　　　listView1.Columns.Add(“地址”, 150, HorizontalAlignment.Center);</p>
+<p>　　　　　　　　ListViewItem lvi = new ListViewItem();<br>　　　　　　　　lvi.SubItems.Clear();</p>
+<p>　　　　　　　　lvi.SubItems[0].Text = “李海云”;<br>　　　　　　　　lvi.SubItems.Add(“男”);<br>　　　　　　　　lvi.SubItems.Add(“69825452”);<br>　　　　　　　　lvi.SubItems.Add(“天海大道18号”);<br>　　　　　　　　listView1.Items.Add(lvi);</p>
+<p>　　　　　　　　lvi = new ListViewItem();<br>　　　　　　　　lvi.SubItems.Clear();</p>
+<p>　　　　　　　　lvi.SubItems[0].Text = “李玲娜”;<br>　　　　　　　　lvi.SubItems.Add(“女”);<br>　　　　　　　　lvi.SubItems.Add(“30257351”);<br>　　　　　　　　lvi.SubItems.Add(“海云东路689号”);</p>
+<h1 id="listView1-Items-Add-lvi"><a href="#listView1-Items-Add-lvi" class="headerlink" title="　　　　　　　　listView1.Items.Add(lvi);"></a>　　　　　　　　listView1.Items.Add(lvi);</h1><p>设置ListView的行高:</p>
+<p>可以加入一个imagelist来撑大行，实现行高的设置！</p>
+<p>// 设置行高<br>ImageList imgList = new ? ImageList();<br>// 分别是宽和高<br>imgList.ImageSize = new Size(1,25);<br>// 这里设置listView的SmallImageList ,用imgList将其撑大</p>
+<h1 id="listView1-SmallImageList-imgList"><a href="#listView1-SmallImageList-imgList" class="headerlink" title="listView1.SmallImageList = imgList; ??"></a>listView1.SmallImageList = imgList; ??</h1><pre><code>运行登陆窗口
+Program.cs中修改Main函数 
+    static void Main()
+    {
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        登陆窗口 login = new 登陆窗口();
+        login.ShowDialog();
+
+        if (login.DialogResult == DialogResult.OK)
+        {
+            login.Dispose();
+            Application.Run(new Form1());
+        }
+        else if (login.DialogResult == DialogResult.Cancel)
+        {
+            login.Dispose();
+            return;
+        }
+        //Application.Run(new Form1());
+    }</code></pre><p>登陆窗口内需要返回状态否则无效<br>        private void BtnOK_Click(object sender, EventArgs e)<br>        {</p>
+<pre><code>        if (cbName.Text.Trim() != &quot;&quot; &amp;&amp; txtPwd.Text.Trim() != &quot;&quot;)
+        {
+            if (checkUserPasswordInMysql(cbName.Text, txtPwd.Text) == true)
+            {
+                adminName = cbName.Text;
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(&quot;用户名或密码错误！&quot;, &quot;提示&quot;);
+                txtPwd.Text = &quot;&quot;;
+                return;
+            }
+        }
+        else
+        {
+            MessageBox.Show(&quot;请输入用户名和密码！&quot;, &quot;提示&quot;);
+            return;
+        }
+    }</code></pre><p>==============================================================<br>       notifyIcon1控件使用：<br>       1.界面中添加notifyIcon控件<br>       2.代码：<br>     notifyIcon1.Visible = true;<br>        private void NotifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)<br>        {<br>            this.Visible = true;<br>            this.WindowState = FormWindowState.Normal;<br>        }</p>
+<pre><code>    private void Form1_Resize(object sender, EventArgs e)
+    {
+        if(this.WindowState == FormWindowState.Minimized)
+        {
+            this.Visible = false;
+        }
+    }</code></pre><p>==============================================================<br>       Timer控件用法：<br>    1.界面中添加Timer1控件。<br>    2.给控件添加函数<br>                timer1.Enabled = true;<br>            //设置时间间隔（毫秒为单位）<br>            timer1.Interval = 1000;</p>
+<pre><code>    private void Timer1_Tick(object sender, EventArgs e)
+    {
+        if (FindProcess() == false)
+            RunProcess();
+    }</code></pre><p>==============================================================<br>        //查找进程<br>        bool FindProcess()<br>        {<br>            Process[] pro = Process.GetProcesses();//获取已开启的所有进程<br>            bool bFound = false;<br>            //遍历所有查找到的进程</p>
+<pre><code>        for (int i = 0; i &lt; pro.Length; i++)
+        {
+            //判断此进程是否是要查找的进程
+            if (pro[i].ProcessName.ToString().ToLower() == &quot;tybsszk&quot;)//加上.exe会找不到
+            {
+                MessageBox.Show(&quot;fonud&quot;);
+                bFound = true;
+                return true;
+            }
+        }
+        return bFound;
+    }</code></pre><p>==============================================================<br>        //运程程序<br>        void RunProcess()<br>        {<br>            Process myProcess = new Process();<br>            myProcess.StartInfo.UseShellExecute = false;<br>            myProcess.StartInfo.FileName = “tybsszk.exe”;<br>            myProcess.StartInfo.CreateNoWindow = true;<br>            myProcess.Start();</p>
+<pre><code>    }</code></pre><p>==============================================================<br>        //获取班级列表<br>        private List<string> getClassList()<br>        {<br>            DataTable dtDgv = new DataTable();<br>            //dtDgv.TableName = “”;<br>            string strConn = “Data Source=120.79.140.200;Initial Catalog=HuaXia;User ID=sa;Password=Www.023**.cn”;</string></p>
+<pre><code>        string strSQL = &quot;SELECT * from classlist&quot;;
+
+
+        SqlConnection conn = new SqlConnection(strConn);
+        SqlCommand cmd = new SqlCommand(strSQL, conn);
+        //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        string strMsg = &quot;&quot;;
+        List&lt;string&gt; listStr= new List&lt;string&gt;();
+        try
+        {
+            conn.Open();
+            SqlDataReader myReader = cmd.ExecuteReader();//执行SQL语句的真正查询了
+
+            while (myReader.Read())// 每次循环查到的一行 如果有N行就循环N次而已
+            {
+                strMsg += myReader.GetString(1);//.ToString();
+                strMsg += &quot;\r\n&quot;;
+
+                listStr.Add(myReader.GetString(1));
+            }
+            myReader.Close();
+        }
+        catch (Exception ex)
+        { }
+        finally
+        {
+            conn.Close();
+        }
+        return listStr;
+
+    }</code></pre><p>==============================================================<br>显示新窗口在父窗口的中间<br>            登陆窗口 dlg = new 登陆窗口();<br>            dlg.StartPosition = FormStartPosition.CenterParent; //显示新窗口在父窗口的中间</p>
+<pre><code>        dlg.ShowDialog();</code></pre><p>==============================================================<br>输入完成后，按回车键直接登录</p>
+<p> private void textBox2_KeyDown(object sender, KeyEventArgs e)<br>        {<br>            if (e.KeyValue == 13)<br>            {<br>                this.button1.Focus();<br>                button1_Click(sender, e);   //调用登录按钮的事件处理代码<br>            }</p>
+<pre><code>    }</code></pre><p>==============================================================<br>调整Tab键顺序<br>①在[vs工具栏]中找到[视图]下拉框，再找到[Tab键顺序]（用快捷键：Alt+V调出[视图]后，再按B调出[Tab键顺序]）</p>
+<h1 id="②按照自己想要的顺序依次给控件标号"><a href="#②按照自己想要的顺序依次给控件标号" class="headerlink" title="②按照自己想要的顺序依次给控件标号"></a>②按照自己想要的顺序依次给控件标号</h1><pre><code>    //核对数据库中的用户名与密码
+    bool checkUserPassword(string sUser, string sPass)
+    {
+        String connsql = &quot;server=120.79.140.200;database=HuaXia;user id=sa;pwd=Www.023**.cn;&quot;; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
+        //创建连接对象
+        SqlConnection connection = new SqlConnection(connsql);
+
+        string sql = string.Format(&quot;SELECT * FROM  fa_user WHERE username=&#39;{0}&#39;&quot;, sUser);  // 查询员工类别的sql语句，也可以是增改删语句。
+
+        // 设置command命令执行的语句
+        SqlCommand command = new SqlCommand(sql, connection);
+        try
+        {
+            connection.Open(); // 打开数据库连接
+            SqlDataReader dataReader = command.ExecuteReader(); // 执行查询
+            string sSqlpass = &quot;&quot;; //数据库中加密的密码
+            string sSqlSalt = &quot;&quot;; //salt，用于判断密码
+            while (dataReader.Read())
+            {
+                sSqlpass = (string)dataReader[&quot;password&quot;];
+                sSqlSalt = (string)dataReader[&quot;salt&quot;];
+            }
+            if(sSqlpass.Length != 0)
+            {
+                string sText = EncryptWithMD5(EncryptWithMD5(sPass) + sSqlSalt);//MD5多次加密完
+                if( sSqlpass == sText)  //对比方式
+                {
+                    //MessageBox.Show(&quot;对比成功&quot;);
+                    return true;
+                }
+            }
+            dataReader.Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+            Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return false;
+    }</code></pre><p>==============================================================<br>       //MD5加密<br>        public static string EncryptWithMD5(string source)<br>        {<br>            byte[] sor = Encoding.UTF8.GetBytes(source);<br>            MD5 md5 = MD5.Create();<br>            byte[] result = md5.ComputeHash(sor);<br>            StringBuilder strbul = new StringBuilder(40);<br>            for (int i = 0; i &lt; result.Length; i++)<br>            {<br>                strbul.Append(result[i].ToString(“x2”));//加密结果”x2”结果为32位,”x3”结果为48位,”x4”结果为64位</p>
+<pre><code>        }
+        return strbul.ToString();
+    }</code></pre><p>==============================================================<br>提示ConfigurationManager上下文找不到<br>就添加引用，搜索Configuration</p>
+<p>app.config是WinForm的配置文件，在B/S中是web.config。</p>
+<h1 id="在WinForm中添加app-config文件：右击“项目名称”-gt-“添加”-gt-“新建项”-gt-“应用程序配置文件”"><a href="#在WinForm中添加app-config文件：右击“项目名称”-gt-“添加”-gt-“新建项”-gt-“应用程序配置文件”" class="headerlink" title="在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”"></a>在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”</h1><p>修改对应英文标题为中文。</p>
+<h1 id="dataGridView1-Columns-“f-RecID”-HeaderText-“编号”"><a href="#dataGridView1-Columns-“f-RecID”-HeaderText-“编号”" class="headerlink" title="dataGridView1.Columns[“f_RecID”].HeaderText = “编号”;"></a>dataGridView1.Columns[“f_RecID”].HeaderText = “编号”;</h1><p>连接字符串</p>
+<pre><code>        String connsql = &quot;server=120.79.140.200;database=HX_AccessData;user id=sa;pwd=password;&quot;; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</code></pre><p>==============================================================<br>            String connsql = “server=120.79.140.200;database=HX_AccessData;user id=sa;pwd=Www”; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</p>
+<pre><code>        try
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = connsql;
+                conn.Open(); // 打开数据库连接
+
+                String sql = &quot;select  top 50 * from t_d_SwipeRecord&quot;; // 查询语句
+
+                SqlDataAdapter myda = new SqlDataAdapter(sql, conn); // 实例化适配器
+
+                DataTable dt = new DataTable(); // 实例化数据表
+                myda.Fill(dt); // 保存数据 
+
+                dataGridView1.DataSource = dt; // 设置到DataGridView中
+
+                conn.Close(); // 关闭数据库连接
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(&quot;错误信息：&quot; + ex.Message, &quot;出现错误&quot;);
+        }</code></pre><p>==============================================================<br>System.Transactions.Diagnostics.DiagnosticTrace 的类型初始值设定项引发异常。配置系统未能初始化<br>解决办法：</p>
+<h1 id="删除app-config"><a href="#删除app-config" class="headerlink" title="删除app.config"></a>删除app.config</h1><pre><code>        str += &quot;System Runtime: &quot; + (Environment.TickCount / 60000).ToString();
+        //运行时间</code></pre><p>==============================================================<br>C#窗体全屏功能<br>this.FormBorderStyle = FormBorderStyle.None;     //设置窗体为无边框样式</p>
+<h1 id="this-WindowState-FormWindowState-Maximized-最大化窗体"><a href="#this-WindowState-FormWindowState-Maximized-最大化窗体" class="headerlink" title="this.WindowState = FormWindowState.Maximized;    //最大化窗体 "></a>this.WindowState = FormWindowState.Maximized;    //最大化窗体 </h1><pre><code>    //查找进程、结束进程
+    void killProcess()
+    {
+        Process[] pro = Process.GetProcesses();//获取已开启的所有进程
+
+        //遍历所有查找到的进程
+
+        for (int i = 0; i &lt; pro.Length; i++)
+        {
+
+            //判断此进程是否是要查找的进程
+            if (pro[i].ProcessName.ToString().ToLower() == &quot;notepad&quot;)
+            {
+                pro[i].Kill();//结束进程
+            }
+        }
+    }</code></pre><p>==============================================================<br>用C#来播放.wav格式的音频文件<br> System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);<br>??????????? </p>
+<p>player.Play();//简单播放一遍<br>???????????<br>player.PlayLooping();//循环播放<br>???????????<br>player.PlaySync();//另起线程播放</p>
+<h1 id="上面三种调用方法，只要调用任意一个就能播放。"><a href="#上面三种调用方法，只要调用任意一个就能播放。" class="headerlink" title=" 上面三种调用方法，只要调用任意一个就能播放。"></a> 上面三种调用方法，只要调用任意一个就能播放。</h1><p>PICTUREBOX显示图片<br>this.pictureBox1.Load(“E:\pic.jpg”);</p>
+<h1 id="sizemode-zoom-就可以放大缩小了"><a href="#sizemode-zoom-就可以放大缩小了" class="headerlink" title="sizemode = zoom //就可以放大缩小了"></a>sizemode = zoom //就可以放大缩小了</h1><p>string转换成list格式，以换行符为标志.<br>            List<string> striparr = str.Split(new string[] { “\r\n” }, StringSplitOptions.None).ToList();</string></p>
+<pre><code>        striparr = striparr.Where(s =&gt; !string.IsNullOrEmpty(s)).ToList();</code></pre><p>==============================================================<br>string字符截取，第4位后的所有字符。<br>string sName = striparr[4].Substring(4);</p>
+<pre><code>    /// &lt;summary&gt;
+    /// 处理部门的字符，因为有多级，以最后一个\为标志
+    /// 原始输出的字符例：深圳市华夏技工学校\18届19届学生\18电商2班
+    /// &lt;/summary&gt;
+    string CutGroup(string sGroup)
+    {
+        int nPos = sGroup.LastIndexOf(@&quot;\&quot;);
+        return sGroup.Substring(nPos + 1); ;
+    }</code></pre><p>以下网上找的互换代码：<br>c# 以换行(\r\n)拆分字符串</p>
+<p>字符串数组形式：<br>string[] striparr = strip.Split(new string[] { “\r\n” }, StringSplitOptions.None);<br>striparr = striparr.Where(s =&gt; !string.IsNullOrEmpty(s)).ToArray();</p>
+<p>List<sting>形式：<br>List<string> striparr = strip.Split(new string[] { “\r\n” }, StringSplitOptions.None).ToList();</string></sting></p>
+<h1 id="striparr-striparr-Where-s-gt-string-IsNullOrEmpty-s-ToList"><a href="#striparr-striparr-Where-s-gt-string-IsNullOrEmpty-s-ToList" class="headerlink" title="striparr = striparr.Where(s =&gt; !string.IsNullOrEmpty(s)).ToList();"></a>striparr = striparr.Where(s =&gt; !string.IsNullOrEmpty(s)).ToList();</h1><h1 id="-1"><a href="#-1" class="headerlink" title="==============================================================    "></a>==============================================================    </h1><h1 id="-2"><a href="#-2" class="headerlink" title="==============================================================    "></a>==============================================================    </h1><p>==============================================================    </p>
+<pre><code>        string connectionStr = &quot;server=localhost;uid=root;password=root;database=test&quot;;
+        string sqlContent = &quot;select * from t_dept&quot;;
+
+        MySqlConnection sqlConnection = null;
+        MySqlDataReader reader = null;
+        try
+        {
+            sqlConnection = new MySqlConnection(connectionStr);
+            sqlConnection.Open();
+            MySqlCommand command = new MySqlCommand(sqlContent, sqlConnection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (reader.HasRows)
+                {
+                    Console.WriteLine(reader.GetString(0) + &quot;:&quot; + reader.GetInt32(1) + &quot;:&quot; );
+                }
+            }
+        }
+        catch (Exception exception)
+        {
+            throw new Exception(exception.Message);
+        }
+        finally
+        {
+            reader.Close();
+            sqlConnection.Close();
+        }</code></pre><p>==============================================================            </p>
+<p>2019.5.17学习mysql笔记（未完成）<br>1.生成SqlHelper类<br>2.添加app.config，写入数据<br>    <connectionstrings><br>    <add name="ConStr" connectionstring="Server=127.0.0.1;Database=test; User ID=root;Password=root;"><br>    </add></connectionstrings></p>
+<p>3.Main函数调用，未成功，只连接到数据。下一步无法执行</p>
+<pre><code>     //连接数据库
+        SqlConnection con = SqlHelper.GetConnection();
+        Console.WriteLine(&quot;数据库连接成功&quot;);
+
+        //建立一张表
+        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;create table student111(id int primary key,name varchar(20),age int)&quot;);
+        Console.WriteLine(&quot;建表成功&quot;);
+
+        //插入数据
+        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;insert into student111 values(1,&#39;Ghazi&#39;,21)&quot;);
+        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;insert into student111111 values(2,&#39;Jack&#39;,20)&quot;);
+        Console.WriteLine(&quot;数据插入成功&quot;);
+
+        //查询
+        DataSet ds = SqlHelper.ExecuteDataset(con, CommandType.Text, &quot;select* from student111&quot;);
+        foreach (DataRow col in ds.Tables[0].Rows)
+        {
+            for (int i = 0; i &lt; 3; i++)
+            {
+                Console.WriteLine(col[i].ToString());
+            }
+        }
+
+        //修改
+        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;update student111 set age=22 where id=2&quot;);
+        Console.WriteLine(&quot;数据修改成功&quot;);
+
+        DataSet ds1 = SqlHelper.ExecuteDataset(con, CommandType.Text, &quot;select* from student111&quot;);
+        foreach (DataRow col in ds1.Tables[0].Rows)
+        {
+            for (int i = 0; i &lt; 3; i++)
+            {
+                Console.WriteLine(col[i].ToString());
+            }
+        }
+
+        //删除
+        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;delete from student111 where id=2&quot;);
+        Console.WriteLine(&quot;数据删除成功&quot;);
+
+        DataSet ds2 = SqlHelper.ExecuteDataset(con, CommandType.Text, &quot;select* from student111&quot;);
+        foreach (DataRow col in ds2.Tables[0].Rows)
+        {
+            for (int i = 0; i &lt; 3; i++)
+            {
+                Console.WriteLine(col[i].ToString());
+            }
+        }</code></pre><p>======WPF类，UI界面存在XML文件中=======================<br>            if (checkBox.IsChecked == true)<br>            {<br>                MessageBox.Show(“wpf msg btn”);<br>                image.Source = new BitmapImage(new Uri(@”E:\pic.jpg”));<br>            }</p>
+<pre><code>// 设置全屏
+this.WindowState = System.Windows.WindowState.Normal;
+this.WindowStyle = System.Windows.WindowStyle.None;
+this.ResizeMode = System.Windows.ResizeMode.NoResize;
+this.Topmost = true;
+
+this.Left = 0.0;
+this.Top = 0.0;
+this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
+this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;</code></pre>
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                </a>
+            </div>
+            <br>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+                    《C#开发代码存档》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/24/C-开发代码存档/" property="cc:attributionName" rel="cc:attributionURL">
+                Qiuge
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/09/24/C-开发代码存档/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="C#开发代码存档">
+                        
+                        <span class="card-title">C#开发代码存档</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ==============================================================MYSQL最简化使用public static string strConn = “Host =localhost;
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Qiuge
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C#</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/23/我是好天据/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            sdfsd
+printf("test")
+
+我是好天据
+
+
+123
+123
+123
+
+
+
+123
+
+
+
+
+
+
+
+
+
+ddd
+
+
+
+
+
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Qiuge
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://imqiuge.github.io/" target="_blank">ImQiuge</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="imqiuge" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=383933675" class="tooltipped" data-tooltip="QQ联系我: 383933675" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
