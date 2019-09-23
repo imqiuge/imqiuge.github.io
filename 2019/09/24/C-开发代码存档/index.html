@@ -5,10 +5,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="C#开发代码存档, C#, 开发">
-    <meta name="description" content="MYSQL最简化使用public static string strConn = &#34;Host =localhost;Database=fastadmin;Username=root;Password=root&#34;;
+    <meta name="description" content="
+MYSQL最简化使用public static string strConn = &#34;Host =localhost;Database=fastadmin;Username=root;Password=root&#34;;
 
 ```csharp
-  ">
+ ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -408,7 +409,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="MYSQL最简化使用"><a href="#MYSQL最简化使用" class="headerlink" title="MYSQL最简化使用"></a>MYSQL最简化使用</h5><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">string</span> strConn <span class="token operator">=</span> <span class="token string">"Host =localhost;Database=fastadmin;Username=root;Password=root"</span><span class="token punctuation">;</span>
+                <hr>
+<h5 id="MYSQL最简化使用"><a href="#MYSQL最简化使用" class="headerlink" title="MYSQL最简化使用"></a>MYSQL最简化使用</h5><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">string</span> strConn <span class="token operator">=</span> <span class="token string">"Host =localhost;Database=fastadmin;Username=root;Password=root"</span><span class="token punctuation">;</span>
 
 ```csharp
         MySqlCommand mycom <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
@@ -434,6 +436,7 @@
 
         myconn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 ```</code></pre>
+<hr>
 <h5 id="全局变量使用方法："><a href="#全局变量使用方法：" class="headerlink" title="全局变量使用方法："></a>全局变量使用方法：</h5><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">namespace</span> 学生课堂签到系统    <span class="token comment" spellcheck="true">//这个要同一个</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">class</span> <span class="token class-name">ClientBase</span>
@@ -453,7 +456,7 @@
 <span class="token comment" spellcheck="true">//调用方法:</span>
             ClientBase<span class="token punctuation">.</span><span class="token function">TestFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>ClientBase<span class="token punctuation">.</span>strTitle<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>==============================================================</p>
+<hr>
 <h5 id="自定义函数类的使用List"><a href="#自定义函数类的使用List" class="headerlink" title="自定义函数类的使用List"></a>自定义函数类的使用List</h5><p>​    </p>
 <pre class=" language-csharp"><code class="language-csharp">  List<span class="token operator">&lt;</span>Classes<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>Classes<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//生成Class类的List列表           string strName = "";</span>
             MySqlDataReader dataReader <span class="token operator">=</span> sql<span class="token punctuation">.</span><span class="token function">GetDataReader</span><span class="token punctuation">(</span>sqlstr<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -478,16 +481,24 @@
     <span class="token keyword">public</span> <span class="token keyword">string</span> className<span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token keyword">string</span> classBZR<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//班主任</span>
 <span class="token punctuation">}</span></code></pre>
-<p>==============================================================</p>
-<p>mysql中数据的读取及转换方法<br>                string strClassName = “”; //数据库中加密的密码<br>                MySqlDataReader dataReader = sql.GetDataReader(sqlstr);<br>                while (dataReader.Read())<br>                {<br>                    strClassName = (string)dataReader[“name”];<br>                    int nId =  (int)dataReader[“id”];<br>                    ListViewItem lvi = new ListViewItem();<br>                    lvi.SubItems.Clear();</p>
-<pre><code>                lvi.SubItems[0].Text = nId.ToString();
-                lvi.SubItems.Add(strClassName);
-                lvi.SubItems.Add(&quot;未知&quot;);
-                lvi.SubItems.Add(&quot;000000&quot;);
-                lvi.SubItems.Add(&quot;000000&quot;);
-                listView1.Items.Add(lvi);
+<hr>
+<h5 id="mysql中数据的读取及转换方法"><a href="#mysql中数据的读取及转换方法" class="headerlink" title="mysql中数据的读取及转换方法"></a>mysql中数据的读取及转换方法</h5><pre class=" language-csharp"><code class="language-csharp">            <span class="token keyword">string</span> strClassName <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//数据库中加密的密码</span>
+            MySqlDataReader dataReader <span class="token operator">=</span> sql<span class="token punctuation">.</span><span class="token function">GetDataReader</span><span class="token punctuation">(</span>sqlstr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>dataReader<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                strClassName <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">)</span>dataReader<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">int</span> nId <span class="token operator">=</span>  <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>dataReader<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                ListViewItem lvi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListViewItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text <span class="token operator">=</span> nId<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>strClassName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"未知"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"000000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"000000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                listView1<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lvi<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            }</code></pre><p>==============================================================<br>控件中添加图标<br>方式1,来源为本地文件<br>            string s = @”E:\ico\downloads.png”;<br>            toolStripButton1.Image = Image.FromFile(s);</p>
+            <span class="token punctuation">}</span></code></pre>
+<p>==============================================================<br>控件中添加图标<br>方式1,来源为本地文件<br>            string s = @”E:\ico\downloads.png”;<br>            toolStripButton1.Image = Image.FromFile(s);</p>
 <p>方式2，为资源文件中：</p>
 <pre><code>        toolStripButton1.Image = Properties.Resources.logo; //直接调用Resources.resx中的资源</code></pre><p>==============================================================<br>C# Winform项目下实现左侧菜单右侧界面显示效果<br><a href="https://www.cnblogs.com/dreamskies/archive/2013/02/21/2921064.html" target="_blank" rel="noopener">https://www.cnblogs.com/dreamskies/archive/2013/02/21/2921064.html</a><br>添加splitContainer控件<br>            this.IsMdiContainer = true;<br>            添加学生 dlg = new 添加学生();<br>            dlg.Parent = splitContainer1.Panel2;<br>            dlg.Show();</p>
 <h1 id="会出错未细测先存档"><a href="#会出错未细测先存档" class="headerlink" title="会出错未细测先存档"></a>会出错未细测先存档</h1><p>combox控件默认点选第一列</p>
@@ -902,10 +913,11 @@ this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MYSQL最简化使用public static string strConn = "Host =localhost;Database=fastadmin;Username=root;Password=root";
+                            
+MYSQL最简化使用public static string strConn = "Host =localhost;Database=fastadmin;Username=root;Password=root";
 
 ```csharp
-  
+ 
                         
                     </div>
                     <div class="publish-info">
