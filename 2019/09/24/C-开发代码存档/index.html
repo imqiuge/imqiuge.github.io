@@ -578,49 +578,53 @@ ImageList imgList <span class="token operator">=</span> <span class="token keywo
 imgList<span class="token punctuation">.</span>ImageSize <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 这里设置listView的SmallImageList ,用imgList将其撑大</span>
 listView1<span class="token punctuation">.</span>SmallImageList <span class="token operator">=</span> imgList<span class="token punctuation">;</span> <span class="token operator">?</span><span class="token operator">?</span></code></pre>
-<pre><code>运行登陆窗口
-Program.cs中修改Main函数 
-    static void Main()
-    {
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        登陆窗口 login = new 登陆窗口();
-        login.ShowDialog();
+<h4 id="运行登陆窗口"><a href="#运行登陆窗口" class="headerlink" title="运行登陆窗口"></a>运行登陆窗口</h4><pre class=" language-csharp"><code class="language-csharp">
+Program<span class="token punctuation">.</span>cs中修改Main函数 
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Application<span class="token punctuation">.</span><span class="token function">EnableVisualStyles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Application<span class="token punctuation">.</span><span class="token function">SetCompatibleTextRenderingDefault</span><span class="token punctuation">(</span><span class="token keyword">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        登陆窗口 login <span class="token operator">=</span> <span class="token keyword">new</span> 登陆窗口<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        login<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        if (login.DialogResult == DialogResult.OK)
-        {
-            login.Dispose();
-            Application.Run(new Form1());
-        }
-        else if (login.DialogResult == DialogResult.Cancel)
-        {
-            login.Dispose();
-            return;
-        }
-        //Application.Run(new Form1());
-    }</code></pre><p>登陆窗口内需要返回状态否则无效<br>        private void BtnOK_Click(object sender, EventArgs e)<br>        {</p>
-<pre><code>        if (cbName.Text.Trim() != &quot;&quot; &amp;&amp; txtPwd.Text.Trim() != &quot;&quot;)
-        {
-            if (checkUserPasswordInMysql(cbName.Text, txtPwd.Text) == true)
-            {
-                adminName = cbName.Text;
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>login<span class="token punctuation">.</span>DialogResult <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>OK<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            login<span class="token punctuation">.</span><span class="token function">Dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Application<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Form1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>login<span class="token punctuation">.</span>DialogResult <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>Cancel<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            login<span class="token punctuation">.</span><span class="token function">Dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//Application.Run(new Form1());</span>
+    <span class="token punctuation">}</span></code></pre>
+<h4 id="登陆窗口内需要返回状态否则无效"><a href="#登陆窗口内需要返回状态否则无效" class="headerlink" title="登陆窗口内需要返回状态否则无效"></a>登陆窗口内需要返回状态否则无效</h4><pre class=" language-csharp"><code class="language-csharp">
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">BtnOK_Click</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> EventArgs e<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cbName<span class="token punctuation">.</span>Text<span class="token punctuation">.</span><span class="token function">Trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">""</span> <span class="token operator">&amp;&amp;</span> txtPwd<span class="token punctuation">.</span>Text<span class="token punctuation">.</span><span class="token function">Trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">""</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">checkUserPasswordInMysql</span><span class="token punctuation">(</span>cbName<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> txtPwd<span class="token punctuation">.</span>Text<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">true</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                adminName <span class="token operator">=</span> cbName<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(&quot;用户名或密码错误！&quot;, &quot;提示&quot;);
-                txtPwd.Text = &quot;&quot;;
-                return;
-            }
-        }
-        else
-        {
-            MessageBox.Show(&quot;请输入用户名和密码！&quot;, &quot;提示&quot;);
-            return;
-        }
-    }</code></pre><h4 id="notifyIcon1控件使用："><a href="#notifyIcon1控件使用：" class="headerlink" title="notifyIcon1控件使用："></a>notifyIcon1控件使用：</h4><blockquote>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>DialogResult <span class="token operator">=</span> DialogResult<span class="token punctuation">.</span>OK<span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"用户名或密码错误！"</span><span class="token punctuation">,</span> <span class="token string">"提示"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                txtPwd<span class="token punctuation">.</span>Text <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"请输入用户名和密码！"</span><span class="token punctuation">,</span> <span class="token string">"提示"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<h4 id="notifyIcon1控件使用："><a href="#notifyIcon1控件使用：" class="headerlink" title="notifyIcon1控件使用："></a>notifyIcon1控件使用：</h4><blockquote>
 <p>​       1.界面中添加notifyIcon控件<br>​       2.代码：</p>
 </blockquote>
 <pre class=" language-csharp"><code class="language-csharp">
@@ -679,8 +683,8 @@ Program.cs中修改Main函数
 ​            myProcess<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 ​         <span class="token punctuation">}</span></code></pre>
-<p>​    //获取班级列表</p>
-<pre class=" language-csharp"><code class="language-csharp"> ​    <span class="token keyword">private</span> List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span> <span class="token function">getClassList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<p>​    </p>
+<h4 id="获取班级列表"><a href="#获取班级列表" class="headerlink" title="获取班级列表"></a>获取班级列表</h4><pre class=" language-csharp"><code class="language-csharp"> ​    <span class="token keyword">private</span> List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span> <span class="token function">getClassList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 ​    <span class="token punctuation">{</span>
 ​        DataTable dtDgv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 ​        <span class="token comment" spellcheck="true">//dtDgv.TableName = "";</span>
@@ -716,59 +720,85 @@ Program.cs中修改Main函数
     <span class="token keyword">return</span> listStr<span class="token punctuation">;</span>
 
 <span class="token punctuation">}</span></code></pre>
-<p>==============================================================<br>显示新窗口在父窗口的中间<br>            登陆窗口 dlg = new 登陆窗口();<br>            dlg.StartPosition = FormStartPosition.CenterParent; //显示新窗口在父窗口的中间</p>
-<pre><code>        dlg.ShowDialog();</code></pre><p>==============================================================<br>输入完成后，按回车键直接登录</p>
-<p> private void textBox2_KeyDown(object sender, KeyEventArgs e)<br>        {<br>            if (e.KeyValue == 13)<br>            {<br>                this.button1.Focus();<br>                button1_Click(sender, e);   //调用登录按钮的事件处理代码<br>            }</p>
-<pre><code>    }</code></pre><p>==============================================================<br>调整Tab键顺序<br>①在[vs工具栏]中找到[视图]下拉框，再找到[Tab键顺序]（用快捷键：Alt+V调出[视图]后，再按B调出[Tab键顺序]）</p>
-<h1 id="②按照自己想要的顺序依次给控件标号"><a href="#②按照自己想要的顺序依次给控件标号" class="headerlink" title="②按照自己想要的顺序依次给控件标号"></a>②按照自己想要的顺序依次给控件标号</h1><pre><code>    //核对数据库中的用户名与密码
-    bool checkUserPassword(string sUser, string sPass)
-    {
-        String connsql = &quot;server=120.79.140.200;database=HuaXia;user id=sa;pwd=Www.023**.cn;&quot;; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
-        //创建连接对象
-        SqlConnection connection = new SqlConnection(connsql);
+<p>==============================================================</p>
+<h4 id="显示新窗口在父窗口的中间"><a href="#显示新窗口在父窗口的中间" class="headerlink" title="显示新窗口在父窗口的中间"></a>显示新窗口在父窗口的中间</h4><pre class=" language-csharp"><code class="language-csharp">            登陆窗口 dlg <span class="token operator">=</span> <span class="token keyword">new</span> 登陆窗口<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            dlg<span class="token punctuation">.</span>StartPosition <span class="token operator">=</span> FormStartPosition<span class="token punctuation">.</span>CenterParent<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//显示新窗口在父窗口的中间</span>
+            dlg<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="输入完成后，按回车键直接登录"><a href="#输入完成后，按回车键直接登录" class="headerlink" title="输入完成后，按回车键直接登录"></a>输入完成后，按回车键直接登录</h4><pre class=" language-csharp"><code class="language-csharp"> <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">textBox2_KeyDown</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> KeyEventArgs e<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>KeyValue <span class="token operator">==</span> <span class="token number">13</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>button1<span class="token punctuation">.</span><span class="token function">Focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">button1_Click</span><span class="token punctuation">(</span>sender<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//调用登录按钮的事件处理代码</span>
+            <span class="token punctuation">}</span>
 
-        string sql = string.Format(&quot;SELECT * FROM  fa_user WHERE username=&#39;{0}&#39;&quot;, sUser);  // 查询员工类别的sql语句，也可以是增改删语句。
+        <span class="token punctuation">}</span></code></pre>
+<h4 id="调整Tab键顺序"><a href="#调整Tab键顺序" class="headerlink" title="调整Tab键顺序"></a>调整Tab键顺序</h4><blockquote>
+<p>①在[vs工具栏]中找到[视图]下拉框，再找到[Tab键顺序]（用快捷键：Alt+V调出[视图]后，再按B调出[Tab键顺序]）</p>
+<h1 id="②按照自己想要的顺序依次给控件标号"><a href="#②按照自己想要的顺序依次给控件标号" class="headerlink" title="②按照自己想要的顺序依次给控件标号"></a>②按照自己想要的顺序依次给控件标号</h1></blockquote>
+<pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">//核对数据库中的用户名与密码</span>
+    <span class="token keyword">bool</span> <span class="token function">checkUserPassword</span><span class="token punctuation">(</span><span class="token keyword">string</span> sUser<span class="token punctuation">,</span> <span class="token keyword">string</span> sPass<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        String connsql <span class="token operator">=</span> <span class="token string">"server=120.79.140.200;database=HuaXia;user id=sa;pwd=Www.023**.cn;"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</span>
+        <span class="token comment" spellcheck="true">//创建连接对象</span>
+        SqlConnection connection <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlConnection</span><span class="token punctuation">(</span>connsql<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 设置command命令执行的语句
-        SqlCommand command = new SqlCommand(sql, connection);
-        try
-        {
-            connection.Open(); // 打开数据库连接
-            SqlDataReader dataReader = command.ExecuteReader(); // 执行查询
-            string sSqlpass = &quot;&quot;; //数据库中加密的密码
-            string sSqlSalt = &quot;&quot;; //salt，用于判断密码
-            while (dataReader.Read())
-            {
-                sSqlpass = (string)dataReader[&quot;password&quot;];
-                sSqlSalt = (string)dataReader[&quot;salt&quot;];
-            }
-            if(sSqlpass.Length != 0)
-            {
-                string sText = EncryptWithMD5(EncryptWithMD5(sPass) + sSqlSalt);//MD5多次加密完
-                if( sSqlpass == sText)  //对比方式
-                {
-                    //MessageBox.Show(&quot;对比成功&quot;);
-                    return true;
-                }
-            }
-            dataReader.Close();
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.Message);
-            Console.WriteLine(ex.Message);
-        }
-        finally
-        {
-            connection.Close();
-        }
-        return false;
-    }</code></pre><p>==============================================================<br>       //MD5加密<br>        public static string EncryptWithMD5(string source)<br>        {<br>            byte[] sor = Encoding.UTF8.GetBytes(source);<br>            MD5 md5 = MD5.Create();<br>            byte[] result = md5.ComputeHash(sor);<br>            StringBuilder strbul = new StringBuilder(40);<br>            for (int i = 0; i &lt; result.Length; i++)<br>            {<br>                strbul.Append(result[i].ToString(“x2”));//加密结果”x2”结果为32位,”x3”结果为48位,”x4”结果为64位</p>
-<pre><code>        }
-        return strbul.ToString();
-    }</code></pre><p>==============================================================<br>提示ConfigurationManager上下文找不到<br>就添加引用，搜索Configuration</p>
+        <span class="token keyword">string</span> sql <span class="token operator">=</span> <span class="token keyword">string</span><span class="token punctuation">.</span><span class="token function">Format</span><span class="token punctuation">(</span><span class="token string">"SELECT * FROM  fa_user WHERE username='{0}'"</span><span class="token punctuation">,</span> sUser<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 查询员工类别的sql语句，也可以是增改删语句。</span>
+
+        <span class="token comment" spellcheck="true">// 设置command命令执行的语句</span>
+        SqlCommand command <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlCommand</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> connection<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span>
+        <span class="token punctuation">{</span>
+            connection<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打开数据库连接</span>
+            SqlDataReader dataReader <span class="token operator">=</span> command<span class="token punctuation">.</span><span class="token function">ExecuteReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行查询</span>
+            <span class="token keyword">string</span> sSqlpass <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//数据库中加密的密码</span>
+            <span class="token keyword">string</span> sSqlSalt <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//salt，用于判断密码</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>dataReader<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                sSqlpass <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">)</span>dataReader<span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                sSqlSalt <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">)</span>dataReader<span class="token punctuation">[</span><span class="token string">"salt"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>sSqlpass<span class="token punctuation">.</span>Length <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">string</span> sText <span class="token operator">=</span> <span class="token function">EncryptWithMD5</span><span class="token punctuation">(</span><span class="token function">EncryptWithMD5</span><span class="token punctuation">(</span>sPass<span class="token punctuation">)</span> <span class="token operator">+</span> sSqlSalt<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//MD5多次加密完</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span> sSqlpass <span class="token operator">==</span> sText<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//对比方式</span>
+                <span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//MessageBox.Show("对比成功");</span>
+                    <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            dataReader<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>ex<span class="token punctuation">.</span>Message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>ex<span class="token punctuation">.</span>Message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">finally</span>
+        <span class="token punctuation">{</span>
+            connection<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>==============================================================</p>
+<h4 id="MD5加密"><a href="#MD5加密" class="headerlink" title="MD5加密"></a>MD5加密</h4><pre class=" language-csharp"><code class="language-csharp">       <span class="token comment" spellcheck="true">//MD5加密</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">string</span> <span class="token function">EncryptWithMD5</span><span class="token punctuation">(</span><span class="token keyword">string</span> source<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sor <span class="token operator">=</span> Encoding<span class="token punctuation">.</span>UTF8<span class="token punctuation">.</span><span class="token function">GetBytes</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            MD5 md5 <span class="token operator">=</span> MD5<span class="token punctuation">.</span><span class="token function">Create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> result <span class="token operator">=</span> md5<span class="token punctuation">.</span><span class="token function">ComputeHash</span><span class="token punctuation">(</span>sor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            StringBuilder strbul <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> result<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                strbul<span class="token punctuation">.</span><span class="token function">Append</span><span class="token punctuation">(</span>result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token string">"x2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//加密结果"x2"结果为32位,"x3"结果为48位,"x4"结果为64位</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> strbul<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<h4 id="提示ConfigurationManager上下文找不到"><a href="#提示ConfigurationManager上下文找不到" class="headerlink" title="提示ConfigurationManager上下文找不到"></a>提示ConfigurationManager上下文找不到</h4><blockquote>
+<p>就添加引用，搜索Configuration</p>
 <p>app.config是WinForm的配置文件，在B/S中是web.config。</p>
-<h1 id="在WinForm中添加app-config文件：右击“项目名称”-gt-“添加”-gt-“新建项”-gt-“应用程序配置文件”"><a href="#在WinForm中添加app-config文件：右击“项目名称”-gt-“添加”-gt-“新建项”-gt-“应用程序配置文件”" class="headerlink" title="在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”"></a>在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”</h1><p>修改对应英文标题为中文。</p>
+<h1 id="在WinForm中添加app-config文件：右击“项目名称”-gt-“添加”-gt-“新建项”-gt-“应用程序配置文件”"><a href="#在WinForm中添加app-config文件：右击“项目名称”-gt-“添加”-gt-“新建项”-gt-“应用程序配置文件”" class="headerlink" title="在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”"></a>在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”</h1></blockquote>
+<p>修改对应英文标题为中文。</p>
 <h1 id="dataGridView1-Columns-“f-RecID”-HeaderText-“编号”"><a href="#dataGridView1-Columns-“f-RecID”-HeaderText-“编号”" class="headerlink" title="dataGridView1.Columns[“f_RecID”].HeaderText = “编号”;"></a>dataGridView1.Columns[“f_RecID”].HeaderText = “编号”;</h1><p>连接字符串</p>
 <pre><code>        String connsql = &quot;server=120.79.140.200;database=HX_AccessData;user id=sa;pwd=password;&quot;; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</code></pre><p>==============================================================<br>            String connsql = “server=120.79.140.200;database=HX_AccessData;user id=sa;pwd=Www”; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</p>
 <pre><code>        try
