@@ -498,34 +498,87 @@ MYSQL最简化使用public static string strConn = &#34;Host =localhost;Database
                 listView1<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lvi<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
             <span class="token punctuation">}</span></code></pre>
-<p>==============================================================<br>控件中添加图标<br>方式1,来源为本地文件<br>            string s = @”E:\ico\downloads.png”;<br>            toolStripButton1.Image = Image.FromFile(s);</p>
-<p>方式2，为资源文件中：</p>
-<pre><code>        toolStripButton1.Image = Properties.Resources.logo; //直接调用Resources.resx中的资源</code></pre><p>==============================================================<br>C# Winform项目下实现左侧菜单右侧界面显示效果<br><a href="https://www.cnblogs.com/dreamskies/archive/2013/02/21/2921064.html" target="_blank" rel="noopener">https://www.cnblogs.com/dreamskies/archive/2013/02/21/2921064.html</a><br>添加splitContainer控件<br>            this.IsMdiContainer = true;<br>            添加学生 dlg = new 添加学生();<br>            dlg.Parent = splitContainer1.Panel2;<br>            dlg.Show();</p>
-<h1 id="会出错未细测先存档"><a href="#会出错未细测先存档" class="headerlink" title="会出错未细测先存档"></a>会出错未细测先存档</h1><p>combox控件默认点选第一列</p>
-<h1 id="this-cbType-SelectedIndex-0-combox控件默认点选第一列"><a href="#this-cbType-SelectedIndex-0-combox控件默认点选第一列" class="headerlink" title="this.cbType.SelectedIndex = 0;  //combox控件默认点选第一列"></a>this.cbType.SelectedIndex = 0;  //combox控件默认点选第一列</h1><p>ListView中点选操作响应函数。//选择状态<br>        private void ListView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)<br>        {<br>            if (listView1.SelectedItems.Count &gt; 0)<br>            {<br>                button1.Enabled = true;<br>            }<br>            else<br>                button1.Enabled = false;<br>        }</p>
-<p>==============================================================<br>ListView中选中，及取内容信息，到右边ListView2<br>            if (this.listView1.SelectedItems.Count &gt; 0)//判断listview有被选中项<br>            {<br>                string sID =    listView1.SelectedItems[0].Text;                //选中行的第一列<br>                string sName =  listView1.SelectedItems[0].SubItems[1].Text;    //选中的行的第二列。</p>
-<pre><code>            ListViewItem lvi = new ListViewItem();  //item信息
-            lvi.SubItems.Clear();
+<h4 id="控件中添加图标"><a href="#控件中添加图标" class="headerlink" title="控件中添加图标"></a>控件中添加图标</h4><h6 id="方式1-来源为本地文件"><a href="#方式1-来源为本地文件" class="headerlink" title="方式1,来源为本地文件"></a>方式1,来源为本地文件</h6><pre class=" language-csharp"><code class="language-csharp">            <span class="token keyword">string</span> s <span class="token operator">=</span> <span class="token string">@"E:\ico\downloads.png"</span><span class="token punctuation">;</span>
+            toolStripButton1<span class="token punctuation">.</span>Image <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token function">FromFile</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="方式2，为资源文件中："><a href="#方式2，为资源文件中：" class="headerlink" title="方式2，为资源文件中："></a>方式2，为资源文件中：</h6><pre class=" language-csharp"><code class="language-csharp">            toolStripButton1<span class="token punctuation">.</span>Image <span class="token operator">=</span> Properties<span class="token punctuation">.</span>Resources<span class="token punctuation">.</span>logo<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//直接调用Resources.resx中的资源</span></code></pre>
+<h4 id="C-Winform项目下实现左侧菜单右侧界面显示效果"><a href="#C-Winform项目下实现左侧菜单右侧界面显示效果" class="headerlink" title="C# Winform项目下实现左侧菜单右侧界面显示效果"></a>C# Winform项目下实现左侧菜单右侧界面显示效果</h4><p><a href="https://www.cnblogs.com/dreamskies/archive/2013/02/21/2921064.html" target="_blank" rel="noopener">https://www.cnblogs.com/dreamskies/archive/2013/02/21/2921064.html</a><br>添加splitContainer控件</p>
+<pre class=" language-csharp"><code class="language-csharp">            <span class="token keyword">this</span><span class="token punctuation">.</span>IsMdiContainer <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+            添加学生 dlg <span class="token operator">=</span> <span class="token keyword">new</span> 添加学生<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            dlg<span class="token punctuation">.</span>Parent <span class="token operator">=</span> splitContainer1<span class="token punctuation">.</span>Panel2<span class="token punctuation">;</span>
+            dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//会出错未细测先存档</span></code></pre>
+<hr>
+<h4 id="combox控件默认点选第一列"><a href="#combox控件默认点选第一列" class="headerlink" title="combox控件默认点选第一列"></a>combox控件默认点选第一列</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token preprocessor property"># this.cbType.SelectedIndex = 0;  </span><span class="token comment" spellcheck="true">//combox控件默认点选第一列</span>
 
-            lvi.SubItems[0].Text = sID;
-            lvi.SubItems.Add(sName);
-            listView2.Items.Add(lvi);       //列表2中添加列表1中选中的信息
+ListView中点选操作响应函数。<span class="token comment" spellcheck="true">//选择状态</span>
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">ListView1_ItemSelectionChanged</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> ListViewItemSelectionChangedEventArgs e<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">.</span>Count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                button1<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+                button1<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<hr>
+<h5 id="ListView中选中，及取内容信息，到右边ListView2"><a href="#ListView中选中，及取内容信息，到右边ListView2" class="headerlink" title="ListView中选中，及取内容信息，到右边ListView2"></a>ListView中选中，及取内容信息，到右边ListView2</h5><pre class=" language-csharp"><code class="language-csharp">          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">.</span>Count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//判断listview有被选中项</span>
+          <span class="token punctuation">{</span>
+            <span class="token keyword">string</span> sID <span class="token operator">=</span>    listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//选中行的第一列</span>
+            <span class="token keyword">string</span> sName <span class="token operator">=</span>  listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>SubItems<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//选中的行的第二列。</span>
+            ListViewItem lvi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListViewItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//item信息</span>
+            lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            //删除当前选中的行
-            listView1.Items.Remove(listView1.SelectedItems[0]);
-        }</code></pre><p>==============================================================<br>在ListView中删除选择的行</p>
-<h1 id="listView1-Items-Remove-listView1-SelectedItems-0"><a href="#listView1-Items-Remove-listView1-SelectedItems-0" class="headerlink" title="listView1.Items.Remove(listView1.SelectedItems[0]);"></a>listView1.Items.Remove(listView1.SelectedItems[0]);</h1><p>listview初始化<br>　　　　　　　　ImageList imgList = new ImageList();<br>　　　　　　　　imgList.ImageSize = new Size(1, 25);<br>　　　　　　　　listView1.SmallImageList = imgList;</p>
-<p>　　　　　　　　listView1.GridLines = true;<br>　　　　　　　　listView1.FullRowSelect = true;</p>
-<p>　　　　　　　　listView1.View = View.Details;<br>　　　　　　　　listView1.Scrollable = true;<br>　　　　　　　　listView1.MultiSelect = false;</p>
-<p>　　　　　　　　listView1.Columns.Add(“姓名”, 90, HorizontalAlignment.Center);<br>　　　　　　　　listView1.Columns.Add(“性别”, 60, HorizontalAlignment.Center);<br>　　　　　　　　listView1.Columns.Add(“电话”, 90, HorizontalAlignment.Center);<br>　　　　　　　　listView1.Columns.Add(“地址”, 150, HorizontalAlignment.Center);</p>
-<p>　　　　　　　　ListViewItem lvi = new ListViewItem();<br>　　　　　　　　lvi.SubItems.Clear();</p>
-<p>　　　　　　　　lvi.SubItems[0].Text = “李海云”;<br>　　　　　　　　lvi.SubItems.Add(“男”);<br>　　　　　　　　lvi.SubItems.Add(“69825452”);<br>　　　　　　　　lvi.SubItems.Add(“天海大道18号”);<br>　　　　　　　　listView1.Items.Add(lvi);</p>
-<p>　　　　　　　　lvi = new ListViewItem();<br>　　　　　　　　lvi.SubItems.Clear();</p>
-<p>　　　　　　　　lvi.SubItems[0].Text = “李玲娜”;<br>　　　　　　　　lvi.SubItems.Add(“女”);<br>　　　　　　　　lvi.SubItems.Add(“30257351”);<br>　　　　　　　　lvi.SubItems.Add(“海云东路689号”);</p>
-<h1 id="listView1-Items-Add-lvi"><a href="#listView1-Items-Add-lvi" class="headerlink" title="　　　　　　　　listView1.Items.Add(lvi);"></a>　　　　　　　　listView1.Items.Add(lvi);</h1><p>设置ListView的行高:</p>
-<p>可以加入一个imagelist来撑大行，实现行高的设置！</p>
-<p>// 设置行高<br>ImageList imgList = new ? ImageList();<br>// 分别是宽和高<br>imgList.ImageSize = new Size(1,25);<br>// 这里设置listView的SmallImageList ,用imgList将其撑大</p>
-<h1 id="listView1-SmallImageList-imgList"><a href="#listView1-SmallImageList-imgList" class="headerlink" title="listView1.SmallImageList = imgList; ??"></a>listView1.SmallImageList = imgList; ??</h1><pre><code>运行登陆窗口
+            lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text <span class="token operator">=</span> sID<span class="token punctuation">;</span>
+            lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>sName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            listView2<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lvi<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//列表2中添加列表1中选中的信息</span>
+
+            <span class="token comment" spellcheck="true">//删除当前选中的行</span>
+            listView1<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span>listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<h4 id="在ListView中删除选择的行"><a href="#在ListView中删除选择的行" class="headerlink" title="在ListView中删除选择的行"></a>在ListView中删除选择的行</h4><pre class=" language-csharp"><code class="language-csharp">        listView1<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span>listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="listview初始化"><a href="#listview初始化" class="headerlink" title="listview初始化"></a>listview初始化</h4><pre class=" language-csharp"><code class="language-csharp">　　　　　　　　ImageList imgList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ImageList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　imgList<span class="token punctuation">.</span>ImageSize <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　listView1<span class="token punctuation">.</span>SmallImageList <span class="token operator">=</span> imgList<span class="token punctuation">;</span>
+
+　　　　　　　　listView1<span class="token punctuation">.</span>GridLines <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+　　　　　　　　listView1<span class="token punctuation">.</span>FullRowSelect <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+
+　　　　　　　　listView1<span class="token punctuation">.</span>View <span class="token operator">=</span> View<span class="token punctuation">.</span>Details<span class="token punctuation">;</span>
+　　　　　　　　listView1<span class="token punctuation">.</span>Scrollable <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+　　　　　　　　listView1<span class="token punctuation">.</span>MultiSelect <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+
+　　　　　　　　listView1<span class="token punctuation">.</span>Columns<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"姓名"</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> HorizontalAlignment<span class="token punctuation">.</span>Center<span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　listView1<span class="token punctuation">.</span>Columns<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"性别"</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> HorizontalAlignment<span class="token punctuation">.</span>Center<span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　listView1<span class="token punctuation">.</span>Columns<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"电话"</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> HorizontalAlignment<span class="token punctuation">.</span>Center<span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　listView1<span class="token punctuation">.</span>Columns<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"地址"</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> HorizontalAlignment<span class="token punctuation">.</span>Center<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+　　　　　　　　ListViewItem lvi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListViewItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text <span class="token operator">=</span> <span class="token string">"李海云"</span><span class="token punctuation">;</span>
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"69825452"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"天海大道18号"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　listView1<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lvi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+　　　　　　　　lvi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListViewItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text <span class="token operator">=</span> <span class="token string">"李玲娜"</span><span class="token punctuation">;</span>
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"女"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"30257351"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　　　　　　　lvi<span class="token punctuation">.</span>SubItems<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"海云东路689号"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   　　　　　　listView1<span class="token punctuation">.</span>Items<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lvi<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="设置ListView的行高"><a href="#设置ListView的行高" class="headerlink" title="设置ListView的行高:"></a>设置ListView的行高:</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">//可以加入一个imagelist来撑大行，实现行高的设置！</span>
+
+<span class="token comment" spellcheck="true">// 设置行高</span>
+ImageList imgList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token operator">?</span> <span class="token function">ImageList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 分别是宽和高</span>
+imgList<span class="token punctuation">.</span>ImageSize <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 这里设置listView的SmallImageList ,用imgList将其撑大</span>
+listView1<span class="token punctuation">.</span>SmallImageList <span class="token operator">=</span> imgList<span class="token punctuation">;</span> <span class="token operator">?</span><span class="token operator">?</span></code></pre>
+<pre><code>运行登陆窗口
 Program.cs中修改Main函数 
     static void Main()
     {
@@ -567,63 +620,103 @@ Program.cs中修改Main函数
             MessageBox.Show(&quot;请输入用户名和密码！&quot;, &quot;提示&quot;);
             return;
         }
-    }</code></pre><p>==============================================================<br>       notifyIcon1控件使用：<br>       1.界面中添加notifyIcon控件<br>       2.代码：<br>     notifyIcon1.Visible = true;<br>        private void NotifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)<br>        {<br>            this.Visible = true;<br>            this.WindowState = FormWindowState.Normal;<br>        }</p>
-<pre><code>    private void Form1_Resize(object sender, EventArgs e)
-    {
-        if(this.WindowState == FormWindowState.Minimized)
-        {
-            this.Visible = false;
-        }
-    }</code></pre><p>==============================================================<br>       Timer控件用法：<br>    1.界面中添加Timer1控件。<br>    2.给控件添加函数<br>                timer1.Enabled = true;<br>            //设置时间间隔（毫秒为单位）<br>            timer1.Interval = 1000;</p>
-<pre><code>    private void Timer1_Tick(object sender, EventArgs e)
-    {
-        if (FindProcess() == false)
-            RunProcess();
-    }</code></pre><p>==============================================================<br>        //查找进程<br>        bool FindProcess()<br>        {<br>            Process[] pro = Process.GetProcesses();//获取已开启的所有进程<br>            bool bFound = false;<br>            //遍历所有查找到的进程</p>
-<pre><code>        for (int i = 0; i &lt; pro.Length; i++)
-        {
-            //判断此进程是否是要查找的进程
-            if (pro[i].ProcessName.ToString().ToLower() == &quot;tybsszk&quot;)//加上.exe会找不到
-            {
-                MessageBox.Show(&quot;fonud&quot;);
-                bFound = true;
-                return true;
-            }
-        }
-        return bFound;
-    }</code></pre><p>==============================================================<br>        //运程程序<br>        void RunProcess()<br>        {<br>            Process myProcess = new Process();<br>            myProcess.StartInfo.UseShellExecute = false;<br>            myProcess.StartInfo.FileName = “tybsszk.exe”;<br>            myProcess.StartInfo.CreateNoWindow = true;<br>            myProcess.Start();</p>
-<pre><code>    }</code></pre><p>==============================================================<br>        //获取班级列表<br>        private List<string> getClassList()<br>        {<br>            DataTable dtDgv = new DataTable();<br>            //dtDgv.TableName = “”;<br>            string strConn = “Data Source=120.79.140.200;Initial Catalog=HuaXia;User ID=sa;Password=Www.023**.cn”;</string></p>
-<pre><code>        string strSQL = &quot;SELECT * from classlist&quot;;
+    }</code></pre><h4 id="notifyIcon1控件使用："><a href="#notifyIcon1控件使用：" class="headerlink" title="notifyIcon1控件使用："></a>notifyIcon1控件使用：</h4><blockquote>
+<p>​       1.界面中添加notifyIcon控件<br>​       2.代码：</p>
+</blockquote>
+<pre class=" language-csharp"><code class="language-csharp">
+     notifyIcon1<span class="token punctuation">.</span>Visible <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">NotifyIcon1_MouseDoubleClick</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> MouseEventArgs e<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>Visible <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>WindowState <span class="token operator">=</span> FormWindowState<span class="token punctuation">.</span>Normal<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">Form1_Resize</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> EventArgs e<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>WindowState <span class="token operator">==</span> FormWindowState<span class="token punctuation">.</span>Minimized<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>Visible <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>==============================================================</p>
+<h4 id="Timer控件用法："><a href="#Timer控件用法：" class="headerlink" title="Timer控件用法："></a>Timer控件用法：</h4><blockquote>
+<p>​    1.界面中添加Timer1控件。<br>​    2.给控件添加函数</p>
+</blockquote>
+<pre class=" language-csharp"><code class="language-csharp">              timer1<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//设置时间间隔（毫秒为单位）</span>
+            timer1<span class="token punctuation">.</span>Interval <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
 
-        SqlConnection conn = new SqlConnection(strConn);
-        SqlCommand cmd = new SqlCommand(strSQL, conn);
-        //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-        string strMsg = &quot;&quot;;
-        List&lt;string&gt; listStr= new List&lt;string&gt;();
-        try
-        {
-            conn.Open();
-            SqlDataReader myReader = cmd.ExecuteReader();//执行SQL语句的真正查询了
+  <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">Timer1_Tick</span><span class="token punctuation">(</span><span class="token keyword">object</span> sender<span class="token punctuation">,</span> EventArgs e<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">FindProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">false</span><span class="token punctuation">)</span>
+            <span class="token function">RunProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h4 id="查找进程"><a href="#查找进程" class="headerlink" title="//查找进程"></a>//查找进程</h4><pre class=" language-csharp"><code class="language-csharp">    <span class="token keyword">bool</span> <span class="token function">FindProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Process<span class="token punctuation">[</span><span class="token punctuation">]</span> pro <span class="token operator">=</span> Process<span class="token punctuation">.</span><span class="token function">GetProcesses</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取已开启的所有进程</span>
+        <span class="token keyword">bool</span> bFound <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//遍历所有查找到的进程</span>
 
-            while (myReader.Read())// 每次循环查到的一行 如果有N行就循环N次而已
-            {
-                strMsg += myReader.GetString(1);//.ToString();
-                strMsg += &quot;\r\n&quot;;
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> pro<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//判断此进程是否是要查找的进程</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>pro<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>ProcessName<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToLower</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"tybsszk"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//加上.exe会找不到</span>
+            <span class="token punctuation">{</span>
+                MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"fonud"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                bFound <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> bFound<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>==============================================================</p>
+<h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4><pre class=" language-csharp"><code class="language-csharp">        <span class="token keyword">void</span> <span class="token function">RunProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+​        <span class="token punctuation">{</span>
+​            Process myProcess <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Process</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+​            myProcess<span class="token punctuation">.</span>StartInfo<span class="token punctuation">.</span>UseShellExecute <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+​            myProcess<span class="token punctuation">.</span>StartInfo<span class="token punctuation">.</span>FileName <span class="token operator">=</span> <span class="token string">"tybsszk.exe"</span><span class="token punctuation">;</span>
+​            myProcess<span class="token punctuation">.</span>StartInfo<span class="token punctuation">.</span>CreateNoWindow <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+​            myProcess<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-                listStr.Add(myReader.GetString(1));
-            }
-            myReader.Close();
-        }
-        catch (Exception ex)
-        { }
-        finally
-        {
-            conn.Close();
-        }
-        return listStr;
+​         <span class="token punctuation">}</span></code></pre>
+<p>​    //获取班级列表</p>
+<pre class=" language-csharp"><code class="language-csharp"> ​    <span class="token keyword">private</span> List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span> <span class="token function">getClassList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+​    <span class="token punctuation">{</span>
+​        DataTable dtDgv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+​        <span class="token comment" spellcheck="true">//dtDgv.TableName = "";</span>
+​        <span class="token keyword">string</span> strConn <span class="token operator">=</span> <span class="token string">"Data Source=120.79.140.200;Initial Catalog=HuaXia;User ID=sa;Password=Www.023**.cn"</span><span class="token punctuation">;</span>
 
-    }</code></pre><p>==============================================================<br>显示新窗口在父窗口的中间<br>            登陆窗口 dlg = new 登陆窗口();<br>            dlg.StartPosition = FormStartPosition.CenterParent; //显示新窗口在父窗口的中间</p>
+​        <span class="token keyword">string</span> strSQL <span class="token operator">=</span> <span class="token string">"SELECT * from classlist"</span><span class="token punctuation">;</span>
+
+     SqlConnection conn <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlConnection</span><span class="token punctuation">(</span>strConn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    SqlCommand cmd <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlCommand</span><span class="token punctuation">(</span>strSQL<span class="token punctuation">,</span> conn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//SqlDataAdapter adapter = new SqlDataAdapter(cmd);</span>
+    <span class="token keyword">string</span> strMsg <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span> listStr<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span>
+    <span class="token punctuation">{</span>
+        conn<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        SqlDataReader myReader <span class="token operator">=</span> cmd<span class="token punctuation">.</span><span class="token function">ExecuteReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//执行SQL语句的真正查询了</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>myReader<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">// 每次循环查到的一行 如果有N行就循环N次而已</span>
+        <span class="token punctuation">{</span>
+            strMsg <span class="token operator">+</span><span class="token operator">=</span> myReader<span class="token punctuation">.</span><span class="token function">GetString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//.ToString();</span>
+            strMsg <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"\r\n"</span><span class="token punctuation">;</span>
+
+            listStr<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>myReader<span class="token punctuation">.</span><span class="token function">GetString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        myReader<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+    <span class="token keyword">finally</span>
+    <span class="token punctuation">{</span>
+        conn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> listStr<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>==============================================================<br>显示新窗口在父窗口的中间<br>            登陆窗口 dlg = new 登陆窗口();<br>            dlg.StartPosition = FormStartPosition.CenterParent; //显示新窗口在父窗口的中间</p>
 <pre><code>        dlg.ShowDialog();</code></pre><p>==============================================================<br>输入完成后，按回车键直接登录</p>
 <p> private void textBox2_KeyDown(object sender, KeyEventArgs e)<br>        {<br>            if (e.KeyValue == 13)<br>            {<br>                this.button1.Focus();<br>                button1_Click(sender, e);   //调用登录按钮的事件处理代码<br>            }</p>
 <pre><code>    }</code></pre><p>==============================================================<br>调整Tab键顺序<br>①在[vs工具栏]中找到[视图]下拉框，再找到[Tab键顺序]（用快捷键：Alt+V调出[视图]后，再按B调出[Tab键顺序]）</p>
