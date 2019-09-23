@@ -410,7 +410,7 @@ MYSQL最简化使用public static string strConn = &#34;Host =localhost;Database
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<h5 id="MYSQL最简化使用"><a href="#MYSQL最简化使用" class="headerlink" title="MYSQL最简化使用"></a>MYSQL最简化使用</h5><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">string</span> strConn <span class="token operator">=</span> <span class="token string">"Host =localhost;Database=fastadmin;Username=root;Password=root"</span><span class="token punctuation">;</span>
+<h4 id="MYSQL最简化使用"><a href="#MYSQL最简化使用" class="headerlink" title="MYSQL最简化使用"></a>MYSQL最简化使用</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">string</span> strConn <span class="token operator">=</span> <span class="token string">"Host =localhost;Database=fastadmin;Username=root;Password=root"</span><span class="token punctuation">;</span>
 
 ```csharp
         MySqlCommand mycom <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
@@ -437,7 +437,7 @@ MYSQL最简化使用public static string strConn = &#34;Host =localhost;Database
         myconn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 ```</code></pre>
 <hr>
-<h5 id="全局变量使用方法："><a href="#全局变量使用方法：" class="headerlink" title="全局变量使用方法："></a>全局变量使用方法：</h5><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">namespace</span> 学生课堂签到系统    <span class="token comment" spellcheck="true">//这个要同一个</span>
+<h4 id="全局变量使用方法："><a href="#全局变量使用方法：" class="headerlink" title="全局变量使用方法："></a>全局变量使用方法：</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">namespace</span> 学生课堂签到系统    <span class="token comment" spellcheck="true">//这个要同一个</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">class</span> <span class="token class-name">ClientBase</span>
     <span class="token punctuation">{</span>
@@ -457,8 +457,7 @@ MYSQL最简化使用public static string strConn = &#34;Host =localhost;Database
             ClientBase<span class="token punctuation">.</span><span class="token function">TestFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>ClientBase<span class="token punctuation">.</span>strTitle<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <hr>
-<h5 id="自定义函数类的使用List"><a href="#自定义函数类的使用List" class="headerlink" title="自定义函数类的使用List"></a>自定义函数类的使用List</h5><p>​    </p>
-<pre class=" language-csharp"><code class="language-csharp">  List<span class="token operator">&lt;</span>Classes<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>Classes<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//生成Class类的List列表           string strName = "";</span>
+<h4 id="自定义函数类的使用List"><a href="#自定义函数类的使用List" class="headerlink" title="自定义函数类的使用List"></a>自定义函数类的使用List</h4><pre class=" language-csharp"><code class="language-csharp">  List<span class="token operator">&lt;</span>Classes<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>Classes<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//生成Class类的List列表           string strName = "";</span>
             MySqlDataReader dataReader <span class="token operator">=</span> sql<span class="token punctuation">.</span><span class="token function">GetDataReader</span><span class="token punctuation">(</span>sqlstr<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">while</span> <span class="token punctuation">(</span>dataReader<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             <span class="token punctuation">{</span>
@@ -482,7 +481,7 @@ MYSQL最简化使用public static string strConn = &#34;Host =localhost;Database
     <span class="token keyword">public</span> <span class="token keyword">string</span> classBZR<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//班主任</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h5 id="mysql中数据的读取及转换方法"><a href="#mysql中数据的读取及转换方法" class="headerlink" title="mysql中数据的读取及转换方法"></a>mysql中数据的读取及转换方法</h5><pre class=" language-csharp"><code class="language-csharp">            <span class="token keyword">string</span> strClassName <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//数据库中加密的密码</span>
+<h4 id="mysql中数据的读取及转换方法"><a href="#mysql中数据的读取及转换方法" class="headerlink" title="mysql中数据的读取及转换方法"></a>mysql中数据的读取及转换方法</h4><pre class=" language-csharp"><code class="language-csharp">            <span class="token keyword">string</span> strClassName <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//数据库中加密的密码</span>
             MySqlDataReader dataReader <span class="token operator">=</span> sql<span class="token punctuation">.</span><span class="token function">GetDataReader</span><span class="token punctuation">(</span>sqlstr<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">while</span> <span class="token punctuation">(</span>dataReader<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             <span class="token punctuation">{</span>
@@ -521,7 +520,7 @@ ListView中点选操作响应函数。<span class="token comment" spellcheck="tr
                 button1<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span></code></pre>
 <hr>
-<h5 id="ListView中选中，及取内容信息，到右边ListView2"><a href="#ListView中选中，及取内容信息，到右边ListView2" class="headerlink" title="ListView中选中，及取内容信息，到右边ListView2"></a>ListView中选中，及取内容信息，到右边ListView2</h5><pre class=" language-csharp"><code class="language-csharp">          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">.</span>Count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//判断listview有被选中项</span>
+<h4 id="ListView中选中，及取内容信息，到右边ListView2"><a href="#ListView中选中，及取内容信息，到右边ListView2" class="headerlink" title="ListView中选中，及取内容信息，到右边ListView2"></a>ListView中选中，及取内容信息，到右边ListView2</h4><pre class=" language-csharp"><code class="language-csharp">          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">.</span>Count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//判断listview有被选中项</span>
           <span class="token punctuation">{</span>
             <span class="token keyword">string</span> sID <span class="token operator">=</span>    listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//选中行的第一列</span>
             <span class="token keyword">string</span> sName <span class="token operator">=</span>  listView1<span class="token punctuation">.</span>SelectedItems<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>SubItems<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//选中的行的第二列。</span>
@@ -655,7 +654,8 @@ Program<span class="token punctuation">.</span>cs中修改Main函数
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">FindProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">false</span><span class="token punctuation">)</span>
             <span class="token function">RunProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span></code></pre>
-<h4 id="查找进程"><a href="#查找进程" class="headerlink" title="//查找进程"></a>//查找进程</h4><pre class=" language-csharp"><code class="language-csharp">    <span class="token keyword">bool</span> <span class="token function">FindProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<h4 id="查找进程"><a href="#查找进程" class="headerlink" title="查找进程"></a>查找进程</h4><pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">//查找进程</span>
+    <span class="token keyword">bool</span> <span class="token function">FindProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
         Process<span class="token punctuation">[</span><span class="token punctuation">]</span> pro <span class="token operator">=</span> Process<span class="token punctuation">.</span><span class="token function">GetProcesses</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取已开启的所有进程</span>
         <span class="token keyword">bool</span> bFound <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
@@ -735,8 +735,9 @@ Program<span class="token punctuation">.</span>cs中修改Main函数
         <span class="token punctuation">}</span></code></pre>
 <h4 id="调整Tab键顺序"><a href="#调整Tab键顺序" class="headerlink" title="调整Tab键顺序"></a>调整Tab键顺序</h4><blockquote>
 <p>①在[vs工具栏]中找到[视图]下拉框，再找到[Tab键顺序]（用快捷键：Alt+V调出[视图]后，再按B调出[Tab键顺序]）</p>
-<h1 id="②按照自己想要的顺序依次给控件标号"><a href="#②按照自己想要的顺序依次给控件标号" class="headerlink" title="②按照自己想要的顺序依次给控件标号"></a>②按照自己想要的顺序依次给控件标号</h1></blockquote>
-<pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">//核对数据库中的用户名与密码</span>
+<p> ②按照自己想要的顺序依次给控件标号</p>
+</blockquote>
+<h4 id="核对数据库中的用户名与密码"><a href="#核对数据库中的用户名与密码" class="headerlink" title="核对数据库中的用户名与密码"></a>核对数据库中的用户名与密码</h4><pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">//核对数据库中的用户名与密码</span>
     <span class="token keyword">bool</span> <span class="token function">checkUserPassword</span><span class="token punctuation">(</span><span class="token keyword">string</span> sUser<span class="token punctuation">,</span> <span class="token keyword">string</span> sPass<span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
         String connsql <span class="token operator">=</span> <span class="token string">"server=120.79.140.200;database=HuaXia;user id=sa;pwd=Www.023**.cn;"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</span>
@@ -797,157 +798,194 @@ Program<span class="token punctuation">.</span>cs中修改Main函数
 <h4 id="提示ConfigurationManager上下文找不到"><a href="#提示ConfigurationManager上下文找不到" class="headerlink" title="提示ConfigurationManager上下文找不到"></a>提示ConfigurationManager上下文找不到</h4><blockquote>
 <p>就添加引用，搜索Configuration</p>
 <p>app.config是WinForm的配置文件，在B/S中是web.config。</p>
-<h1 id="在WinForm中添加app-config文件：右击“项目名称”-gt-“添加”-gt-“新建项”-gt-“应用程序配置文件”"><a href="#在WinForm中添加app-config文件：右击“项目名称”-gt-“添加”-gt-“新建项”-gt-“应用程序配置文件”" class="headerlink" title="在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”"></a>在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”</h1></blockquote>
-<p>修改对应英文标题为中文。</p>
-<h1 id="dataGridView1-Columns-“f-RecID”-HeaderText-“编号”"><a href="#dataGridView1-Columns-“f-RecID”-HeaderText-“编号”" class="headerlink" title="dataGridView1.Columns[“f_RecID”].HeaderText = “编号”;"></a>dataGridView1.Columns[“f_RecID”].HeaderText = “编号”;</h1><p>连接字符串</p>
-<pre><code>        String connsql = &quot;server=120.79.140.200;database=HX_AccessData;user id=sa;pwd=password;&quot;; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</code></pre><p>==============================================================<br>            String connsql = “server=120.79.140.200;database=HX_AccessData;user id=sa;pwd=Www”; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</p>
-<pre><code>        try
-        {
-            using (SqlConnection conn = new SqlConnection())
-            {
-                conn.ConnectionString = connsql;
-                conn.Open(); // 打开数据库连接
+<p>在WinForm中添加app.config文件：右击“项目名称”-&gt;“添加”-&gt;“新建项”-&gt;“应用程序配置文件”</p>
+</blockquote>
+<h4 id="修改对应英文标题为中文。"><a href="#修改对应英文标题为中文。" class="headerlink" title="修改对应英文标题为中文。"></a>修改对应英文标题为中文。</h4><pre class=" language-csharp"><code class="language-csharp">    dataGridView1<span class="token punctuation">.</span>Columns<span class="token punctuation">[</span><span class="token string">"f_RecID"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>HeaderText <span class="token operator">=</span> <span class="token string">"编号"</span><span class="token punctuation">;</span></code></pre>
+<h4 id="连接字符串-MSSQL方式"><a href="#连接字符串-MSSQL方式" class="headerlink" title="连接字符串(MSSQL方式)"></a>连接字符串(MSSQL方式)</h4><pre class=" language-csharp"><code class="language-csharp">            String connsql <span class="token operator">=</span> <span class="token string">"server=120.79.140.200;database=HX_AccessData;user id=sa;pwd=password;"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</span></code></pre>
+<pre class=" language-csharp"><code class="language-csharp">        String connsql <span class="token operator">=</span> <span class="token string">"server=120.79.140.200;database=HX_AccessData;user id=sa;pwd=Www"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</span>
 
-                String sql = &quot;select  top 50 * from t_d_SwipeRecord&quot;; // 查询语句
+        <span class="token keyword">try</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">using</span> <span class="token punctuation">(</span>SqlConnection conn <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                conn<span class="token punctuation">.</span>ConnectionString <span class="token operator">=</span> connsql<span class="token punctuation">;</span>
+                conn<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打开数据库连接</span>
 
-                SqlDataAdapter myda = new SqlDataAdapter(sql, conn); // 实例化适配器
+                String sql <span class="token operator">=</span> <span class="token string">"select  top 50 * from t_d_SwipeRecord"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 查询语句</span>
 
-                DataTable dt = new DataTable(); // 实例化数据表
-                myda.Fill(dt); // 保存数据 
+                SqlDataAdapter myda <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlDataAdapter</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> conn<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 实例化适配器</span>
 
-                dataGridView1.DataSource = dt; // 设置到DataGridView中
+                DataTable dt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 实例化数据表</span>
+                myda<span class="token punctuation">.</span><span class="token function">Fill</span><span class="token punctuation">(</span>dt<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 保存数据 </span>
 
-                conn.Close(); // 关闭数据库连接
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(&quot;错误信息：&quot; + ex.Message, &quot;出现错误&quot;);
-        }</code></pre><p>==============================================================<br>System.Transactions.Diagnostics.DiagnosticTrace 的类型初始值设定项引发异常。配置系统未能初始化<br>解决办法：</p>
-<h1 id="删除app-config"><a href="#删除app-config" class="headerlink" title="删除app.config"></a>删除app.config</h1><pre><code>        str += &quot;System Runtime: &quot; + (Environment.TickCount / 60000).ToString();
-        //运行时间</code></pre><p>==============================================================<br>C#窗体全屏功能<br>this.FormBorderStyle = FormBorderStyle.None;     //设置窗体为无边框样式</p>
-<h1 id="this-WindowState-FormWindowState-Maximized-最大化窗体"><a href="#this-WindowState-FormWindowState-Maximized-最大化窗体" class="headerlink" title="this.WindowState = FormWindowState.Maximized;    //最大化窗体 "></a>this.WindowState = FormWindowState.Maximized;    //最大化窗体 </h1><pre><code>    //查找进程、结束进程
-    void killProcess()
-    {
-        Process[] pro = Process.GetProcesses();//获取已开启的所有进程
+                dataGridView1<span class="token punctuation">.</span>DataSource <span class="token operator">=</span> dt<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 设置到DataGridView中</span>
 
-        //遍历所有查找到的进程
+                conn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 关闭数据库连接</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"错误信息："</span> <span class="token operator">+</span> ex<span class="token punctuation">.</span>Message<span class="token punctuation">,</span> <span class="token string">"出现错误"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>==============================================================</p>
+<h4 id="System-Transactions-Diagnostics-DiagnosticTrace-的类型初始值设定项引发异常。配置系统未能初始化"><a href="#System-Transactions-Diagnostics-DiagnosticTrace-的类型初始值设定项引发异常。配置系统未能初始化" class="headerlink" title="System.Transactions.Diagnostics.DiagnosticTrace 的类型初始值设定项引发异常。配置系统未能初始化"></a>System.Transactions.Diagnostics.DiagnosticTrace 的类型初始值设定项引发异常。配置系统未能初始化</h4><blockquote>
+<p>解决办法：</p>
+<p>删除app.config</p>
+</blockquote>
+<pre class=" language-csharp"><code class="language-csharp">        str <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"System Runtime: "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>Environment<span class="token punctuation">.</span>TickCount <span class="token operator">/</span> <span class="token number">60000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//运行时间</span></code></pre>
+<p>==============================================================    </p>
+<h4 id="C-窗体全屏功能"><a href="#C-窗体全屏功能" class="headerlink" title="C#窗体全屏功能"></a>C#窗体全屏功能</h4><pre class=" language-csharp"><code class="language-csharp">    <span class="token keyword">this</span><span class="token punctuation">.</span>FormBorderStyle <span class="token operator">=</span> FormBorderStyle<span class="token punctuation">.</span>None<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//设置窗体为无边框样式</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>WindowState <span class="token operator">=</span> FormWindowState<span class="token punctuation">.</span>Maximized<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//最大化窗体 </span></code></pre>
+<h4 id="查找进程、结束进程"><a href="#查找进程、结束进程" class="headerlink" title="查找进程、结束进程"></a>查找进程、结束进程</h4><pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">//查找进程、结束进程</span>
+    <span class="token keyword">void</span> <span class="token function">killProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Process<span class="token punctuation">[</span><span class="token punctuation">]</span> pro <span class="token operator">=</span> Process<span class="token punctuation">.</span><span class="token function">GetProcesses</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取已开启的所有进程</span>
 
-        for (int i = 0; i &lt; pro.Length; i++)
-        {
+        <span class="token comment" spellcheck="true">//遍历所有查找到的进程</span>
 
-            //判断此进程是否是要查找的进程
-            if (pro[i].ProcessName.ToString().ToLower() == &quot;notepad&quot;)
-            {
-                pro[i].Kill();//结束进程
-            }
-        }
-    }</code></pre><p>==============================================================<br>用C#来播放.wav格式的音频文件<br> System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);<br>??????????? </p>
-<p>player.Play();//简单播放一遍<br>???????????<br>player.PlayLooping();//循环播放<br>???????????<br>player.PlaySync();//另起线程播放</p>
-<h1 id="上面三种调用方法，只要调用任意一个就能播放。"><a href="#上面三种调用方法，只要调用任意一个就能播放。" class="headerlink" title=" 上面三种调用方法，只要调用任意一个就能播放。"></a> 上面三种调用方法，只要调用任意一个就能播放。</h1><p>PICTUREBOX显示图片<br>this.pictureBox1.Load(“E:\pic.jpg”);</p>
-<h1 id="sizemode-zoom-就可以放大缩小了"><a href="#sizemode-zoom-就可以放大缩小了" class="headerlink" title="sizemode = zoom //就可以放大缩小了"></a>sizemode = zoom //就可以放大缩小了</h1><p>string转换成list格式，以换行符为标志.<br>            List<string> striparr = str.Split(new string[] { “\r\n” }, StringSplitOptions.None).ToList();</string></p>
-<pre><code>        striparr = striparr.Where(s =&gt; !string.IsNullOrEmpty(s)).ToList();</code></pre><p>==============================================================<br>string字符截取，第4位后的所有字符。<br>string sName = striparr[4].Substring(4);</p>
-<pre><code>    /// &lt;summary&gt;
-    /// 处理部门的字符，因为有多级，以最后一个\为标志
-    /// 原始输出的字符例：深圳市华夏技工学校\18届19届学生\18电商2班
-    /// &lt;/summary&gt;
-    string CutGroup(string sGroup)
-    {
-        int nPos = sGroup.LastIndexOf(@&quot;\&quot;);
-        return sGroup.Substring(nPos + 1); ;
-    }</code></pre><p>以下网上找的互换代码：<br>c# 以换行(\r\n)拆分字符串</p>
-<p>字符串数组形式：<br>string[] striparr = strip.Split(new string[] { “\r\n” }, StringSplitOptions.None);<br>striparr = striparr.Where(s =&gt; !string.IsNullOrEmpty(s)).ToArray();</p>
-<p>List<sting>形式：<br>List<string> striparr = strip.Split(new string[] { “\r\n” }, StringSplitOptions.None).ToList();</string></sting></p>
-<h1 id="striparr-striparr-Where-s-gt-string-IsNullOrEmpty-s-ToList"><a href="#striparr-striparr-Where-s-gt-string-IsNullOrEmpty-s-ToList" class="headerlink" title="striparr = striparr.Where(s =&gt; !string.IsNullOrEmpty(s)).ToList();"></a>striparr = striparr.Where(s =&gt; !string.IsNullOrEmpty(s)).ToList();</h1><h1 id><a href="#" class="headerlink" title="==============================================================    "></a>==============================================================    </h1><h1 id="-1"><a href="#-1" class="headerlink" title="==============================================================    "></a>==============================================================    </h1><p>==============================================================    </p>
-<pre><code>        string connectionStr = &quot;server=localhost;uid=root;password=root;database=test&quot;;
-        string sqlContent = &quot;select * from t_dept&quot;;
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> pro<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
 
-        MySqlConnection sqlConnection = null;
-        MySqlDataReader reader = null;
-        try
-        {
-            sqlConnection = new MySqlConnection(connectionStr);
-            sqlConnection.Open();
-            MySqlCommand command = new MySqlCommand(sqlContent, sqlConnection);
-            reader = command.ExecuteReader();
+            <span class="token comment" spellcheck="true">//判断此进程是否是要查找的进程</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>pro<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>ProcessName<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToLower</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"notepad"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                pro<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">Kill</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//结束进程</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>==============================================================    </p>
+<h4 id="用C-来播放-wav格式的音频文件"><a href="#用C-来播放-wav格式的音频文件" class="headerlink" title="用C#来播放.wav格式的音频文件"></a>用C#来播放.wav格式的音频文件</h4><pre class=" language-csharp"><code class="language-csharp"> System<span class="token punctuation">.</span>Media<span class="token punctuation">.</span>SoundPlayer player <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">System<span class="token punctuation">.</span>Media<span class="token punctuation">.</span>SoundPlayer</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span> 
 
-            while (reader.Read())
-            {
-                if (reader.HasRows)
-                {
-                    Console.WriteLine(reader.GetString(0) + &quot;:&quot; + reader.GetInt32(1) + &quot;:&quot; );
-                }
-            }
-        }
-        catch (Exception exception)
-        {
-            throw new Exception(exception.Message);
-        }
-        finally
-        {
-            reader.Close();
-            sqlConnection.Close();
-        }</code></pre><p>==============================================================            </p>
-<p>2019.5.17学习mysql笔记（未完成）<br>1.生成SqlHelper类<br>2.添加app.config，写入数据<br>    <connectionstrings><br>    <add name="ConStr" connectionstring="Server=127.0.0.1;Database=test; User ID=root;Password=root;"><br>    </add></connectionstrings></p>
+player<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//简单播放一遍</span>
+<span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span> 
+player<span class="token punctuation">.</span><span class="token function">PlayLooping</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//循环播放</span>
+<span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span> 
+player<span class="token punctuation">.</span><span class="token function">PlaySync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//另起线程播放</span>
+
+<span class="token comment" spellcheck="true">//上面三种调用方法，只要调用任意一个就能播放。</span></code></pre>
+<h4 id="PICTUREBOX显示图片"><a href="#PICTUREBOX显示图片" class="headerlink" title="PICTUREBOX显示图片"></a>PICTUREBOX显示图片</h4><pre class=" language-csharp"><code class="language-csharp">    <span class="token keyword">this</span><span class="token punctuation">.</span>pictureBox1<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span><span class="token string">"E:\\pic.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token preprocessor property"># sizemode = zoom </span><span class="token comment" spellcheck="true">//就可以放大缩小了</span></code></pre>
+<h4 id="string转换成list格式，以换行符为标志"><a href="#string转换成list格式，以换行符为标志" class="headerlink" title="string转换成list格式，以换行符为标志."></a>string转换成list格式，以换行符为标志.</h4><pre class=" language-csharp"><code class="language-csharp">            List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span> striparr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">Split</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token string">"\r\n"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> StringSplitOptions<span class="token punctuation">.</span>None<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            striparr <span class="token operator">=</span> striparr<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>s <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">!</span><span class="token keyword">string</span><span class="token punctuation">.</span><span class="token function">IsNullOrEmpty</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="string字符截取，第4位后的所有字符。"><a href="#string字符截取，第4位后的所有字符。" class="headerlink" title="string字符截取，第4位后的所有字符。"></a>string字符截取，第4位后的所有字符。</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">string</span> sName <span class="token operator">=</span> striparr<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">Substring</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">/// &lt;summary></span>
+    <span class="token comment" spellcheck="true">/// 处理部门的字符，因为有多级，以最后一个\为标志</span>
+    <span class="token comment" spellcheck="true">/// 原始输出的字符例：深圳市华夏技工学校\18届19届学生\18电商2班</span>
+    <span class="token comment" spellcheck="true">/// &lt;/summary></span>
+    <span class="token keyword">string</span> <span class="token function">CutGroup</span><span class="token punctuation">(</span><span class="token keyword">string</span> sGroup<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> nPos <span class="token operator">=</span> sGroup<span class="token punctuation">.</span><span class="token function">LastIndexOf</span><span class="token punctuation">(</span><span class="token string">@"\"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> sGroup<span class="token punctuation">.</span><span class="token function">Substring</span><span class="token punctuation">(</span>nPos <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<pre class=" language-csharp"><code class="language-csharp">以下网上找的互换代码：
+c# 以换行<span class="token punctuation">(</span>\r\n<span class="token punctuation">)</span>拆分字符串
+
+字符串数组形式：
+<span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> striparr <span class="token operator">=</span> strip<span class="token punctuation">.</span><span class="token function">Split</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token string">"\r\n"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> StringSplitOptions<span class="token punctuation">.</span>None<span class="token punctuation">)</span><span class="token punctuation">;</span>
+striparr <span class="token operator">=</span> striparr<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>s <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">!</span><span class="token keyword">string</span><span class="token punctuation">.</span><span class="token function">IsNullOrEmpty</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+List<span class="token operator">&lt;</span>sting<span class="token operator">></span>形式：
+List<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span> striparr <span class="token operator">=</span> strip<span class="token punctuation">.</span><span class="token function">Split</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token string">"\r\n"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> StringSplitOptions<span class="token punctuation">.</span>None<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+striparr <span class="token operator">=</span> striparr<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>s <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">!</span><span class="token keyword">string</span><span class="token punctuation">.</span><span class="token function">IsNullOrEmpty</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-csharp"><code class="language-csharp">        <span class="token keyword">string</span> connectionStr <span class="token operator">=</span> <span class="token string">"server=localhost;uid=root;password=root;database=test"</span><span class="token punctuation">;</span>
+        <span class="token keyword">string</span> sqlContent <span class="token operator">=</span> <span class="token string">"select * from t_dept"</span><span class="token punctuation">;</span>
+
+        MySqlConnection sqlConnection <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        MySqlDataReader reader <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span>
+        <span class="token punctuation">{</span>
+            sqlConnection <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MySqlConnection</span><span class="token punctuation">(</span>connectionStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sqlConnection<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            MySqlCommand command <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MySqlCommand</span><span class="token punctuation">(</span>sqlContent<span class="token punctuation">,</span> sqlConnection<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            reader <span class="token operator">=</span> command<span class="token punctuation">.</span><span class="token function">ExecuteReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>reader<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>reader<span class="token punctuation">.</span>HasRows<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>reader<span class="token punctuation">.</span><span class="token function">GetString</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> reader<span class="token punctuation">.</span><span class="token function">GetInt32</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> exception<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span>exception<span class="token punctuation">.</span>Message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">finally</span>
+        <span class="token punctuation">{</span>
+            reader<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sqlConnection<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>==============================================================            </p>
+<h4 id="2019-5-17学习mysql笔记（未完成）"><a href="#2019-5-17学习mysql笔记（未完成）" class="headerlink" title="2019.5.17学习mysql笔记（未完成）"></a>2019.5.17学习mysql笔记（未完成）</h4><blockquote>
+<p>1.生成SqlHelper类<br>2.添加app.config，写入数据<br>    <connectionstrings><br>    <add name="ConStr" connectionstring="Server=127.0.0.1;Database=test; User ID=root;Password=root;"><br>    </add></connectionstrings></p>
 <p>3.Main函数调用，未成功，只连接到数据。下一步无法执行</p>
-<pre><code>     //连接数据库
-        SqlConnection con = SqlHelper.GetConnection();
-        Console.WriteLine(&quot;数据库连接成功&quot;);
+</blockquote>
+<pre class=" language-csharp"><code class="language-csharp">     <span class="token comment" spellcheck="true">//连接数据库</span>
+        SqlConnection con <span class="token operator">=</span> SqlHelper<span class="token punctuation">.</span><span class="token function">GetConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"数据库连接成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        //建立一张表
-        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;create table student111(id int primary key,name varchar(20),age int)&quot;);
-        Console.WriteLine(&quot;建表成功&quot;);
+        <span class="token comment" spellcheck="true">//建立一张表</span>
+        SqlHelper<span class="token punctuation">.</span><span class="token function">ExecuteNonQuery</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> CommandType<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> <span class="token string">"create table student111(id int primary key,name varchar(20),age int)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"建表成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        //插入数据
-        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;insert into student111 values(1,&#39;Ghazi&#39;,21)&quot;);
-        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;insert into student111111 values(2,&#39;Jack&#39;,20)&quot;);
-        Console.WriteLine(&quot;数据插入成功&quot;);
+        <span class="token comment" spellcheck="true">//插入数据</span>
+        SqlHelper<span class="token punctuation">.</span><span class="token function">ExecuteNonQuery</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> CommandType<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> <span class="token string">"insert into student111 values(1,'Ghazi',21)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        SqlHelper<span class="token punctuation">.</span><span class="token function">ExecuteNonQuery</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> CommandType<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> <span class="token string">"insert into student111111 values(2,'Jack',20)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"数据插入成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        //查询
-        DataSet ds = SqlHelper.ExecuteDataset(con, CommandType.Text, &quot;select* from student111&quot;);
-        foreach (DataRow col in ds.Tables[0].Rows)
-        {
-            for (int i = 0; i &lt; 3; i++)
-            {
-                Console.WriteLine(col[i].ToString());
-            }
-        }
+        <span class="token comment" spellcheck="true">//查询</span>
+        DataSet ds <span class="token operator">=</span> SqlHelper<span class="token punctuation">.</span><span class="token function">ExecuteDataset</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> CommandType<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> <span class="token string">"select* from student111"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">foreach</span> <span class="token punctuation">(</span>DataRow col <span class="token keyword">in</span> ds<span class="token punctuation">.</span>Tables<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Rows<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>col<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
 
-        //修改
-        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;update student111 set age=22 where id=2&quot;);
-        Console.WriteLine(&quot;数据修改成功&quot;);
+        <span class="token comment" spellcheck="true">//修改</span>
+        SqlHelper<span class="token punctuation">.</span><span class="token function">ExecuteNonQuery</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> CommandType<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> <span class="token string">"update student111 set age=22 where id=2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"数据修改成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        DataSet ds1 = SqlHelper.ExecuteDataset(con, CommandType.Text, &quot;select* from student111&quot;);
-        foreach (DataRow col in ds1.Tables[0].Rows)
-        {
-            for (int i = 0; i &lt; 3; i++)
-            {
-                Console.WriteLine(col[i].ToString());
-            }
-        }
+        DataSet ds1 <span class="token operator">=</span> SqlHelper<span class="token punctuation">.</span><span class="token function">ExecuteDataset</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> CommandType<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> <span class="token string">"select* from student111"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">foreach</span> <span class="token punctuation">(</span>DataRow col <span class="token keyword">in</span> ds1<span class="token punctuation">.</span>Tables<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Rows<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>col<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
 
-        //删除
-        SqlHelper.ExecuteNonQuery(con, CommandType.Text, &quot;delete from student111 where id=2&quot;);
-        Console.WriteLine(&quot;数据删除成功&quot;);
+        <span class="token comment" spellcheck="true">//删除</span>
+        SqlHelper<span class="token punctuation">.</span><span class="token function">ExecuteNonQuery</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> CommandType<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> <span class="token string">"delete from student111 where id=2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"数据删除成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        DataSet ds2 = SqlHelper.ExecuteDataset(con, CommandType.Text, &quot;select* from student111&quot;);
-        foreach (DataRow col in ds2.Tables[0].Rows)
-        {
-            for (int i = 0; i &lt; 3; i++)
-            {
-                Console.WriteLine(col[i].ToString());
-            }
-        }</code></pre><p>======WPF类，UI界面存在XML文件中=======================<br>            if (checkBox.IsChecked == true)<br>            {<br>                MessageBox.Show(“wpf msg btn”);<br>                image.Source = new BitmapImage(new Uri(@”E:\pic.jpg”));<br>            }</p>
-<pre><code>// 设置全屏
-this.WindowState = System.Windows.WindowState.Normal;
-this.WindowStyle = System.Windows.WindowStyle.None;
-this.ResizeMode = System.Windows.ResizeMode.NoResize;
-this.Topmost = true;
+        DataSet ds2 <span class="token operator">=</span> SqlHelper<span class="token punctuation">.</span><span class="token function">ExecuteDataset</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> CommandType<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> <span class="token string">"select* from student111"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">foreach</span> <span class="token punctuation">(</span>DataRow col <span class="token keyword">in</span> ds2<span class="token punctuation">.</span>Tables<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Rows<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>col<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>======WPF类，UI界面存在XML文件中=======================<br>            if (checkBox.IsChecked == true)<br>            {<br>                MessageBox.Show(“wpf msg btn”);<br>                image.Source = new BitmapImage(new Uri(@”E:\pic.jpg”));<br>            }</p>
+<pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">// 设置全屏</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>WindowState <span class="token operator">=</span> System<span class="token punctuation">.</span>Windows<span class="token punctuation">.</span>WindowState<span class="token punctuation">.</span>Normal<span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>WindowStyle <span class="token operator">=</span> System<span class="token punctuation">.</span>Windows<span class="token punctuation">.</span>WindowStyle<span class="token punctuation">.</span>None<span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>ResizeMode <span class="token operator">=</span> System<span class="token punctuation">.</span>Windows<span class="token punctuation">.</span>ResizeMode<span class="token punctuation">.</span>NoResize<span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>Topmost <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
 
-this.Left = 0.0;
-this.Top = 0.0;
-this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
-this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;</code></pre>
+<span class="token keyword">this</span><span class="token punctuation">.</span>Left <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>Top <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>Width <span class="token operator">=</span> System<span class="token punctuation">.</span>Windows<span class="token punctuation">.</span>SystemParameters<span class="token punctuation">.</span>PrimaryScreenWidth<span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>Height <span class="token operator">=</span> System<span class="token punctuation">.</span>Windows<span class="token punctuation">.</span>SystemParameters<span class="token punctuation">.</span>PrimaryScreenHeight<span class="token punctuation">;</span></code></pre>
+
             </div>
             <hr>
 
