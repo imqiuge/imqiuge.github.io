@@ -428,6 +428,40 @@
     MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>ip<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//修改：</span>
     xn<span class="token punctuation">.</span>InnerText <span class="token operator">=</span> <span class="token string">"192.168.2.2"</span><span class="token punctuation">;</span>
     xml<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//保存更改到路径</span></code></pre>
+<hr>
+<pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">/// &lt;summary></span>
+    <span class="token comment" spellcheck="true">/// 读取配置文件，XML文件方式</span>
+    <span class="token comment" spellcheck="true">/// &lt;/summary></span>
+    <span class="token comment" spellcheck="true">/// &lt;returns>&lt;/returns></span>
+    <span class="token keyword">string</span> <span class="token function">LoadUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">string</span> path <span class="token operator">=</span> Application<span class="token punctuation">.</span>StartupPath <span class="token operator">+</span> <span class="token string">"\\config.xml"</span><span class="token punctuation">;</span>
+        XmlDocument xml <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//声明xml</span>
+        xml<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//按路径读xml文件</span>
+        XmlNode root <span class="token operator">=</span> xml<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"config"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点</span>
+        XmlNode xn <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点下的serv_ip节点</span>
+        <span class="token keyword">string</span> strUser <span class="token operator">=</span> xn<span class="token punctuation">.</span>InnerText<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//读出里面的值 注意读取的是string 需要类型转换的话自己做</span>
+
+        <span class="token keyword">return</span> strUser<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/// &lt;summary></span>
+    <span class="token comment" spellcheck="true">/// 保存配置文件，XML文件方式</span>
+    <span class="token comment" spellcheck="true">/// &lt;/summary></span>
+    <span class="token comment" spellcheck="true">/// &lt;param name="strUser">&lt;/param></span>
+    <span class="token keyword">void</span> <span class="token function">SaveUser</span><span class="token punctuation">(</span><span class="token keyword">string</span> strUser<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">string</span> path <span class="token operator">=</span> Application<span class="token punctuation">.</span>StartupPath <span class="token operator">+</span> <span class="token string">"\\config.xml"</span><span class="token punctuation">;</span>
+        XmlDocument xml <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//声明xml</span>
+        xml<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//按路径读xml文件</span>
+        XmlNode root <span class="token operator">=</span> xml<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"config"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点</span>
+        XmlNode xn <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点下的serv_ip节点</span>
+
+        <span class="token comment" spellcheck="true">//修改：</span>
+        xn<span class="token punctuation">.</span>InnerText <span class="token operator">=</span> strUser<span class="token punctuation">;</span>
+        xml<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//保存更改到路径</span>
+
+    <span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr>
