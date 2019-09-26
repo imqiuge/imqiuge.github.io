@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>SQL命令整理</title>
+      <link href="/2019/09/27/SQL%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
+      <url>/2019/09/27/SQL%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<pre class=" language-mysql"><code class="language-mysql">select ltrim(rtrim(UsrName))  //sql trim()函数去掉两头空格</code></pre><pre class=" language-mysql"><code class="language-mysql">select * from fa_studentswhere name not in (select name from fa_money2019)//以fa_students为标准，查找所有不在fa_money2019中的人员</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SQL, MYSQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>XML操作方法</title>
       <link href="/2019/09/27/XML%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95/"/>
       <url>/2019/09/27/XML%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95/</url>

@@ -4,12 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="XML操作方法, C#, 开发">
-    <meta name="description" content=" 1.XML文件格式：
-&amp;lt;config&gt;
-  &amp;lt;serv_ip&gt;192.168.2.2&amp;lt;/serv_ip&gt;
-  &amp;lt;connect_time&gt;30&amp;lt;/connect_time&gt;
-  &amp;lt;refresh_tim">
+    <meta name="keywords" content="SQL命令整理, C#, 开发">
+    <meta name="description" content="select ltrim(rtrim(UsrName))  //sql trim()函数去掉两头空格
+select * from fa_students
+where name not in (select name from fa_mone">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>XML操作方法 | 邱哥的小站</title>
+    <title>SQL命令整理 | 邱哥的小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +259,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        XML操作方法
+                        SQL命令整理
                     </div>
                 </div>
             </div>
@@ -378,8 +376,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-XML/" target="_blank">
-                                <span class="chip bg-color">C#, XML</span>
+                            <a href="/tags/SQL-MYSQL/" target="_blank">
+                                <span class="chip bg-color">SQL, MYSQL</span>
                             </a>
                         
                     </div>
@@ -409,59 +407,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p> 1.XML文件格式：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>config</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>serv_ip</span><span class="token punctuation">></span></span>192.168.2.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>serv_ip</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>connect_time</span><span class="token punctuation">></span></span>30<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>connect_time</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>refresh_time</span><span class="token punctuation">></span></span>60<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>refresh_time</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>serv_port</span><span class="token punctuation">></span></span>3000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>serv_port</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>config</span><span class="token punctuation">></span></span></code></pre>
-<p>2.</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">.</span>Xml<span class="token punctuation">;</span></code></pre>
-<p>3.</p>
-<pre class=" language-csharp"><code class="language-csharp">    <span class="token keyword">string</span> path <span class="token operator">=</span> <span class="token string">"D:\\test.xml"</span><span class="token punctuation">;</span>
-    XmlDocument xml <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//声明xml</span>
-    xml<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//按路径读xml文件</span>
-    XmlNode root <span class="token operator">=</span> xml<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"config"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点</span>
-    XmlNode xn <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"serv_ip"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点下的serv_ip节点</span>
-    <span class="token keyword">string</span> ip <span class="token operator">=</span> xn<span class="token punctuation">.</span>InnerText<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//读出里面的值 注意读取的是string 需要类型转换的话自己做</span>
-    MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>ip<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//修改：</span>
-    xn<span class="token punctuation">.</span>InnerText <span class="token operator">=</span> <span class="token string">"192.168.2.2"</span><span class="token punctuation">;</span>
-    xml<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//保存更改到路径</span></code></pre>
-<hr>
-<pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">/// &lt;summary></span>
-    <span class="token comment" spellcheck="true">/// 读取配置文件，XML文件方式</span>
-    <span class="token comment" spellcheck="true">/// &lt;/summary></span>
-    <span class="token comment" spellcheck="true">/// &lt;returns>&lt;/returns></span>
-    <span class="token keyword">string</span> <span class="token function">LoadUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">string</span> path <span class="token operator">=</span> Application<span class="token punctuation">.</span>StartupPath <span class="token operator">+</span> <span class="token string">"\\config.xml"</span><span class="token punctuation">;</span>
-        XmlDocument xml <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//声明xml</span>
-        xml<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//按路径读xml文件</span>
-        XmlNode root <span class="token operator">=</span> xml<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"config"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点</span>
-        XmlNode xn <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点下的serv_ip节点</span>
-        <span class="token keyword">string</span> strUser <span class="token operator">=</span> xn<span class="token punctuation">.</span>InnerText<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//读出里面的值 注意读取的是string 需要类型转换的话自己做</span>
-
-        <span class="token keyword">return</span> strUser<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/// &lt;summary></span>
-    <span class="token comment" spellcheck="true">/// 保存配置文件，XML文件方式</span>
-    <span class="token comment" spellcheck="true">/// &lt;/summary></span>
-    <span class="token comment" spellcheck="true">/// &lt;param name="strUser">&lt;/param></span>
-    <span class="token keyword">void</span> <span class="token function">SaveUser</span><span class="token punctuation">(</span><span class="token keyword">string</span> strUser<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">string</span> path <span class="token operator">=</span> Application<span class="token punctuation">.</span>StartupPath <span class="token operator">+</span> <span class="token string">"\\config.xml"</span><span class="token punctuation">;</span>
-        XmlDocument xml <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//声明xml</span>
-        xml<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//按路径读xml文件</span>
-        XmlNode root <span class="token operator">=</span> xml<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"config"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点</span>
-        XmlNode xn <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">SelectSingleNode</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//指向根节点下的serv_ip节点</span>
-
-        <span class="token comment" spellcheck="true">//修改：</span>
-        xn<span class="token punctuation">.</span>InnerText <span class="token operator">=</span> strUser<span class="token punctuation">;</span>
-        xml<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//保存更改到路径</span>
-
-    <span class="token punctuation">}</span></code></pre>
+                <pre class=" language-mysql"><code class="language-mysql">select ltrim(rtrim(UsrName))  //sql trim()函数去掉两头空格</code></pre>
+<pre class=" language-mysql"><code class="language-mysql">select * from fa_students
+where name not in (select name from fa_money2019)
+//以fa_students为标准，查找所有不在fa_money2019中的人员</code></pre>
 
             </div>
             <hr>
@@ -493,9 +442,9 @@
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《XML操作方法》
+                    《SQL命令整理》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/27/XML操作方法/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/27/SQL命令整理/" property="cc:attributionName" rel="cc:attributionURL">
                 Qiuge
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -536,7 +485,8 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/09/27/SQL命令整理/">
                     <div class="card-image">
@@ -556,9 +506,9 @@ where name not in (select name from fa_mone
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -567,6 +517,7 @@ where name not in (select name from fa_mone
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -585,28 +536,28 @@ where name not in (select name from fa_mone
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/24/C-开发代码存档/">
+                <a href="/2019/09/27/XML操作方法/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="C#开发代码存档">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="XML操作方法">
                         
-                        <span class="card-title">C#开发代码存档</span>
+                        <span class="card-title">XML操作方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-MYSQL最简化使用public static string strConn = "Host =localhost;Database=fastadmin;Username=root;Password=root";
-
-```csharp
- 
+                             1.XML文件格式：
+&lt;config>
+  &lt;serv_ip>192.168.2.2&lt;/serv_ip>
+  &lt;connect_time>30&lt;/connect_time>
+  &lt;refresh_tim
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-27
                             </span>
                         <span class="publish-author">
                             
@@ -619,8 +570,8 @@ MYSQL最简化使用public static string strConn = "Host =localhost;Database=fas
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C#</span>
+                    <a href="/tags/C-XML/" target="_blank">
+                        <span class="chip bg-color">C#, XML</span>
                     </a>
                     
                 </div>
