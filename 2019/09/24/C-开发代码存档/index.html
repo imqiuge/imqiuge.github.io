@@ -688,7 +688,7 @@ Program<span class="token punctuation">.</span>cs中修改Main函数
 ​    <span class="token punctuation">{</span>
 ​        DataTable dtDgv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 ​        <span class="token comment" spellcheck="true">//dtDgv.TableName = "";</span>
-​        <span class="token keyword">string</span> strConn <span class="token operator">=</span> <span class="token string">"Data Source=120.79.140.200;Initial Catalog=HuaXia;User ID=sa;Password=Www.023**.cn"</span><span class="token punctuation">;</span>
+​        <span class="token keyword">string</span> strConn <span class="token operator">=</span> <span class="token string">"Data Source=120.79.140.200;Initial Catalog=HuaXia;User ID=sa;Password=Www.****.cn"</span><span class="token punctuation">;</span>
 
 ​        <span class="token keyword">string</span> strSQL <span class="token operator">=</span> <span class="token string">"SELECT * from classlist"</span><span class="token punctuation">;</span>
 
@@ -740,7 +740,7 @@ Program<span class="token punctuation">.</span>cs中修改Main函数
 <h4 id="核对数据库中的用户名与密码"><a href="#核对数据库中的用户名与密码" class="headerlink" title="核对数据库中的用户名与密码"></a>核对数据库中的用户名与密码</h4><pre class=" language-csharp"><code class="language-csharp">    <span class="token comment" spellcheck="true">//核对数据库中的用户名与密码</span>
     <span class="token keyword">bool</span> <span class="token function">checkUserPassword</span><span class="token punctuation">(</span><span class="token keyword">string</span> sUser<span class="token punctuation">,</span> <span class="token keyword">string</span> sPass<span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        String connsql <span class="token operator">=</span> <span class="token string">"server=120.79.140.200;database=HuaXia;user id=sa;pwd=Www.023**.cn;"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</span>
+        String connsql <span class="token operator">=</span> <span class="token string">"server=120.79.140.200;database=HuaXia;user id=sa;pwd=Www.****.cn;"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证</span>
         <span class="token comment" spellcheck="true">//创建连接对象</span>
         SqlConnection connection <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlConnection</span><span class="token punctuation">(</span>connsql<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
